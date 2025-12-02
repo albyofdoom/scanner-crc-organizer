@@ -46,9 +46,7 @@ This file gives focused, actionable guidance so an AI coding agent can be immedi
 If anything in this file is unclear or you'd like more details (for example, a quick reference to the matching code paths or tests to run after edits), tell me which area to expand and I'll update this file.
 
 **Legacy patterns & migration notes**
-- `Add-EscChars` vs `-LiteralPath`: older scripts include `Add-EscChars` to escape wildcards — prefer `-LiteralPath` for new work, but do not remove legacy helpers without running tests.
-- 7-Zip usage is present in older scripts (`C:\Program Files\7-Zip\7z.exe`) — migration notes suggest `Compress-Archive` / `Expand-Archive` as native alternatives; update carefully and run tests.
-
+- (No file-specific legacy helpers are referenced here; keep legacy-awareness high when refactoring.)
 **Environment & tests (practical commands)**
 - Recommended Python: 3.9+ (project tests run under pytest). Use a venv at repo root: `python -m venv .venv` then `.\.venv\Scripts\Activate.ps1` and `pip install -r requirements.txt`.
 - PowerShell test runner: `pwsh -NoProfile -File .\tests\run-crc-tests.ps1` or `.	ests\Quick-Test-CRC.ps1` for a fast smoke test.
@@ -66,7 +64,7 @@ If anything in this file is unclear or you'd like more details (for example, a q
 
 These lines are intentionally fragile; preserve the pattern when refactoring parallel hashing.
 
-If you'd like, I can merge more specific snippets from the old instructions (examples for `Add-EscChars` usage or `ps_syntax_check.ps1` invocation). Approve and I'll apply them.
+If you'd like, I can expand this guidance with examples or restore archived snippets on request.
 
 **Variable Naming**
 - **Goal:** Use descriptive, context-specific names to avoid shadowing and improve readability across scripts and runspaces.

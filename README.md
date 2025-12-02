@@ -5,6 +5,7 @@ Production-grade CRC32-based file organization workflow for managing downloaded 
 ## Overview
 
 This tool automates the workflow of:
+
 1. Reading CSV files containing expected filenames with CRC32 hashes
 2. Calculating CRC32 hashes for downloaded files in parallel
 3. Matching files to CSV entries by CRC32 (handles duplicates, renames, etc.)
@@ -58,10 +59,10 @@ pip install -r requirements.txt
 
 ## Folder Structure
 
-```
+``` plaintext
 RootFolder/          # CSV files and logs
   ├── *.csv          # CSV metadata files
-  ├── _98_Logs/      # Timestamped logs
+  ├── Logs/      # Timestamped logs
   └── Archive/       # Archived logs
 
 SourceFolderCRC/     # Downloaded files to organize
@@ -85,25 +86,25 @@ image002.jpg,2345678,EFGH5678,,
 ```
 
 **Column details:**
-- **FileName**: Expected filename (used for reference only, matching is by CRC)
-- **Size**: File size in bytes (informational)
+
+- **FileName**: Expected filename (used for reference only, matching is by CRC and size)
+- **Size**: File size in bytes (for matching validation in addition to CRC32)
 - **CRC32**: 8-character hexadecimal CRC32 hash (case-insensitive)
-- **Path**: Optional subdirectory path (rarely used)
-- **Comment**: Optional notes (preserved during repairs)
+- **Path**: Optional subdirectory path (often used)
+- **Comment**: Optional notes (Uncommon, but preserved during repairs)
 
 ## Scripts
 
 ### Main Scripts
 
-- **CRC-FileOrganizer.ps1** (966 lines) - Main workflow orchestrator
-- **CRC-FileOrganizerLib.ps1** (226 lines) - Shared CRC calculation functions
+- **CRC-FileOrganizer.ps1** - Main workflow orchestrator
+- **CRC-FileOrganizerLib.ps1** - Shared CRC calculation functions
 - **CRC-FileOrganizer-ReportConflicts.ps1** - Detailed conflict analysis tool
 
 ### Python Utilities
 
 - **CSV-Validate-Repair.py** - Repairs malformed CSVs, handles exotic encodings
 -- **CRC32_Folder_Calc.py** - Standalone CRC32 calculator for folders
-- **ExtractModelID.ps1** - HTML parsing for model IDs (optional utility)
 
 ## Testing
 
@@ -126,6 +127,7 @@ pytest tests/
 ### Test Files
 
 **PowerShell tests:**
+
 - `Test-CRCFileOrganizer.ps1` - Main workflow tests
 - `Test-CRCFileOrganizerLib.ps1` - Library function tests
 - `Test-ReportConflicts.ps1` - Conflict reporting tests
@@ -133,6 +135,7 @@ pytest tests/
 - `Test-MissingFiles-Columns.ps1` - Missing file column tests
 
 **Python tests:**
+
 - `test_csv_validate_repair.py` - CSV repair functionality
 - `test_csv_escaped_comma.py` - Escaped comma handling
 - `test_csv_comment_preservation.py` - Comment preservation
@@ -143,24 +146,28 @@ pytest tests/
 ## Workflow Details
 
 ### Phase 1: Archive Old Logs
+
 - Moves previous logs to `Archive/` subfolder with timestamps
 - Prevents log directory clutter
 
 ### Phase 2: Calculate CRC32 Hashes
+
 - Scans all files in `SourceFolderCRC` recursively
 - Parallel processing with configurable throttle limit
 - Creates `CRC:Size` candidate map for fast lookups
 
 ### Phase 3: Process Each CSV
+
 - Reads CSV entries (expected files)
-- Matches entries to candidates by CRC32
+- Matches entries to candidates by CRC32 and Size
 - Handles edge cases:
-  - Multiple files with same CRC (picks best match by filename similarity)
+  - Multiple files with same CRC (Matches both Size and CRC32)
   - Duplicate CRC entries in CSV (all variants must be found)
   - Files already in destination (skips gracefully)
   - Missing files (logs incomplete CSVs)
 
 ### Phase 4: Move Complete Sets
+
 - If CSV is **COMPLETE** (all files found):
   - Creates folder named after CSV
   - Moves all matched files to folder
@@ -172,6 +179,7 @@ pytest tests/
   - Logs missing files for manual review
 
 ### Phase 5: Cleanup
+
 - Removes empty folders from `SourceFolderCRC`
 - Final log summary
 
@@ -183,30 +191,35 @@ pytest tests/
 | `-SourceFolderCRC` | `D:\ScanSorting\_02_Image_Source\` | Downloaded files location |
 | `-CompletedFolder` | `D:\ScanSorting\_99_Completed\` | Final destination for complete sets |
 | `-LogFolder` | `D:\ScanSorting\_98_Logs\` | Log file directory |
-| `-ThrottleLimit` | `4` | Parallel CRC threads (1-32) |
+| `-ThrottleLimit` | `12` | Parallel CRC threads (1-32) |
 | `-DryRun` | (switch) | Preview mode - no file moves |
 
 **Deprecated (kept for compatibility):**
+
 - `-StagingFolder` - No longer used in current workflow
 
 ## Troubleshooting
 
 ### Files Not Matching Despite Correct CRC
+
 - Check CSV encoding (must be UTF-8)
-- Verify CRC values are 8 hex characters
+- Verify CRC values are 8 hex characters (repair script optionally converts to uppercase)
 - Run `CSV-Validate-Repair.py` on the CSV
 
 ### Slow CRC Calculation
+
 - Increase `-ThrottleLimit` (try 8 or 16 for fast SSDs)
 - Move files to faster storage
 - Check disk I/O in Task Manager
 
 ### "Access Denied" Errors
+
 - Ensure files aren't open in other programs
 - Check folder permissions
 - Run PowerShell as Administrator if needed
 
 ### CSV Parse Errors
+
 ```powershell
 # Repair CSV automatically
 python CSV-Validate-Repair.py broken.csv
@@ -215,20 +228,23 @@ python CSV-Validate-Repair.py broken.csv
 ## Advanced Usage
 
 ### Custom Conflict Analysis
+
 ```powershell
-# Generate detailed conflict report
+# Generate detailed conflict report to determine if a file is used either multiple times within a csv or across multiple csvs (overlaps)
 .\CRC-FileOrganizer-ReportConflicts.ps1 `
     -CsvPath "SetName.csv" `
     -SourceFolderCRC "D:\Downloads"
 ```
 
 ### Calculate CRC for Existing Files
+
 ```powershell
-# Python utility for any folder
+# Python utility for any folder used for fater manual matching or logging
 python CRC32_Folder_Calc.py "D:\MyFiles"
 ```
 
 ### Preview Mode for Testing
+
 ```powershell
 # See exactly what would happen
 .\CRC-FileOrganizer.ps1 -DryRun | Out-File preview.txt
@@ -237,6 +253,7 @@ python CRC32_Folder_Calc.py "D:\MyFiles"
 ## Performance
 
 **Typical benchmarks:**
+
 - CRC32 calculation: ~500 MB/s per thread on SSD
 - 1000 files (~2 GB): ~30 seconds with `-ThrottleLimit 4`
 - 10,000 files (~20 GB): ~5 minutes with `-ThrottleLimit 8`
@@ -244,11 +261,13 @@ python CRC32_Folder_Calc.py "D:\MyFiles"
 ## Architecture
 
 ### Dependencies
+
 - **PowerShell**: Native cmdlets only (`Get-ChildItem`, `Move-Item`, `ForEach-Object -Parallel`)
 - **Python**: Standard library only (`csv`, `hashlib`, `pathlib`)
 - **No external binaries** required
 
 ### Key Design Decisions
+
 1. **CRC32 over SHA256**: Faster, sufficient for filename matching (not security)
 2. **Parallel processing**: Modern multi-core CPUs benefit from parallel hashing
 3. **Self-contained scripts**: No external module dependencies for portability
@@ -256,8 +275,7 @@ python CRC32_Folder_Calc.py "D:\MyFiles"
 
 ## Contributing
 
-This repository is part of a larger PowerShell-Scripts collection that has been split for maintainability. For the original context:
-- Original repo: [PowerShell-Scripts](https://github.com/albyofdoom/PowerShell-Scripts)
+This repository is part of a larger PowerShell-Scripts collection that has been split for maintainability.
 
 ## License
 
@@ -268,6 +286,3 @@ Personal utility scripts - use at your own risk. No warranty provided.
 - `venv_readme.md` - Python virtual environment setup
 - `Samples/` - Example CSV files
 - `TestData/` - Test fixtures for automated tests
-- Related repos:
-  - `model-metadata-toolkit` - Model metadata gathering and web scraping
-  - `brainbooks-organizer` - eBook metadata extraction and organization
