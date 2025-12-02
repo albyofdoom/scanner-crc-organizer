@@ -1,0 +1,8 @@
+# scanner-crc-organizer Python Dependencies
+# For CSV validation and repair utilities
+
+# No external dependencies required for main CRC workflow
+# Python standard library (csv, hashlib, pathlib) is sufficient
+
+# Optional: For advanced CSV testing
+pytest==9.0.1

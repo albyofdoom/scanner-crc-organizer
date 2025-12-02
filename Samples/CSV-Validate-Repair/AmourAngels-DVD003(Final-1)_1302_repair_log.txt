@@ -1,0 +1,19 @@
+CSV Validation and Repair Log
+================================================================================
+Input File: Samples\CSV-Validate-Repair\AmourAngels-DVD003(Final-1)_1302.csv
+Output File: Samples\CSV-Validate-Repair\AmourAngels-DVD003(Final-1)_1302_repaired.csv
+Timestamp: 2025-11-27 14:32:33
+Mode: REPAIR
+Normalize CRC32: Yes
+Normalize Only: No
+
+Total Rows Processed: 1302
+Total Issues Found: 2
+Header Row Detected: No
+
+================================================================================
+
+Issues Found:
+--------------------------------------------------------------------------------
+Line 266, Field 3 (CRC32): Duplicate CRC32 value found; CRC=A1C26523, Size=19693; also used on lines: 266, 278 - Original: 'A1C26523'
+Line 278, Field 3 (CRC32): Duplicate CRC32 value found; CRC=A1C26523, Size=19693; also used on lines: 266, 278 - Original: 'A1C26523'
