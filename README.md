@@ -1,6 +1,8 @@
 # scanner-crc-organizer
 
-Production-grade CRC32-based file organization workflow for managing downloaded scanner sets with CSV metadata.
+Production-grade CRC32-based file organization workflow for managing downloaded scanner sets with CSV metadata. This was originated as a modernized replacement for the functionality in Hunter (aka HunterCSV). 
+
+Historical note: Most scanner csvs pre-date creation or wide adoption of csv standards in [RFC4180](https://datatracker.ietf.org/doc/html/rfc4180) which wasn't published until 2005, and the expansion and further defining of CSV standards by the [W3C in 2013](https://www.w3.org/TR/sparql11-results-csv-tsv/). The height of scanning as an internet sub-culture occurred during the late 1990s and early 2000s, though thre were pre-cursors and there are some remnants remaining to this day.
 
 ## Overview
 
