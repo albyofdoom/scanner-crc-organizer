@@ -102,7 +102,7 @@ image002.jpg,2345678,EFGH5678,,
 ### Python Utilities
 
 - **CSV-Validate-Repair.py** - Repairs malformed CSVs, handles exotic encodings
-- **CRC32-Folder-Calc.py** - Standalone CRC32 calculator for folders
+-- **CRC32_Folder_Calc.py** - Standalone CRC32 calculator for folders
 - **ExtractModelID.ps1** - HTML parsing for model IDs (optional utility)
 
 ## Testing
@@ -225,7 +225,7 @@ python CSV-Validate-Repair.py broken.csv
 ### Calculate CRC for Existing Files
 ```powershell
 # Python utility for any folder
-python CRC32-Folder-Calc.py "D:\MyFiles"
+python CRC32_Folder_Calc.py "D:\MyFiles"
 ```
 
 ### Preview Mode for Testing

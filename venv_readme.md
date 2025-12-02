@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository includes Python utilities for CSV validation and repair (`CSV-Validate-Repair.py`, `CRC32-Folder-Calc.py`). A virtual environment is recommended for isolation and dependency management.
+This repository includes Python utilities for CSV validation and repair (`CSV-Validate-Repair.py`, `CRC32_Folder_Calc.py`). A virtual environment is recommended for isolation and dependency management.
 
 ## Quick Start
 
@@ -64,7 +64,7 @@ python CSV-Validate-Repair.py input.csv
 
 ### Run CRC32 Folder Calculator
 ```powershell
-python CRC32-Folder-Calc.py D:\ScanFolder
+python CRC32_Folder_Calc.py D:\ScanFolder
 ```
 
 ### Run Tests

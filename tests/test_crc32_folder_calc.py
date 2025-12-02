@@ -1,5 +1,5 @@
 """
-Unit tests for CRC32-Folder-Calc.py
+Unit tests for CRC32_Folder_Calc.py
 
 Tests cover:
 - CRC32 computation accuracy
