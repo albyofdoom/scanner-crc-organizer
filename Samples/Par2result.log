@@ -1,1271 +1,0 @@
-Parchive 2.0 client version 1.3.3.5 by Yutaka Sawada
-
-Base Directory	: "M:\Downloads\Newsbin\Pack_Posters\"
-Recovery File	: "M:\Downloads\Newsbin\Pack_Posters\Trainpack_2025-130.6AAD4A1D.par2"
-CPU thread	: 12 / 24
-CPU cache limit : 128 KB, 2048 KB (32)
-CPU extra	: AVX2 CLMUL
-Memory usage	: Auto (89244 MB available)
-
-PAR File list :
-         Size :  Filename
-       220532 : "Trainpack_2025-130.6AAD4A1D.par2"
-       569612 : "Trainpack_2025-130.6AAD4A1D.vol0000+001.par2"
-      1139148 : "Trainpack_2025-130.6AAD4A1D.vol0001+002.par2"
-      2057764 : "Trainpack_2025-130.6AAD4A1D.vol0003+004.par2"
-      3674540 : "Trainpack_2025-130.6AAD4A1D.vol0007+008.par2"
-      6687636 : "Trainpack_2025-130.6AAD4A1D.vol0015+016.par2"
-     12493372 : "Trainpack_2025-130.6AAD4A1D.vol0031+032.par2"
-     23884388 : "Trainpack_2025-130.6AAD4A1D.vol0063+064.par2"
-     46445964 : "Trainpack_2025-130.6AAD4A1D.vol0127+128.par2"
-     91348660 : "Trainpack_2025-130.6AAD4A1D.vol0255+256.par2"
-    180933596 : "Trainpack_2025-130.6AAD4A1D.vol0511+512.par2"
-    180933596 : "Trainpack_2025-130.6AAD4A1D.vol1023+512.par2"
-
-PAR File total size	: 550388808
-PAR File possible count	: 12
-
-Recovery Set ID		: 6AAD4A1D82AD6F867D849FD40DEFFA1C
-Input File Slice size	: 349012
-Input File total count	: 600
-Recovery Set file count : 600
-Creator : par2j v1.3.3
-
-Input File list      :
-         Size  Slice :  Filename
-       604937      2 : "A J Moran - Knot Today (epub).epub"
-      1242176      4 : "A J Rivers - Watched in the Pines (epub).epub"
-       744073      3 : "A R Aravena - Do It For Me (epub).epub"
-       535980      2 : "A V Asher - Wyatt (epub).epub"
-       936528      3 : "A Zavarelli  - Beautiful Torment (epub).epub"
-       946334      3 : "A Zavarelli - Beautiful Torment (epub).epub"
-      1139518      4 : "Aaron Renfroe - The Resonance Cycle Omnibus (epub).epub"
-      1717611      5 : "Abigail Kelly - Grim's Delight (epub).epub"
-      1069456      4 : "Adrienne Chinn - The Queen's Necklace (epub).epub"
-       677760      2 : "Aest Belequa - Victoria Falling (epub).epub"
-       984168      3 : "Ainsley Vale - Sail Me to Ruin (epub).epub"
-       355883      2 : "Alby Blake - Bro Amazing (epub).epub"
-       833044      3 : "Alex Toxic - Kill or Die 04 (epub).epub"
-       496362      2 : "Alexa Riley - Guilty As Charged (epub).epub"
-      1710042      5 : "Alexandra Keillor - The Enemy to the Living (epub).epub"
-      2181334      7 : "Ali Hazelwood - Hot for Slayer (epub).epub"
-       541966      2 : "Alina Jacobs - [Svensson Brothers 08] - I Hate, I Bake, and I Don't Date! (epub).epub"
-       483748      2 : "Alina Jacobs - [The Manhattan Svenssons 02] - Hating and Dating Your Boss with Style! (epub).epub"
-       535260      2 : "Alina Jacobs - [The Manhattan Svenssons 03] - Yeah, I Hate-Ate Your Cupcake (epub).epub"
-       438893      2 : "Alina Jacobs - [The Manhattan Svenssons 04] - Love, Hate, and Terrible Dates (epub).epub"
-       421380      2 : "Alina Jacobs - [The Manhattan Svenssons 05] - The Worst Dates Bring Chocolate Cake (epub).epub"
-       799735      3 : "Alina K Field - Claims of the Heart (retail) (epub).epub"
-       582934      2 : "Alina K Field - Convincing the Countess (retail) (epub).epub"
-       451111      2 : "Alina K Field - The Earl's Scottish Hoyden (retail) (epub).epub"
-       609168      2 : "Alison Roberts - The Surgeon's Christmas Miracle (epub).epub"
-      1038256      3 : "Alora Quinn - The Genie's Wish (epub).epub"
-      1277257      4 : "Amanda Lees - The Key to the Island House (epub).epub"
-      1095580      4 : "Amanda Richardson - Kneel with the King (epub).epub"
-      2185385      7 : "Amanda Tyler - How to End Christian Nationalism (retail) (epub).epub"
-       871235      3 : "Amarie Collins - All Your Lies (epub).epub"
-       741124      3 : "Amber Nicole - Dare To Hold (epub).epub"
-       697042      2 : "Amora Sway - The Maid's New Husband (epub).epub"
-       383343      2 : "Amy Cross - 9pm (epub).epub"
-       539581      2 : "Amy Cross - Dusk (epub).epub"
-      1206937      4 : "Andi Rhodes - Screamer (epub).epub"
-       884701      3 : "Angela K Ryan - A Dangerous Scoop (epub).epub"
-      1575087      5 : "Ann C Orlandi - Oathborn (epub).epub"
-      1064162      4 : "Anna B Doe - Make Me Trust Again (epub).epub"
-      2533287      8 : "Anna Blakely - Christian (epub).epub"
-      1061077      4 : "Anna Mocikat - Neon Fever (epub).epub"
-       798507      3 : "Anna Stuart - The President's Wife (epub).epub"
-       964389      3 : "Annabelle Jacobs - Lynx (epub).epub"
-      1186896      4 : "Annabeth Albert - Keep You Safe (epub).epub"
-       755612      3 : "Anton Panarin - Backstreet Evolutionist (epub).epub"
-      2868078      9 : "Antonio Morale - I'm coming for you (epub).epub"
-       714077      3 : "Anya J Cosgrove - The Crown of a Fallen Queen (epub).epub"
-      1808424      6 : "Ariana Cane - When Fences Fall (epub).epub"
-      1703158      5 : "Ashley Munoz - The Lost Kings (epub).epub"
-       774849      3 : "Avery Kent - Murder Takes the Cake (epub).epub"
-       831490      3 : "B P Walter - The Winter Visitor (epub).epub"
-      2101724      7 : "Barb Han - Crisis at Rescue Ridge (epub).epub"
-       243333      1 : "Barb Han - Mystery at Rescue Ridge (epub).epub"
-      1521059      5 : "Barbara Hannay - Second Chance Family (epub).epub"
-      1156005      4 : "Barrie Stevenson - The Dreadmoor Experiment (epub).epub"
-       916398      3 : "Becca Seymour - Full Tilt (epub).epub"
-      1138972      4 : "Bella Blair - Returned to the Vissigroth (epub).epub"
-       303472      1 : "Bernice Cochran - Ninja Foodi PossibleCooker Cookbook for Beginners (epub).epub"
-      1037872      3 : "Beth Bolden - Breakaway Goals (epub).epub"
-      1373568      4 : "Bethanie Loren & Billie Leigh - Kalix (epub).epub"
-      1002048      3 : "BJ Bourg - But Not For Profit (epub).epub"
-       495944      2 : "Blake R Wolfe - The Minotaur's Maze (epub).epub"
-      1682116      5 : "Bobby Akart - Ring of Fire Axial (epub).epub"
-      2068666      6 : "Bobby Akart - Ring of Fire Cascadia (epub).epub"
-      1071714      4 : "Boots Walker - The Twilight Empire (epub).epub"
-      1805042      6 : "Boris Becker - Inside (epub).epub"
-      1803615      6 : "Breanne Bergie - Their Stolen Obsession (epub).epub"
-       455972      2 : "Brian Moore - The Statement (epub).epub"
-       547642      2 : "Brian Moore - The Statement (mobi).mobi"
-       648369      2 : "Brian Moreland - Shadows in the Mist (retail) (epub).epub"
-       534226      2 : "Brian Moreland - They Stalk the Night (epub).epub"
-      4121979     12 : "Brian Moreland - Tomb of Gods [Fiction Without Frontiers] (retail) (epub).epub"
-       241118      1 : "Brian N Ball - [Frames 02] - Planet Probability (epub).epub"
-       349616      2 : "Brian N Ball - [Frames 02] - Planet Probability (mobi).mobi"
-       319568      1 : "Brian N Ball - Singularity Station (mobi).mobi"
-       389445      2 : "Brian N Ball - Sundog (txt).txt"
-      2521375      8 : "Brooklyn Cross - Volatile King (epub).epub"
-      1107198      4 : "Bruce Wagner - Amputation (epub).epub"
-       831156      3 : "C H Admirand - The Duke's Sharpshooter (epub).epub"
-       829820      3 : "C J Cross & Without Warrent - Girl Between (epub).epub"
-       793705      3 : "C M Howes - Growing Home (epub).epub"
-      2822485      9 : "C M Stunich - Game Over, Boys (epub).epub"
-      2045677      6 : "C M Stunich - If You Don't Love Me We Both Die (epub).epub"
-       693201      2 : "C R Chandler - Payback (epub).epub"
-       550795      2 : "C Rochelle - [The Yaga's Riders 01] - Rise of The Witch (epub).epub"
-      1848483      6 : "Cala Riley - Panther's Magpie (epub).epub"
-      1112456      4 : "Cara Bristol - Alien Spare (epub).epub"
-       969157      3 : "Carla Simpson - Deadly Murder (epub).epub"
-       399133      2 : "Carly Claire - Their Hallowed Queen Part One (epub).epub"
-       906373      3 : "Caroline Lea - Love, Sex and Frankenstein (epub).epub"
-       781648      3 : "Cass Morgan - Balancing Act (epub).epub"
-      1162212      4 : "Cassia Quinn - Corrupt Promises (epub).epub"
-       364900      2 : "Cassidy Fox - How NOT to Seduce a Rockstar (epub).epub"
-       564378      2 : "Cassie Alexander - Dragon's Flame (epub).epub"
-      2529312      8 : "Caty Rogan - Kissed by the Gods (epub).epub"
-      1054949      4 : "CeCe Wylder - The Scars of War (epub).epub"
-       785760      3 : "CeeCee James - Danger in the Desert (epub).epub"
-      1685961      5 : "Chaos65 - The Second Stage (epub).epub"
-      1155859      4 : "Charity Massengale - I Knew You (epub).epub"
-       139738      1 : "Charles Coleman Finlay - An Eye for an Eye (epub).epub"
-       131682      1 : "Charles Coleman Finlay - Lucy, in Her Splendor (epub).epub"
-       130693      1 : "Charles Coleman Finlay - Moons Like Great White Whales (epub).epub"
-       132299      1 : "Charles Coleman Finlay - Passing Through (epub).epub"
-       149865      1 : "Charles Coleman Finlay - The Minutemen's Witch (epub).epub"
-       132455      1 : "Charles Coleman Finlay - The Moon Is Always Full (epub).epub"
-       164172      1 : "Charles Coleman Finlay - The Political Officer (epub).epub"
-       181822      1 : "Charles Coleman Finlay - The Political Prisoner (epub).epub"
-      3050389      9 : "Charles Coleman Finlay - The Prodigal Troll (epub).epub"
-      1615071      5 : "Charlie Lennon - Dangerous Little Dares (epub).epub"
-     19145657     55 : "Chelsea Goodwin - Money-Saving Meal Plans with Chelsea (epub).epub"
-       764809      3 : "Cheyenne McCray - Country Winds (epub).epub"
-      1473764      5 : "Christina Lauren - Falling (epub).epub"
-      1222330      4 : "Christopher C Tubbs - Revenge (epub).epub"
-      1890082      6 : "Christopher Hall & Maxlex - Dungeon Prime (epub).epub"
-      2936699      9 : "Christopher Mitchell - Suffer the Heir (epub).epub"
-      2578735      8 : "Christopher Risso-Gill - There's Always Something to Do (retail) (epub).epub"
-      2461897      8 : "Ciara St James - Sean's Redemption (epub).epub"
-       832682      3 : "Cindy Bell - Awards, Adventure, and Accusations (epub).epub"
-      1542691      5 : "Claudia Ambrose - Bake You Mine (epub).epub"
-       818108      3 : "CM Rawlins - Death in the Abbey (epub).epub"
-      1135480      4 : "CM Stunich - Blizzards and Bastards (epub).epub"
-       674740      2 : "Colin Falconer - Silk Road (epub).epub"
-       999946      3 : "Connie Aldana - The Ultimate Ninja Foodi PossibleCooker Cookbook for Beginners (epub).epub"
-       591685      2 : "Cyn Blade & Milly Taiden - Savage Devotion (epub).epub"
-      2138393      7 : "Cynthia Eden - When He Defends (epub).epub"
-      1187527      4 : "D E Sherman - Duskbound 02 (epub).epub"
-       551708      2 : "D L Bacon - Ghost Academy 01 (epub).epub"
-       221085      1 : "D L Harrison - Chaos Divine (epub).epub"
-      2008480      6 : "Daisy Jane - Father Knows Best (epub).epub"
-      1351303      4 : "Dakota Krout - Rob X Punzel (epub).epub"
-      7810742     23 : "Dana McCullough - Unofficial Guide to FamilySearch.org (epub).epub"
-       857047      3 : "Daniel Hurst - The Ex Who Came Back (epub).epub"
-       846024      3 : "Daniel Young - Infected (epub).epub"
-      2832702      9 : "Danielle Lynn - Fate In Pieces (epub).epub"
-      1086855      4 : "Dante King - A Modern Mage 02 (epub).epub"
-       757008      3 : "Dave Felholder - Low, In The Valley (epub).epub"
-      1330439      4 : "David Field - The Belvedere Scandal (epub).epub"
-       724031      3 : "David Hodges - Deceiver On The Levels (epub).epub"
-       811905      3 : "David Leadbeater - The Diamond Hunters (epub).epub"
-       751303      3 : "Dax Hunter - Living the Dream (epub).epub"
-      1600708      5 : "Dean Koontz - [City 01] - The City (azw3).azw3"
-      2525812      8 : "Dean Koontz - [City 01] - The City (epub).epub"
-       864260      3 : "Dean Koontz - [City 05] - The Neighbor (azw3).azw3"
-       593807      2 : "Dean Koontz - Cold Fire (epub).epub"
-       172208      1 : "Dean Koontz - Dance with the Devil as Deanna Dwyer (epub).epub"
-       250880      1 : "Dean Koontz - Dance with the Devil as Deanna Dwyer (mobi).mobi"
-       217696      1 : "Dean Koontz - Dark of the Woods (epub).epub"
-       192039      1 : "Dean Koontz - Dark of the Woods (mobi).mobi"
-       256982      1 : "Dean Koontz - Dark Symphony (epub).epub"
-       331859      1 : "Dean Koontz - Darkfall (epub).epub"
-       782362      3 : "Declan Rhodes - Borrowed Pain (epub).epub"
-       748074      3 : "Deva Blake - The Pakhan's Forced Bride (epub).epub"
-      1423649      5 : "Devon C Ford - Enclave (epub).epub"
-      1187232      4 : "Dianna Love - Corbin (epub).epub"
-       829583      3 : "Dr Az Hakeem - DETRANS When transition is not the solution (epub).epub"
-       570612      2 : "Eden Finley - The Office Bet (epub).epub"
-      2044878      6 : "Eden Finley & Saxon James - Stubborn Puckboy (epub).epub"
-      2450443      8 : "Edie Skye - Blood Knight Box Set (epub).epub"
-       954877      3 : "Eileen Mueller - Cobalt Dragon (epub).epub"
-       672629      2 : "Eliza Green - Daylight Chaos (epub).epub"
-       804411      3 : "Elizabeth Donne - Jillian's Wild Heart (epub).epub"
-       723874      3 : "Elle James, Kris Norris - Raven's Nest (epub).epub"
-      1817861      6 : "Elle Kaelee - Sweet Silver Bells (epub).epub"
-       824141      3 : "Elle Keaton - Bait and Switch (epub).epub"
-      1082736      4 : "Elle Rivers - As They Are (epub).epub"
-      2989511      9 : "Ellen Ryan - Girls Who Slay Monsters (epub).epub"
-       918292      3 : "Ellie Alexander - Revenge on the Rocks (epub).epub"
-      1901996      6 : "Ellie Ash - The Lost Art of Revealing Hidden Truths (epub).epub"
-       674165      2 : "Ellory Douglas - The Mer-Mate (epub).epub"
-      1067168      4 : "Em Petrova - Stealthy Seduction (epub).epub"
-      1694245      5 : "Emilie Baz - Somewhere down the Ley Line (epub).epub"
-      1004940      3 : "Emilie Castera - A Bloody Merry Murder (epub).epub"
-       844622      3 : "Emily Organ - Murder in the Soho Graveyard (epub).epub"
-       668100      2 : "Emily Prescott - Henhouse (epub).epub"
-      1600672      5 : "Emma Baird - Forever, Maybe (epub).epub"
-      1156734      4 : "Emma Davies - The Midnight Bakery (epub).epub"
-      1043893      3 : "Emma Dean - Demon Touched (epub).epub"
-       506146      2 : "Emmy Ellis - Rioted (epub).epub"
-       993639      3 : "Emmy Sanders - This and Every Life (epub).epub"
-      1052538      4 : "Emory Winters - The Elves and the Shoemaker (epub).epub"
-       836997      3 : "Eric Raglin - Bitter Apples (retail) (epub).epub"
-       973535      3 : "Eric Raglin - Nightmare Yearnings (retail) (epub).epub"
-      1344671      4 : "Eric Raglin - Shredded (retail) (epub).epub"
-      2284988      7 : "Eric Raglin & Lor Gislason & Shelley Lavigne - Sick Stories From the Goop Troop (epub).epub"
-      1080803      4 : "Eric Raglin (ed) - Antifa Splatterpunk (retail) (epub).epub"
-       368391      2 : "Eric Red - Don't Stand So Close (epub).epub"
-       798394      3 : "Eric Red - It Waits Below (mobi).mobi"
-      1234448      4 : "Eric Red - It Waits Below (retail) (epub).epub"
-      2634835      8 : "Eric Red - Strange Fruit (mobi).mobi"
-       360548      2 : "Eric Red - The Guns of Santa Sangre (epub).epub"
-       467420      2 : "Erica Lee - Anyone But Me (epub).epub"
-      1632640      5 : "Essie Sloane - Sam & Justin (epub).epub"
-      2326267      7 : "Eugenia Valero - The Complete Ninja Foodi PossibleCooker Cookbook (epub).epub"
-      1084291      4 : "Eve Bale - Wild Alpha (epub).epub"
-       844852      3 : "Eve Campbell - Seven Lost Summers (epub).epub"
-       537439      2 : "F N Manning - The Boy Next Door (epub).epub"
-      1207449      4 : "Fel Fern - Asher (epub).epub"
-       874860      3 : "Felix Taylor - Embercore 03 (epub).epub"
-      1586001      5 : "Fiona Valpy - The Dark of the Moon (epub).epub"
-      1553684      5 : "Flossindune - Courier Quest 02 (epub).epub"
-       723675      3 : "Freya Barker - Finding Silence (epub).epub"
-       692252      2 : "G B Ralph - Fright on Stage Right (epub).epub"
-      1364391      4 : "G Bailey - Moonlight Bonds (epub).epub"
-      1687526      5 : "G R Jordan - Mage of the Dice (epub).epub"
-      2646059      8 : "Gareth Rubin - The Waterfall (epub).epub"
-      1015824      3 : "Garon Whited - Phoebe's Tale (epub).epub"
-      1125120      4 : "Gavin Brown - The Dark Sorcerer's Assistant (epub).epub"
-      9399004     27 : "Gene P Abel - [Defenders of Time 03] - The Aliens Step In (epub).epub"
-       648784      2 : "Gina X Grant - An Unlikely Escape (epub).epub"
-       349216      2 : "Glass Jawed A Second Chance Ch - AJ Bishop (epub).epub"
-     66199024    190 : "Glenn Adamson - A Century of Tomorrows (epub).epub"
-      1843238      6 : "Glenna Maynard - The Biker Next Door (retail) (epub).epub"
-       706334      3 : "Glisser - Jane Washington (epub).epub"
-       994589      3 : "Glynn Stewart - Regent's Mate (epub).epub"
-      1016997      3 : "Grace McGinty - Eight Seconds to Fly (epub).epub"
-       437715      2 : "Grace Miller - Ninja Foodi PossibleCooker Cookbook One-Pot and Soud-Vide Recipes (epub).epub"
-      5146361     15 : "Grady Hendrix - The Blanks (epub).epub"
-      3558460     11 : "Grae Bryan - An Unwitting Bargain (epub).epub"
-      2962738      9 : "Grae Bryan - Colin (epub).epub"
-      1693033      5 : "Grae Bryan - Johann (epub).epub"
-       647686      2 : "Grafton Carter - Glitches and Kisses (epub).epub"
-      1849385      6 : "Greg Sorber - By Archangel's Light (epub).epub"
-      1255465      4 : "Gregg Dunnett - Deep Blue Lies (epub).epub"
-      4528712     13 : "Greyson Vale - Soulmarked (epub).epub"
-      1281176      4 : "Greyson Vale - Stolen Harmony (epub).epub"
-     43164658    124 : "Guy Bass - Stitch Head- The Forgotten Creation (retail) (epub).epub"
-      2664531      8 : "Gwin Savage - Insolence (epub).epub"
-      1448087      5 : "Gwynne Forster - Swept Away (retail) (epub).epub"
-      1432546      5 : "H J Welch & Helen Juliet - Striking the Match (epub).epub"
-       601737      2 : "H K Christie - Before She Said I Do (epub).epub"
-       959627      3 : "Hadley Hartwell - One Is The Deadliest Number (epub).epub"
-      1068956      4 : "Hannah Bashir - Of Wisdom (epub).epub"
-      1027658      3 : "Hannah Ellis - A Chef's Kiss for Christmas (epub).epub"
-       785801      3 : "Harley Madison - Brat Baby (epub).epub"
-      1431345      5 : "Harloe Rae - Saddled in Secrets (epub).epub"
-       776381      3 : "Harper A Brooks - A Love So Deadly (epub).epub"
-       598364      2 : "Harper Lennox - Claimed by the Psychos (epub).epub"
-     25046463     72 : "Harunohi Biyori - The Otome Heroine's Fight for Survival, Volume 05 (retail) (epub).epub"
-       944710      3 : "Hazel Mack - Misbehaving With Minotaurs (epub).epub"
-      6204586     18 : "Hazell Ward - The Game Is Murder (retail) (epub).epub"
-       755973      3 : "Heather B Moore - May I Kiss the Bride (epub).epub"
-       756773      3 : "Heather K O'Malley - Goodbye, Hello [Bold Strokes FF] (retail) (epub).epub"
-       854604      3 : "Heather Long - Some Like It Scandalous (epub).epub"
-       791464      3 : "Heather Redmond - Death and the Runaways (retail) (epub).epub"
-       441115      2 : "Heather Saville Gupta - Becoming Mrs Kumar (retail) (epub).epub"
-       780448      3 : "Heather Slade - Code Name Reaper (epub).epub"
-      2477093      8 : "Heather Slade - Roaring Fork Rockstar (epub).epub"
-      2208662      7 : "Heather Slade - Roaring Fork Rooker (epub).epub"
-       719779      3 : "Herbert Schlossberg - Idols for Destruction (retail) (epub).epub"
-      1206368      4 : "Honey Phillips - The Lone Cyborg (epub).epub"
-      1414190      5 : "Ian A O'Connor - The Seventh Seal (epub).epub"
-       918610      3 : "Isabel Campbell & Michael Anderle - Moon, Murder, and Mesquite (epub).epub"
-       795673      3 : "Izza Malik - Overdue I Love You's (epub).epub"
-       373487      2 : "J E Birk - Booklover (epub).epub"
-       851605      3 : "J E Rowney - Red Flags (epub).epub"
-       751954      3 : "J J Howell - Underleveled (epub).epub"
-      1138550      4 : "J L Weil - Unmask (epub).epub"
-      1939627      6 : "J M Clarke - Oaths (epub).epub"
-      1812103      6 : "J M D Reid - Radiance's Knight (epub).epub"
-      1408720      5 : "J M Snap - A Luna's Dynasty (epub).epub"
-      1225655      4 : "J N Chaney & Tyler Burnworth - Rising Dawn (epub).epub"
-      1021461      3 : "J P Sayle - Blood of the Damned - Thorn (epub).epub"
-      1647787      5 : "J Pal - Apocalypse Arena 03 (epub).epub"
-       718324      3 : "J S Cooper - To Fall Or Not To Fall (epub).epub"
-       853928      3 : "J S Harman - Dark Sands (epub).epub"
-      1039953      3 : "J Saman & Julie Saman - Undeniably Corrupt (epub).epub"
-       749889      3 : "J T Bishop - Black Bird (epub).epub"
-      1125883      4 : "J T Geissinger - Spicy Little Curses (epub).epub"
-      1174350      4 : "Jack Hance - Road Warriors (epub).epub"
-      1744889      5 : "Jack Maconaghy - The Power to Corrupt (epub).epub"
-      4932930     15 : "Jaclyn Kot - Between Soul and Vessel (epub).epub"
-      1116582      4 : "James Lawrence - Order of Moloch (epub).epub"
-       631183      2 : "James Patterson - The President's Daughter - Bill Clinton (retail) (epub).epub"
-       208444      1 : "James Patterson - The Pretender - Andrew Bourelle (epub).epub"
-       318390      1 : "James Patterson - The Quickie - Michael Ledwidge (retail) (epub).epub"
-      1351460      4 : "James Rosone & Brandon Ellis - Battle of Shadows (epub).epub"
-       291243      1 : "Jamie K Schmidt - The Cauldronball Run (epub).epub"
-      1601837      5 : "Jane Washington - Elancer (epub).epub"
-      1290772      4 : "Jay Leigh Brown - Cider House Fools (epub).epub"
-      1042783      3 : "Jaycee Wolfe - Her Nosey Biker (epub).epub"
-      2967167      9 : "Jaymin Eve - Spellcaster (epub).epub"
-      1685038      5 : "Jayne Castel - The Queen and the Half-blood (epub).epub"
-       719700      3 : "Jeff Harwell - EMP Bugout 02 (epub).epub"
-      1116536      4 : "Jeff Wheeler - The Brotherhood of Shadows (epub).epub"
-      2032525      6 : "Jeffrey Archer - End Game (epub).epub"
-      1555989      5 : "Jen Hatmaker - Awake (epub).epub"
-      1078766      4 : "Jennae Vale - A Bridge Through Time (epub).epub"
-       572217      2 : "Jessica Gadziala - Coach (epub).epub"
-       987339      3 : "Jessica Seaborn - Isn't It Nice We Both Hate the Same Things (epub).epub"
-      1044160      3 : "Jilleen Dolbeare - The Bounty Hunter and the Spirit Wolf (epub).epub"
-       600443      2 : "Jillian Rink - Ready or Knot (epub).epub"
-      1437914      5 : "Jin Holland - Lost in Fiction 05 (epub).epub"
-      1756766      6 : "Jocelyn Bleu - Wings of Ash & Flame (epub).epub"
-      1655703      5 : "Joe Posnanski - Why We Love Football (epub).epub"
-       574910      2 : "John Banville - Venetian Vespers (epub).epub"
-       491411      2 : "John David - The Bystander (epub).epub"
-       287971      1 : "John G Hartness - (Quincy Harker 16SS) - Histories (Hammer Time, Jazz City Blues, Anna's Song) (epub).epub"
-       743411      3 : "Jonathan Janz - Veil (retail) (epub).epub"
-      2801346      9 : "Joseph Sterk - Son of the Borderlands (epub).epub"
-      1222687      4 : "K Bengston - The Boatman (epub).epub"
-      1233326      4 : "K C Crowne - Dark Desires (epub).epub"
-      1356936      4 : "K E Osborn - Victorious (epub).epub"
-       458751      2 : "K L Donn - Property of Brute & Axl (epub).epub"
-       896923      3 : "K N Banet - Cruel Revenge (epub).epub"
-      1105869      4 : "K T Dady - Christmas in Port Berry (epub).epub"
-       902699      3 : "Kal Griffith - Mage Academy 06 (epub).epub"
-       770285      3 : "Kala Aster & Milly Taiden - Fetch Me A Mate (epub).epub"
-      7142450     21 : "Kamala Harris - 107 Days (epub).epub"
-      1350931      4 : "Kamitoan - Rise of a Monster (epub).epub"
-       929313      3 : "Karen Ann Hopkins - Wicked Winds Whisper (epub).epub"
-       297660      1 : "Karen Baugh Menuhin, Matilda Swift - The Caxton Manor Murders (epub).epub"
-      1487291      5 : "Kat Singleton - Bad for Business (epub).epub"
-       752398      3 : "Kate Lewis - Her Stolen Scent (epub).epub"
-      2093067      6 : "Kate Rozy - The Summoning Spell (epub).epub"
-      1682374      5 : "Katee Robert - Beautiful Nightmare (epub).epub"
-       957233      3 : "Katherine McIntyre - Filtration Play (epub).epub"
-       921708      3 : "Kathi Daley - Haunting or Homicide (epub).epub"
-       459252      2 : "Kathi S Barton - Aaron (epub).epub"
-       782905      3 : "Kathleen Suzette - Sweets, Sleuths, and Scoops (epub).epub"
-      1213187      4 : "Katie Gayle - Murder in the Winter Woods (epub).epub"
-       496057      2 : "Katie May - [Damning 01] - Greed (epub).epub"
-       770724      3 : "Katie May - [Damning 03] - Gluttony (epub).epub"
-       490270      2 : "Katie May - [Damning 04] - Sloth (epub).epub"
-       473983      2 : "Katie May - [Damning 05] - Pride (epub).epub"
-       244583      1 : "Katie May - [Together We Fall 01] - The Darkness We Crave (epub).epub"
-       291381      1 : "Katie May - [Together We Fall 03] - Storm We Face (epub).epub"
-       639280      2 : "Katie May - Wrath (epub).epub"
-       397269      2 : "Katie May & Loxley Savage - [Afterworld Academy 02] - Darkness Deceives (epub).epub"
-       391979      2 : "Katie May & Loxley Savage - [Afterworld Academy 03] - Defying Destiny (epub).epub"
-       785993      3 : "Kay Jennings - Wave's End (epub).epub"
-       420136      2 : "Kelly Gendron - [A Different Kind of Escort Service 01] - My Escort (retail) (epub).epub"
-       357125      2 : "Kelly Gendron - [A Different Kind of Escort Service 02] - Her Escort (epub).epub"
-       158526      1 : "Kelly Golden - Daughter Darling (epub).epub"
-       237281      1 : "Kelly Goode - Careless (epub).epub"
-       253561      1 : "Kelly Goode - Dauntless (epub).epub"
-       117813      1 : "Kelly Grayson - Cecil the Combat Wombat (epub).epub"
-       123872      1 : "Kelly Grayson - Platypus Platoon (epub).epub"
-      1124343      4 : "Kelly Grayson - Random Synapses (epub).epub"
-      2685779      8 : "Kelly Grayson - Wombat Prime (epub).epub"
-       858022      3 : "Kennedy Kerr - A Dance with the Fae (epub).epub"
-       985307      3 : "Kennedy Kerr - A Kiss from the Fae (epub).epub"
-      1532529      5 : "Khloe Summers - Marked by my Protector (epub).epub"
-       628675      2 : "Kim Stephenson - Your Pace or Mine (epub).epub"
-      1616976      5 : "Kimberly Lemming - My Boyfriends Are All Monsters (epub).epub"
-       246264      1 : "Kris M Davey - The Leaving Road (epub).epub"
-      1008034      3 : "Kris T Bethke & Tia Fielding - Earn his Trust (epub).epub"
-       836881      3 : "Kylie Kent - His Deadly Devotion (epub).epub"
-       646022      2 : "L Loren - Her Missing Cowboy (epub).epub"
-       910083      3 : "Lacey Day - My Three Hometown Alphas (epub).epub"
-       628291      2 : "Lanaeus - Return of the S-Rank Hunter 02 (epub).epub"
-       940124      3 : "Laurel K Reid - Sins of the Father (epub).epub"
-       833496      3 : "Lee Brook - The Tingley Reservoir Murders (epub).epub"
-      1433679      5 : "Lee Strauss - Murder in the Painted Mask (epub).epub"
-      1895139      6 : "Leni Morgan - Hot n Bothered (epub).epub"
-       216859      1 : "leo bruce-case for three detectives (retail) (epub).epub"
-       886293      3 : "Leona White - The Pakhan's Bride (epub).epub"
-      1115550      4 : "Lexi Asher - The Russian Pakhan's Forced Bride (epub).epub"
-      2646859      8 : "Lexi Post - Third Rock from the Cowboy (epub).epub"
-      1212386      4 : "Liam Lawless - The Apocalypse is a Side Quest (epub).epub"
-       835263      3 : "Lili Valente - The No Touch Roommate Rule (epub).epub"
-      1112675      4 : "Lilith Vincent - Soft Tissue Damage (epub).epub"
-      1464535      5 : "Lilura Sloane - [Fated 01] - Falling for the Wolf (epub).epub"
-      2782205      8 : "Lily Anderson - Big Bad (retail) (epub).epub"
-       418302      2 : "Lily Anderson - Killer House Party (epub).epub"
-      2666853      8 : "Lily Anderson - Scout's Honor (retail) (epub).epub"
-      1207780      4 : "Lily Anne Rose - [The Elemental Kingdoms 01] - The Truth of Lies (epub).epub"
-       821693      3 : "Lily Archer - A Land of Never and Night (epub).epub"
-       857966      3 : "Lily Archer - A Sea of Risk and Ruin (epub).epub"
-       772155      3 : "Lily Archer - An Isle of Secrets and Shadows (epub).epub"
-      2343242      7 : "Lily Archer - The Book of G (epub).epub"
-       587341      2 : "Lily Miller - Deal Breaker (epub).epub"
-      1638721      5 : "Linda Norlander - The Pines Were Watching (epub).epub"
-      1513031      5 : "Lisa Kleypas - Devil in Winter (retail) (epub).epub"
-      1078374      4 : "Lisa Oliver - The Most Unsuitable Prince (epub).epub"
-      1132617      4 : "Lora Whitney - Brutal Devil (epub).epub"
-       754226      3 : "Lorelei M Hart - Shopping for His Omega (epub).epub"
-      1501337      5 : "Lorna Barrett - [Booktown Mystery 19] - A Perilous Plot (epub).epub"
-       500890      2 : "Lucky Moon - Bratva Daddy (epub).epub"
-       975012      3 : "Lynnea Lee - Fated to the Hunter (epub).epub"
-      1262032      4 : "M A Innes - Culture and Curiosities (epub).epub"
-       903335      3 : "M J Michaels - The Trouble With Perfect Women (epub).epub"
-       237160      1 : "M L Bullock - Wraith of Fort Morgan (epub).epub"
-       789228      3 : "M Tress - The Lost Bloodline 04 (epub).epub"
-      1336478      4 : "Madison Noelle - When It's Us (epub).epub"
-      1309655      4 : "Mae Malone - Daddy's Firm Hands (epub).epub"
-      1503792      5 : "Mariah Stone - Duke of Eccess (epub).epub"
-       697727      2 : "Marissa Farrar & S R Jones - The Preachers' Promise (epub).epub"
-       838233      3 : "Mark Yarwood - Hunt Down (epub).epub"
-       984281      3 : "Mark Yarwood - Strike Down (epub).epub"
-       864641      3 : "Mark Yarwood - Track Down (epub).epub"
-       283288      1 : "Martin H Greenberg (ed) - The Robot and the Man (mobi).mobi"
-      2468660      8 : "Martin H Greenberg (ed) - Travelers of Space (epub).epub"
-      5225488     15 : "Martin H Greenberg (ed) - Travelers of Space (mobi).mobi"
-       671558      2 : "Martin H Greenberg (ed) - Vampires-The Greatest Stories (html).html"
-       215188      1 : "Martin H Greenberg (ed) - Visions of Liberty (epub).epub"
-       327053      1 : "Martin H Greenberg (ed) - Visions of Liberty (mobi).mobi"
-       358349      2 : "Martin Hill - The Fourth Rising (retail) (epub).epub"
-       249629      1 : "Martin Hill - The Last Refuge (retail) (epub).epub"
-     10466481     30 : "Martin Howard - Mallory Vayle and the Curse of Maggoty Skull (retail) (epub).epub"
-       647016      2 : "Martin Howard - Shaun the Sheep Movie (epub).epub"
-       872397      3 : "Mary Lancaster - Vengeance in Venice (epub).epub"
-      8515873     25 : "Matilda Heindow - The Art of Feeling Better (epub).epub"
-      1224686      4 : "Maya Alden - Best In Class (epub).epub"
-      1569561      5 : "Meghan Ciana Doidge - Snag (epub).epub"
-       508056      2 : "Melinda Leigh - Dead Against Her (epub).epub"
-      1019248      3 : "Melissa Brayden - Can We Skip to the Good Part (epub).epub"
-      1147465      4 : "Melissa Huxley - Packed in the Penalty Box (epub).epub"
-       875916      3 : "Michael Anderle - Haven Goes to War (epub).epub"
-       851182      3 : "Michael Anderle - No Deposits, No Return (epub).epub"
-       856674      3 : "Michael Cheney - Illegal Operation (epub).epub"
-       920242      3 : "Michael G Thomas - The Rise of Spartan (epub).epub"
-      1672138      5 : "Michelle Chouinard - A Tour to Die For (epub).epub"
-       847366      3 : "Michelle Powers - Devil's Ridge (epub).epub"
-       738298      3 : "Michelle Salter - Murder in Trafalgar Square (epub).epub"
-       507947      2 : "Mike Faricy - Unmarked Grave (epub).epub"
-      1038616      3 : "Mike Ignatov - The Realization Fifth Circle (epub).epub"
-       859149      3 : "Milli Rabbit - Second Chance Daddy (epub).epub"
-      1205328      4 : "Mira Shaw - Almost Gone (epub).epub"
-      1112222      4 : "Miranda May - Knot His Omega (epub).epub"
-      1704736      5 : "Miranda Vale & Miranda Martin - A Voice of Silver and Blood (epub).epub"
-       483657      2 : "MM Farmer & Merry Farmer - His Prize (epub).epub"
-      1714178      5 : "MOJIKAKIYA - My Daughter Left the Nest and Returned an S-Rank Adventurer 11 (epub).epub"
-       767061      3 : "Montana Fyre - The One Night Match (epub).epub"
-      6153152     18 : "N D Stevenson - Scarlet Morning 01 (epub).epub"
-       866036      3 : "N J Adel - XOXO, Little Butterfly (epub).epub"
-       637974      2 : "Naia Moray - Where the Current Takes Him (epub).epub"
-      1805622      6 : "Natalie Alexandra - A Touch of Stars and Stones (epub).epub"
-      1439579      5 : "Nathan Hystad - Pathos (epub).epub"
-       554444      2 : "Nic Roberts - A Peaceful Murder (epub).epub"
-      2016564      6 : "Nick Lowles - How to Defeat the Far Right (epub).epub"
-      1443541      5 : "Nicole J Owens - Beneath Your Lies (epub).epub"
-       716638      3 : "Nikita Parmenter - Deadly Reckoning 07 (epub).epub"
-       990043      3 : "Nikki Landis - Reaping Havoc (epub).epub"
-       659767      2 : "Nola Heart - Bonds of Hate (epub).epub"
-      1571322      5 : "Nova Kane - Atrocity (epub).epub"
-       804602      3 : "Olga Tokarczuk,Antonia Lloyd-Jones - House of Day, House of Night (epub).epub"
-      2759658      8 : "Oriana Ramunno - Smoke in Berlin (epub).epub"
-      9768780     28 : "Pamela Butchart - The Popcorn Puppy (retail) (epub).epub"
-       459402      2 : "Pamela Griffin - A Single Rose (retail) (epub).epub"
-       517172      2 : "Pamela Griffin - A Treasure Reborn (retail) (epub).epub"
-       551327      2 : "Pandora Pine - Dead Calm (epub).epub"
-      2483743      8 : "Patricia Lockwood - Will There Ever Be Another You (epub).epub"
-      1360179      4 : "Penny Dee - Cinder (epub).epub"
-      2579674      8 : "Penny Warner - Murder at Blackwood Inn (epub).epub"
-      1766428      6 : "Phil Lecomber - Midnight Streets (epub).epub"
-      2500496      8 : "Philip Fracassi - The Third Rule of Time Travel (retail) (epub).epub"
-       620303      2 : "Pip Adam - Nothing to See (retail) (epub).epub"
-     30893187     89 : "Pip Bird - The Naughtiest Unicorn and the Birthday Party (retail) (epub).epub"
-     28369607     82 : "Pip Bird - The Naughtiest Unicorn and the Ice Dragon (retail) (epub).epub"
-       916706      3 : "Piper Stone - Claim Me (epub).epub"
-      7401512     22 : "Poppy Rose Solomon - Woken Kingdom (retail) (epub).epub"
-      1826864      6 : "Priscilla Beaulieu Presley, Mary Jane Ross - Softly, As I Leave You (epub).epub"
-      4632679     14 : "Pulphouse Fiction Magazine - Issue 37 (retail) (epub).epub"
-      1007756      3 : "Quentin Kilgore & Julia Moonie - King of the Block Omnibus (epub).epub"
-       896980      3 : "Quinn Loftis - Veiled By Smoke (epub).epub"
-      1102933      4 : "R A Schmitt - World Affinity The Radiant Traveler Series (epub).epub"
-      1511023      5 : "R G Alexander - For the Win (epub).epub"
-      1707541      5 : "R J Scott - Rio (epub).epub"
-       754514      3 : "R K Pierce - Three Ring Heat (epub).epub"
-       671540      2 : "Rachael Chadwick - Crawl For Me (epub).epub"
-      1688694      5 : "Rachel Enriquez - A Promise of Power (epub).epub"
-       679638      2 : "Raju Vashishta - Fusion of Love (epub).epub"
-      1326117      4 : "Ranyhin1 - The Abyssal Descent (epub).epub"
-       721250      3 : "Rebecca Cohen - Bleeding for the Prince (epub).epub"
-       546535      2 : "Rebekah Lynn - He Is Ours (epub).epub"
-       387994      2 : "Reina Torres - Falling for Gabriel (epub).epub"
-       450291      2 : "Reina Torres - Falling for Joshua (epub).epub"
-       727901      3 : "Remington Kane - Fishers of Men (epub).epub"
-       600626      2 : "Renee Harless - At First Dance (epub).epub"
-       942007      3 : "Renee Jagger & Michael Anderle - The Waif Forward (epub).epub"
-       922199      3 : "Renee Zara - Royal Bargain (epub).epub"
-       304310      1 : "Rhys Everly - Insatiable (epub).epub"
-      1447947      5 : "Richard F Weyand - Push in Bootes (epub).epub"
-      1807995      6 : "Richard Osman - The Impossible Fortune (epub).epub"
-      1389775      4 : "Robert Dugoni - [Tracy Crosswhite 08.5] - The Last Line (epub).epub"
-       853430      3 : "Robert Dugoni - [Tracy Crosswhite 08] - In Her Tracks (epub).epub"
-      1675591      5 : "Robert Dugoni - [Tracy Crosswhite 09] - What She Found (epub).epub"
-        24346      1 : "Robert Dunbar - Gray Soil (rtf).rtf"
-       462024      2 : "Robert Dunbar - The Shore (epub).epub"
-       420994      2 : "Robert Dunbar - The Shore (mobi).mobi"
-      2102475      7 : "Robert Tracy McKenzie - We the Fallen People (epub).epub"
-      1625741      5 : "Robin D Mahle & Elle Madison - Bound to the Shadow Queen (epub).epub"
-      1272560      4 : "Robin Knight - The Nook for Brooks (epub).epub"
-       540469      2 : "Rose Pascoe - Shocking Deceptions (epub).epub"
-      1242547      4 : "Rose Warner - The Teacher Evacuees (epub).epub"
-      1377575      4 : "Rosie Goodwin - The Rag Princess (epub).epub"
-      1060583      4 : "Roxy Monroe - Bossy Mountain Daddies (epub).epub"
-      2183534      7 : "Ruby Dixon - Space Vampire (epub).epub"
-      1088488      4 : "Rupa Mahadevan - Nine Dolls (epub).epub"
-      6244142     18 : "Ryan La Sala - The Dead of Summer (epub).epub"
-      1124822      4 : "Ryan Taylor & Joshua Harwood - Overtime Goal (epub).epub"
-       929995      3 : "S E Babin - An Unfolding Crime (epub).epub"
-       247312      1 : "S E Babin - Another One Fights the Dust (epub).epub"
-       232411      1 : "S E Babin - The Grim Sweeper (epub).epub"
-       649271      2 : "S E Green - Break (epub).epub"
-       616873      2 : "S E Reed - The First Wives (epub).epub"
-       823072      3 : "S J Richards - Tiger Bait (epub).epub"
-      1670940      5 : "S P Miskowski - If You Knew Me (epub).epub"
-      1147190      4 : "Samara Cove - Who's There (epub).epub"
-      1683948      5 : "Sapir A Englard - Dance of the Phoenix (epub).epub"
-      1340039      4 : "Sara Ackerman - The Guest in Room 120 (epub).epub"
-       831145      3 : "Sara Bourgeois - Monster Madness (epub).epub"
-       880752      3 : "Sara C Roethle - Vicious Little Vows (epub).epub"
-       795066      3 : "Sara Ney - Don't Go Breaking My Heart (epub).epub"
-       939702      3 : "Sarah A Bailey - Reckless Roses (epub).epub"
-      1394175      4 : "Sarah Gailey - Spread Me (epub).epub"
-      1289154      4 : "Saxon James - Wilde's End (epub).epub"
-      1161500      4 : "Scarlett Scott - Duke with a Lie (epub).epub"
-       720091      3 : "Scarlett Shelton - The Disputed Legacy (epub).epub"
-       635346      2 : "Scott Medbury - A Debt to Pay (epub).epub"
-       726583      3 : "Shane Purdy - Reaper's Resurgence (epub).epub"
-       428906      2 : "Sharon Lee & Steve Miller - [Liaden Universe 01] - Conflict of Honors (retail) (mobi).mobi"
-       413692      2 : "Sharon Lee & Steve Miller - [Liaden Universe 02] - Agent of Change (retail) (mobi).mobi"
-       488130      2 : "Sharon Lee & Steve Miller - [Liaden Universe 03] - Carpe Diem (retail) (mobi).mobi"
-       459018      2 : "Sharon Lee & Steve Miller - [Liaden Universe 04] - Plan B (retail) (mobi).mobi"
-       483624      2 : "Sharon Lee & Steve Miller - [Liaden Universe 05] - Local Custom (retail) (mobi).mobi"
-       500527      2 : "Sharon Lee & Steve Miller - [Liaden Universe 06] - Scout's Progress (retail) (mobi).mobi"
-       652297      2 : "Sharon Lee & Steve Miller - [Liaden Universe 07] - I Dare (retail) (mobi).mobi"
-       595059      2 : "Sharon Lee & Steve Miller - [Liaden Universe 08] - Balance of Trade (retail) (mobi).mobi"
-       421081      2 : "Sharon Lee & Steve Miller - [Liaden Universe 09] - Necessity's Child (retail) (epub).epub"
-      1229733      4 : "Sharon Lee & Steve Miller - [Liaden Universe 29] - Ribbon Dance (retail) (epub).epub"
-      1222888      4 : "Siena Trap - Bellini Born (epub).epub"
-      1002218      3 : "Sonia Parin - Killer Heatwave (epub).epub"
-      1796230      6 : "Sophie Love - Scandal and Supper (epub).epub"
-      2077063      6 : "Spaizzzer - Tree of Aeons 7 (epub).epub"
-      1478431      5 : "Stacey Trombley - Devour (epub).epub"
-       695309      2 : "Stella Rainbow - Shade (epub).epub"
-      1072501      4 : "Stephanie Mylchreest & Mike Kraus - Twilight's Ruin (epub).epub"
-       787985      3 : "Stephen Szabados - Polish Genealogy (retail) (epub).epub"
-      1176504      4 : "Steve Kelly - Beneath the Red Line (epub).epub"
-      1651594      5 : "Steve McHugh - The Pilgrims of the Damned (epub).epub"
-       816447      3 : "Steven A McKay - Return of the Wolf (epub).epub"
-      1550929      5 : "Stevie Sparks - Snake Eyes (epub).epub"
-      1051662      4 : "Stewart Giles - The Optician (epub).epub"
-       825601      3 : "Stina Lindenblatt - One More Heartbeat (epub).epub"
-       932260      3 : "Susan Boles - Curve Balls & Second Chances (epub).epub"
-       808960      3 : "Susan Stoker - Marrying Caroline (epub).epub"
-      1042957      3 : "Susan Stoker - Protecting Alabama (epub).epub"
-       982531      3 : "Susan Stoker - Protecting Alabama's Kids (epub).epub"
-      1090595      4 : "Susan Stoker - Protecting Caroline (epub).epub"
-      1047028      3 : "Susan Stoker - Protecting Cheyenne (epub).epub"
-       946613      3 : "Susan Stoker - Protecting Dakota (epub).epub"
-      1067425      4 : "Susan Stoker - Protecting Fiona (epub).epub"
-      1062506      4 : "Susan Stoker - Protecting Jessyka (epub).epub"
-       677232      2 : "Susan Stoker - Protecting Julie (epub).epub"
-       998382      3 : "Susan Stoker - Protecting Kiera (epub).epub"
-       996041      3 : "Susan Stoker - Protecting Melody (epub).epub"
-      1028770      3 : "Susan Stoker - Protecting Summer (epub).epub"
-      1171133      4 : "Susan Stoker - Protecting the Future (epub).epub"
-       778544      3 : "T A Williams - Under a Spanish Sky (epub).epub"
-      1115494      4 : "Tana Stone - Revenge (epub).epub"
-       560278      2 : "Tasha Alexander - The Sisterhood (epub).epub"
-       309351      1 : "Taylor Knox - My Troublemaker Hero (epub).epub"
-      1025135      3 : "Teri Woods - True to the Game 01 (epub).epub"
-      1221691      4 : "Teri Woods - True to the Game 02 (epub).epub"
-      1017599      3 : "Teri Woods - True to the Game 03 (epub).epub"
-       716221      3 : "Tess Oliver - Theo (epub).epub"
-       282651      1 : "Tessa Hale - Rising Reign (epub).epub"
-      1034451      3 : "Tessa Pacelli - The Garbage Man (epub).epub"
-       885128      3 : "Theo Baxter - In Her Shadow (epub).epub"
-       995109      3 : "Thomas Fincham - The Hidden Child (epub).epub"
-       725339      3 : "Tilly Chapman - Last Lock-In at the Skin and Bones (epub).epub"
-      1507772      5 : "Tim L Rey - The Ship (epub).epub"
-       706154      3 : "Toby Neighbors - Foray (epub).epub"
-      4549891     14 : "Tony Burgess - The n-Body Problem (retail) (mobi).mobi"
-       405636      2 : "Tony Burton (ed) - [Holiday Crimes 01] - By the Chimney With Care (mobi).mobi"
-       407360      2 : "Tony Burton (ed) - [Holiday Crimes 02] - Carols and Crimes, Gifts and Grifters (mobi).mobi"
-       329960      1 : "Tony Burton (ed) - [Holiday Crimes 03] - Dying in a Winter Wonderland (mobi).mobi"
-     11358079     33 : "Tony C Smith (ed) - StarShipSofa Stories Volume 01 (pdf).pdf"
-       876092      3 : "Tony C Smith (ed) - StarShipSofa Stories Volume 03 (epub).epub"
-      1974726      6 : "Tony C Smith (ed) - StarShipSofa Stories Volume 03 (mobi).mobi"
-       516599      2 : "Tony Cape - The Cambridge Theorem (epub).epub"
-       924977      3 : "Tony Cape - The Cambridge Theorem (mobi).mobi"
-       942473      3 : "Tony Cavanaugh - Darian Richards 01-02 - Promise, Dead Girl Singing (epub).epub"
-      3046158      9 : "Tonya Burrows - Wilde and Untamed (epub).epub"
-       810395      3 : "Tory Baker - Feels Like Forever (epub).epub"
-       718099      3 : "Trina M Lee - Grave Sacrifice (epub).epub"
-      1383473      4 : "Valerie Pepper - Worth the Try (epub).epub"
-      1287874      4 : "Victoria Brown - The Death Ship (epub).epub"
-      1427143      5 : "Victoria Kazarian - Naan the Wiser (epub).epub"
-      1193123      4 : "Victoria LK Williams - Thyme to Depart (epub).epub"
-      1474172      5 : "Victoria McCombs - Labyrinth Wolves (epub).epub"
-      1647777      5 : "Victoria Paige - Scorned Beauty (epub).epub"
-      1172148      4 : "Vince Flynn & Don Bentley - Denied Access (epub).epub"
-       290653      1 : "Violet Coltair - The Long Lost Omega A Contempo (epub).epub"
-       491838      2 : "Wendy Meadows - Hops and Homicide (retail) (epub).epub"
-      1515661      5 : "William C Dietz - Short Fiction (epub).epub"
-      3206384     10 : "William L Hamling - Fiction Spectacular (epub).epub"
-       513149      2 : "William Shakespeare - Macbeth (Deluxe Student ed) - (tr) SparkNotes (retail) (epub).epub"
-       471606      2 : "William Shakespeare - Richard III - (tr) SparkNotes (retail) (epub).epub"
-       564595      2 : "William Shakespeare - Sonnets - (tr) SparkNotes (retail) (epub).epub"
-       965139      3 : "Willow Dixon - Wicked Games (epub).epub"
-      1081514      4 : "Willow Rose - The Woman He Married (epub).epub"
-       859960      3 : "Winter K Willis - The Psychiatrist (epub).epub"
-       765822      3 : "Wolfe Locke & Mike Caliban - [Ballad of Shady Greg 01] - Dungeon Mercantile (epub).epub"
-      1041875      3 : "Woody Allen - What's with Baum (epub).epub"
-      1754205      6 : "XKarnation - Reborn as a Demonic Tree 07 (epub).epub"
-       720422      3 : "Zara Crowe - Hunted by Khor (epub).epub"
-      1883579      6 : "Zara Storm - Prisoner of Darkness and Dreams (epub).epub"
-       526875      2 : "Zarah Detand - Second to None (epub).epub"
-      1333070      4 : "Zoey Voss - The Crimson Princess (epub).epub"
-
-Input File total size	: 948093197
-Input File Slice count	: 3023
-
-Loading PAR File       :
- Packet Slice Status   :  Filename
-   1202     0 Good     : "Trainpack_2025-130.6AAD4A1D.par2"
-1    1203     1 Good     : "Trainpack_2025-130.6AAD4A1D.vol0000+001.par2"
-3    2405     2 Good     : "Trainpack_2025-130.6AAD4A1D.vol0001+002.par2"
-7    3608     4 Good     : "Trainpack_2025-130.6AAD4A1D.vol0003+004.par2"
-15    4813     8 Good     : "Trainpack_2025-130.6AAD4A1D.vol0007+008.par2"
-31    6022    16 Good     : "Trainpack_2025-130.6AAD4A1D.vol0015+016.par2"
-63    7239    32 Good     : "Trainpack_2025-130.6AAD4A1D.vol0031+032.par2"
-127    8472    64 Good     : "Trainpack_2025-130.6AAD4A1D.vol0063+064.par2"
-255    9737   128 Good     : "Trainpack_2025-130.6AAD4A1D.vol0127+128.par2"
-511   11066   256 Good     : "Trainpack_2025-130.6AAD4A1D.vol0255+256.par2"
-1023   12523   512 Good     : "Trainpack_2025-130.6AAD4A1D.vol0511+512.par2"
-1535   12523   512 Good     : "Trainpack_2025-130.6AAD4A1D.vol1023+512.par2"
-
-Recovery Slice count	: 1535
-Recovery Slice found	: 1535
-
-Verifying Input File   :
-         Size Status   :  Filename
-2             = Complete : "A J Moran - Knot Today (epub).epub"
-6             = Complete : "A J Rivers - Watched in the Pines (epub).epub"
-9             = Complete : "A R Aravena - Do It For Me (epub).epub"
-11             = Complete : "A V Asher - Wyatt (epub).epub"
-14             = Complete : "A Zavarelli  - Beautiful Torment (epub).epub"
-17             = Complete : "A Zavarelli - Beautiful Torment (epub).epub"
-21             = Complete : "Aaron Renfroe - The Resonance Cycle Omnibus (epub).epub"
-26             = Complete : "Abigail Kelly - Grim's Delight (epub).epub"
-30             = Complete : "Adrienne Chinn - The Queen's Necklace (epub).epub"
-32             = Complete : "Aest Belequa - Victoria Falling (epub).epub"
-35             = Complete : "Ainsley Vale - Sail Me to Ruin (epub).epub"
-37             = Complete : "Alby Blake - Bro Amazing (epub).epub"
-40             = Complete : "Alex Toxic - Kill or Die 04 (epub).epub"
-42             = Complete : "Alexa Riley - Guilty As Charged (epub).epub"
-47             = Complete : "Alexandra Keillor - The Enemy to the Living (epub).epub"
-54             = Complete : "Ali Hazelwood - Hot for Slayer (epub).epub"
-56             = Complete : "Alina Jacobs - [Svensson Brothers 08] - I Hate, I Bake, and I Don't Date! (epub).epub"
-58             = Complete : "Alina Jacobs - [The Manhattan Svenssons 02] - Hating and Dating Your Boss with Style! (epub).epub"
-60             = Complete : "Alina Jacobs - [The Manhattan Svenssons 03] - Yeah, I Hate-Ate Your Cupcake (epub).epub"
-62             = Complete : "Alina Jacobs - [The Manhattan Svenssons 04] - Love, Hate, and Terrible Dates (epub).epub"
-64             = Complete : "Alina Jacobs - [The Manhattan Svenssons 05] - The Worst Dates Bring Chocolate Cake (epub).epub"
-67             = Complete : "Alina K Field - Claims of the Heart (retail) (epub).epub"
-69             = Complete : "Alina K Field - Convincing the Countess (retail) (epub).epub"
-71             = Complete : "Alina K Field - The Earl's Scottish Hoyden (retail) (epub).epub"
-73             = Complete : "Alison Roberts - The Surgeon's Christmas Miracle (epub).epub"
-76             = Complete : "Alora Quinn - The Genie's Wish (epub).epub"
-80             = Complete : "Amanda Lees - The Key to the Island House (epub).epub"
-84             = Complete : "Amanda Richardson - Kneel with the King (epub).epub"
-91             = Complete : "Amanda Tyler - How to End Christian Nationalism (retail) (epub).epub"
-94             = Complete : "Amarie Collins - All Your Lies (epub).epub"
-97             = Complete : "Amber Nicole - Dare To Hold (epub).epub"
-99             = Complete : "Amora Sway - The Maid's New Husband (epub).epub"
-101             = Complete : "Amy Cross - 9pm (epub).epub"
-103             = Complete : "Amy Cross - Dusk (epub).epub"
-107             = Complete : "Andi Rhodes - Screamer (epub).epub"
-110             = Complete : "Angela K Ryan - A Dangerous Scoop (epub).epub"
-115             = Complete : "Ann C Orlandi - Oathborn (epub).epub"
-119             = Complete : "Anna B Doe - Make Me Trust Again (epub).epub"
-127             = Complete : "Anna Blakely - Christian (epub).epub"
-131             = Complete : "Anna Mocikat - Neon Fever (epub).epub"
-134             = Complete : "Anna Stuart - The President's Wife (epub).epub"
-137             = Complete : "Annabelle Jacobs - Lynx (epub).epub"
-141             = Complete : "Annabeth Albert - Keep You Safe (epub).epub"
-144             = Complete : "Anton Panarin - Backstreet Evolutionist (epub).epub"
-153             = Complete : "Antonio Morale - I'm coming for you (epub).epub"
-156             = Complete : "Anya J Cosgrove - The Crown of a Fallen Queen (epub).epub"
-162             = Complete : "Ariana Cane - When Fences Fall (epub).epub"
-167             = Complete : "Ashley Munoz - The Lost Kings (epub).epub"
-170             = Complete : "Avery Kent - Murder Takes the Cake (epub).epub"
-173             = Complete : "B P Walter - The Winter Visitor (epub).epub"
-180             = Complete : "Barb Han - Crisis at Rescue Ridge (epub).epub"
-181             = Complete : "Barb Han - Mystery at Rescue Ridge (epub).epub"
-186             = Complete : "Barbara Hannay - Second Chance Family (epub).epub"
-190             = Complete : "Barrie Stevenson - The Dreadmoor Experiment (epub).epub"
-193             = Complete : "Becca Seymour - Full Tilt (epub).epub"
-197             = Complete : "Bella Blair - Returned to the Vissigroth (epub).epub"
-198             = Complete : "Bernice Cochran - Ninja Foodi PossibleCooker Cookbook for Beginners (epub).epub"
-201             = Complete : "Beth Bolden - Breakaway Goals (epub).epub"
-205             = Complete : "Bethanie Loren & Billie Leigh - Kalix (epub).epub"
-208             = Complete : "BJ Bourg - But Not For Profit (epub).epub"
-210             = Complete : "Blake R Wolfe - The Minotaur's Maze (epub).epub"
-215             = Complete : "Bobby Akart - Ring of Fire Axial (epub).epub"
-221             = Complete : "Bobby Akart - Ring of Fire Cascadia (epub).epub"
-225             = Complete : "Boots Walker - The Twilight Empire (epub).epub"
-231             = Complete : "Boris Becker - Inside (epub).epub"
-237             = Complete : "Breanne Bergie - Their Stolen Obsession (epub).epub"
-239             = Complete : "Brian Moore - The Statement (epub).epub"
-241             = Complete : "Brian Moore - The Statement (mobi).mobi"
-243             = Complete : "Brian Moreland - Shadows in the Mist (retail) (epub).epub"
-245             = Complete : "Brian Moreland - They Stalk the Night (epub).epub"
-257             = Complete : "Brian Moreland - Tomb of Gods [Fiction Without Frontiers] (retail) (epub).epub"
-258             = Complete : "Brian N Ball - [Frames 02] - Planet Probability (epub).epub"
-260             = Complete : "Brian N Ball - [Frames 02] - Planet Probability (mobi).mobi"
-261             = Complete : "Brian N Ball - Singularity Station (mobi).mobi"
-263             = Complete : "Brian N Ball - Sundog (txt).txt"
-271             = Complete : "Brooklyn Cross - Volatile King (epub).epub"
-275             = Complete : "Bruce Wagner - Amputation (epub).epub"
-278             = Complete : "C H Admirand - The Duke's Sharpshooter (epub).epub"
-281             = Complete : "C J Cross & Without Warrent - Girl Between (epub).epub"
-284             = Complete : "C M Howes - Growing Home (epub).epub"
-293             = Complete : "C M Stunich - Game Over, Boys (epub).epub"
-299             = Complete : "C M Stunich - If You Don't Love Me We Both Die (epub).epub"
-301             = Complete : "C R Chandler - Payback (epub).epub"
-303             = Complete : "C Rochelle - [The Yaga's Riders 01] - Rise of The Witch (epub).epub"
-309             = Complete : "Cala Riley - Panther's Magpie (epub).epub"
-313             = Complete : "Cara Bristol - Alien Spare (epub).epub"
-316             = Complete : "Carla Simpson - Deadly Murder (epub).epub"
-318             = Complete : "Carly Claire - Their Hallowed Queen Part One (epub).epub"
-321             = Complete : "Caroline Lea - Love, Sex and Frankenstein (epub).epub"
-324             = Complete : "Cass Morgan - Balancing Act (epub).epub"
-328             = Complete : "Cassia Quinn - Corrupt Promises (epub).epub"
-330             = Complete : "Cassidy Fox - How NOT to Seduce a Rockstar (epub).epub"
-332             = Complete : "Cassie Alexander - Dragon's Flame (epub).epub"
-340             = Complete : "Caty Rogan - Kissed by the Gods (epub).epub"
-344             = Complete : "CeCe Wylder - The Scars of War (epub).epub"
-347             = Complete : "CeeCee James - Danger in the Desert (epub).epub"
-352             = Complete : "Chaos65 - The Second Stage (epub).epub"
-356             = Complete : "Charity Massengale - I Knew You (epub).epub"
-357             = Complete : "Charles Coleman Finlay - An Eye for an Eye (epub).epub"
-358             = Complete : "Charles Coleman Finlay - Lucy, in Her Splendor (epub).epub"
-359             = Complete : "Charles Coleman Finlay - Moons Like Great White Whales (epub).epub"
-360             = Complete : "Charles Coleman Finlay - Passing Through (epub).epub"
-361             = Complete : "Charles Coleman Finlay - The Minutemen's Witch (epub).epub"
-362             = Complete : "Charles Coleman Finlay - The Moon Is Always Full (epub).epub"
-363             = Complete : "Charles Coleman Finlay - The Political Officer (epub).epub"
-364             = Complete : "Charles Coleman Finlay - The Political Prisoner (epub).epub"
-373             = Complete : "Charles Coleman Finlay - The Prodigal Troll (epub).epub"
-378             = Complete : "Charlie Lennon - Dangerous Little Dares (epub).epub"
-433             = Complete : "Chelsea Goodwin - Money-Saving Meal Plans with Chelsea (epub).epub"
-436             = Complete : "Cheyenne McCray - Country Winds (epub).epub"
-441             = Complete : "Christina Lauren - Falling (epub).epub"
-445             = Complete : "Christopher C Tubbs - Revenge (epub).epub"
-451             = Complete : "Christopher Hall & Maxlex - Dungeon Prime (epub).epub"
-460             = Complete : "Christopher Mitchell - Suffer the Heir (epub).epub"
-468             = Complete : "Christopher Risso-Gill - There's Always Something to Do (retail) (epub).epub"
-476             = Complete : "Ciara St James - Sean's Redemption (epub).epub"
-479             = Complete : "Cindy Bell - Awards, Adventure, and Accusations (epub).epub"
-484             = Complete : "Claudia Ambrose - Bake You Mine (epub).epub"
-487             = Complete : "CM Rawlins - Death in the Abbey (epub).epub"
-491             = Complete : "CM Stunich - Blizzards and Bastards (epub).epub"
-493             = Complete : "Colin Falconer - Silk Road (epub).epub"
-496             = Complete : "Connie Aldana - The Ultimate Ninja Foodi PossibleCooker Cookbook for Beginners (epub).epub"
-498             = Complete : "Cyn Blade & Milly Taiden - Savage Devotion (epub).epub"
-505             = Complete : "Cynthia Eden - When He Defends (epub).epub"
-509             = Complete : "D E Sherman - Duskbound 02 (epub).epub"
-511             = Complete : "D L Bacon - Ghost Academy 01 (epub).epub"
-512             = Complete : "D L Harrison - Chaos Divine (epub).epub"
-518             = Complete : "Daisy Jane - Father Knows Best (epub).epub"
-522             = Complete : "Dakota Krout - Rob X Punzel (epub).epub"
-545             = Complete : "Dana McCullough - Unofficial Guide to FamilySearch.org (epub).epub"
-548             = Complete : "Daniel Hurst - The Ex Who Came Back (epub).epub"
-551             = Complete : "Daniel Young - Infected (epub).epub"
-560             = Complete : "Danielle Lynn - Fate In Pieces (epub).epub"
-564             = Complete : "Dante King - A Modern Mage 02 (epub).epub"
-567             = Complete : "Dave Felholder - Low, In The Valley (epub).epub"
-571             = Complete : "David Field - The Belvedere Scandal (epub).epub"
-574             = Complete : "David Hodges - Deceiver On The Levels (epub).epub"
-577             = Complete : "David Leadbeater - The Diamond Hunters (epub).epub"
-580             = Complete : "Dax Hunter - Living the Dream (epub).epub"
-585             = Complete : "Dean Koontz - [City 01] - The City (azw3).azw3"
-593             = Complete : "Dean Koontz - [City 01] - The City (epub).epub"
-596             = Complete : "Dean Koontz - [City 05] - The Neighbor (azw3).azw3"
-598             = Complete : "Dean Koontz - Cold Fire (epub).epub"
-599             = Complete : "Dean Koontz - Dance with the Devil as Deanna Dwyer (epub).epub"
-600             = Complete : "Dean Koontz - Dance with the Devil as Deanna Dwyer (mobi).mobi"
-601             = Complete : "Dean Koontz - Dark of the Woods (epub).epub"
-602             = Complete : "Dean Koontz - Dark of the Woods (mobi).mobi"
-603             = Complete : "Dean Koontz - Dark Symphony (epub).epub"
-604             = Complete : "Dean Koontz - Darkfall (epub).epub"
-607             = Complete : "Declan Rhodes - Borrowed Pain (epub).epub"
-610             = Complete : "Deva Blake - The Pakhan's Forced Bride (epub).epub"
-615             = Complete : "Devon C Ford - Enclave (epub).epub"
-619             = Complete : "Dianna Love - Corbin (epub).epub"
-622             = Complete : "Dr Az Hakeem - DETRANS When transition is not the solution (epub).epub"
-624             = Complete : "Eden Finley - The Office Bet (epub).epub"
-630             = Complete : "Eden Finley & Saxon James - Stubborn Puckboy (epub).epub"
-638             = Complete : "Edie Skye - Blood Knight Box Set (epub).epub"
-641             = Complete : "Eileen Mueller - Cobalt Dragon (epub).epub"
-643             = Complete : "Eliza Green - Daylight Chaos (epub).epub"
-646             = Complete : "Elizabeth Donne - Jillian's Wild Heart (epub).epub"
-649             = Complete : "Elle James, Kris Norris - Raven's Nest (epub).epub"
-655             = Complete : "Elle Kaelee - Sweet Silver Bells (epub).epub"
-658             = Complete : "Elle Keaton - Bait and Switch (epub).epub"
-662             = Complete : "Elle Rivers - As They Are (epub).epub"
-671             = Complete : "Ellen Ryan - Girls Who Slay Monsters (epub).epub"
-674             = Complete : "Ellie Alexander - Revenge on the Rocks (epub).epub"
-680             = Complete : "Ellie Ash - The Lost Art of Revealing Hidden Truths (epub).epub"
-682             = Complete : "Ellory Douglas - The Mer-Mate (epub).epub"
-686             = Complete : "Em Petrova - Stealthy Seduction (epub).epub"
-691             = Complete : "Emilie Baz - Somewhere down the Ley Line (epub).epub"
-694             = Complete : "Emilie Castera - A Bloody Merry Murder (epub).epub"
-697             = Complete : "Emily Organ - Murder in the Soho Graveyard (epub).epub"
-699             = Complete : "Emily Prescott - Henhouse (epub).epub"
-704             = Complete : "Emma Baird - Forever, Maybe (epub).epub"
-708             = Complete : "Emma Davies - The Midnight Bakery (epub).epub"
-711             = Complete : "Emma Dean - Demon Touched (epub).epub"
-713             = Complete : "Emmy Ellis - Rioted (epub).epub"
-716             = Complete : "Emmy Sanders - This and Every Life (epub).epub"
-720             = Complete : "Emory Winters - The Elves and the Shoemaker (epub).epub"
-723             = Complete : "Eric Raglin - Bitter Apples (retail) (epub).epub"
-726             = Complete : "Eric Raglin - Nightmare Yearnings (retail) (epub).epub"
-730             = Complete : "Eric Raglin - Shredded (retail) (epub).epub"
-737             = Complete : "Eric Raglin & Lor Gislason & Shelley Lavigne - Sick Stories From the Goop Troop (epub).epub"
-741             = Complete : "Eric Raglin (ed) - Antifa Splatterpunk (retail) (epub).epub"
-743             = Complete : "Eric Red - Don't Stand So Close (epub).epub"
-746             = Complete : "Eric Red - It Waits Below (mobi).mobi"
-750             = Complete : "Eric Red - It Waits Below (retail) (epub).epub"
-758             = Complete : "Eric Red - Strange Fruit (mobi).mobi"
-760             = Complete : "Eric Red - The Guns of Santa Sangre (epub).epub"
-762             = Complete : "Erica Lee - Anyone But Me (epub).epub"
-767             = Complete : "Essie Sloane - Sam & Justin (epub).epub"
-774             = Complete : "Eugenia Valero - The Complete Ninja Foodi PossibleCooker Cookbook (epub).epub"
-778             = Complete : "Eve Bale - Wild Alpha (epub).epub"
-781             = Complete : "Eve Campbell - Seven Lost Summers (epub).epub"
-783             = Complete : "F N Manning - The Boy Next Door (epub).epub"
-787             = Complete : "Fel Fern - Asher (epub).epub"
-790             = Complete : "Felix Taylor - Embercore 03 (epub).epub"
-795             = Complete : "Fiona Valpy - The Dark of the Moon (epub).epub"
-800             = Complete : "Flossindune - Courier Quest 02 (epub).epub"
-803             = Complete : "Freya Barker - Finding Silence (epub).epub"
-805             = Complete : "G B Ralph - Fright on Stage Right (epub).epub"
-809             = Complete : "G Bailey - Moonlight Bonds (epub).epub"
-814             = Complete : "G R Jordan - Mage of the Dice (epub).epub"
-822             = Complete : "Gareth Rubin - The Waterfall (epub).epub"
-825             = Complete : "Garon Whited - Phoebe's Tale (epub).epub"
-829             = Complete : "Gavin Brown - The Dark Sorcerer's Assistant (epub).epub"
-856             = Complete : "Gene P Abel - [Defenders of Time 03] - The Aliens Step In (epub).epub"
-858             = Complete : "Gina X Grant - An Unlikely Escape (epub).epub"
-860             = Complete : "Glass Jawed A Second Chance Ch - AJ Bishop (epub).epub"
-1050             = Complete : "Glenn Adamson - A Century of Tomorrows (epub).epub"
-1056             = Complete : "Glenna Maynard - The Biker Next Door (retail) (epub).epub"
-1059             = Complete : "Glisser - Jane Washington (epub).epub"
-1062             = Complete : "Glynn Stewart - Regent's Mate (epub).epub"
-1065             = Complete : "Grace McGinty - Eight Seconds to Fly (epub).epub"
-1067             = Complete : "Grace Miller - Ninja Foodi PossibleCooker Cookbook One-Pot and Soud-Vide Recipes (epub).epub"
-1082             = Complete : "Grady Hendrix - The Blanks (epub).epub"
-1093             = Complete : "Grae Bryan - An Unwitting Bargain (epub).epub"
-1102             = Complete : "Grae Bryan - Colin (epub).epub"
-1107             = Complete : "Grae Bryan - Johann (epub).epub"
-1109             = Complete : "Grafton Carter - Glitches and Kisses (epub).epub"
-1115             = Complete : "Greg Sorber - By Archangel's Light (epub).epub"
-1119             = Complete : "Gregg Dunnett - Deep Blue Lies (epub).epub"
-1132             = Complete : "Greyson Vale - Soulmarked (epub).epub"
-1136             = Complete : "Greyson Vale - Stolen Harmony (epub).epub"
-1260             = Complete : "Guy Bass - Stitch Head- The Forgotten Creation (retail) (epub).epub"
-1268             = Complete : "Gwin Savage - Insolence (epub).epub"
-1273             = Complete : "Gwynne Forster - Swept Away (retail) (epub).epub"
-1278             = Complete : "H J Welch & Helen Juliet - Striking the Match (epub).epub"
-1280             = Complete : "H K Christie - Before She Said I Do (epub).epub"
-1283             = Complete : "Hadley Hartwell - One Is The Deadliest Number (epub).epub"
-1287             = Complete : "Hannah Bashir - Of Wisdom (epub).epub"
-1290             = Complete : "Hannah Ellis - A Chef's Kiss for Christmas (epub).epub"
-1293             = Complete : "Harley Madison - Brat Baby (epub).epub"
-1298             = Complete : "Harloe Rae - Saddled in Secrets (epub).epub"
-1301             = Complete : "Harper A Brooks - A Love So Deadly (epub).epub"
-1303             = Complete : "Harper Lennox - Claimed by the Psychos (epub).epub"
-1375             = Complete : "Harunohi Biyori - The Otome Heroine's Fight for Survival, Volume 05 (retail) (epub).epub"
-1378             = Complete : "Hazel Mack - Misbehaving With Minotaurs (epub).epub"
-1396             = Complete : "Hazell Ward - The Game Is Murder (retail) (epub).epub"
-1399             = Complete : "Heather B Moore - May I Kiss the Bride (epub).epub"
-1402             = Complete : "Heather K O'Malley - Goodbye, Hello [Bold Strokes FF] (retail) (epub).epub"
-1405             = Complete : "Heather Long - Some Like It Scandalous (epub).epub"
-1408             = Complete : "Heather Redmond - Death and the Runaways (retail) (epub).epub"
-1410             = Complete : "Heather Saville Gupta - Becoming Mrs Kumar (retail) (epub).epub"
-1413             = Complete : "Heather Slade - Code Name Reaper (epub).epub"
-1421             = Complete : "Heather Slade - Roaring Fork Rockstar (epub).epub"
-1428             = Complete : "Heather Slade - Roaring Fork Rooker (epub).epub"
-1431             = Complete : "Herbert Schlossberg - Idols for Destruction (retail) (epub).epub"
-1435             = Complete : "Honey Phillips - The Lone Cyborg (epub).epub"
-1440             = Complete : "Ian A O'Connor - The Seventh Seal (epub).epub"
-1443             = Complete : "Isabel Campbell & Michael Anderle - Moon, Murder, and Mesquite (epub).epub"
-1446             = Complete : "Izza Malik - Overdue I Love You's (epub).epub"
-1448             = Complete : "J E Birk - Booklover (epub).epub"
-1451             = Complete : "J E Rowney - Red Flags (epub).epub"
-1454             = Complete : "J J Howell - Underleveled (epub).epub"
-1458             = Complete : "J L Weil - Unmask (epub).epub"
-1464             = Complete : "J M Clarke - Oaths (epub).epub"
-1470             = Complete : "J M D Reid - Radiance's Knight (epub).epub"
-1475             = Complete : "J M Snap - A Luna's Dynasty (epub).epub"
-1479             = Complete : "J N Chaney & Tyler Burnworth - Rising Dawn (epub).epub"
-1482             = Complete : "J P Sayle - Blood of the Damned - Thorn (epub).epub"
-1487             = Complete : "J Pal - Apocalypse Arena 03 (epub).epub"
-1490             = Complete : "J S Cooper - To Fall Or Not To Fall (epub).epub"
-1493             = Complete : "J S Harman - Dark Sands (epub).epub"
-1496             = Complete : "J Saman & Julie Saman - Undeniably Corrupt (epub).epub"
-1499             = Complete : "J T Bishop - Black Bird (epub).epub"
-1503             = Complete : "J T Geissinger - Spicy Little Curses (epub).epub"
-1507             = Complete : "Jack Hance - Road Warriors (epub).epub"
-1512             = Complete : "Jack Maconaghy - The Power to Corrupt (epub).epub"
-1527             = Complete : "Jaclyn Kot - Between Soul and Vessel (epub).epub"
-1531             = Complete : "James Lawrence - Order of Moloch (epub).epub"
-1533             = Complete : "James Patterson - The President's Daughter - Bill Clinton (retail) (epub).epub"
-1534             = Complete : "James Patterson - The Pretender - Andrew Bourelle (epub).epub"
-1535             = Complete : "James Patterson - The Quickie - Michael Ledwidge (retail) (epub).epub"
-1539             = Complete : "James Rosone & Brandon Ellis - Battle of Shadows (epub).epub"
-1540             = Complete : "Jamie K Schmidt - The Cauldronball Run (epub).epub"
-1545             = Complete : "Jane Washington - Elancer (epub).epub"
-1549             = Complete : "Jay Leigh Brown - Cider House Fools (epub).epub"
-1552             = Complete : "Jaycee Wolfe - Her Nosey Biker (epub).epub"
-1561             = Complete : "Jaymin Eve - Spellcaster (epub).epub"
-1566             = Complete : "Jayne Castel - The Queen and the Half-blood (epub).epub"
-1569             = Complete : "Jeff Harwell - EMP Bugout 02 (epub).epub"
-1573             = Complete : "Jeff Wheeler - The Brotherhood of Shadows (epub).epub"
-1579             = Complete : "Jeffrey Archer - End Game (epub).epub"
-1584             = Complete : "Jen Hatmaker - Awake (epub).epub"
-1588             = Complete : "Jennae Vale - A Bridge Through Time (epub).epub"
-1590             = Complete : "Jessica Gadziala - Coach (epub).epub"
-1593             = Complete : "Jessica Seaborn - Isn't It Nice We Both Hate the Same Things (epub).epub"
-1596             = Complete : "Jilleen Dolbeare - The Bounty Hunter and the Spirit Wolf (epub).epub"
-1598             = Complete : "Jillian Rink - Ready or Knot (epub).epub"
-1603             = Complete : "Jin Holland - Lost in Fiction 05 (epub).epub"
-1609             = Complete : "Jocelyn Bleu - Wings of Ash & Flame (epub).epub"
-1614             = Complete : "Joe Posnanski - Why We Love Football (epub).epub"
-1616             = Complete : "John Banville - Venetian Vespers (epub).epub"
-1618             = Complete : "John David - The Bystander (epub).epub"
-1619             = Complete : "John G Hartness - (Quincy Harker 16SS) - Histories (Hammer Time, Jazz City Blues, Anna's Song) (epub).epub"
-1622             = Complete : "Jonathan Janz - Veil (retail) (epub).epub"
-1631             = Complete : "Joseph Sterk - Son of the Borderlands (epub).epub"
-1635             = Complete : "K Bengston - The Boatman (epub).epub"
-1639             = Complete : "K C Crowne - Dark Desires (epub).epub"
-1643             = Complete : "K E Osborn - Victorious (epub).epub"
-1645             = Complete : "K L Donn - Property of Brute & Axl (epub).epub"
-1648             = Complete : "K N Banet - Cruel Revenge (epub).epub"
-1652             = Complete : "K T Dady - Christmas in Port Berry (epub).epub"
-1655             = Complete : "Kal Griffith - Mage Academy 06 (epub).epub"
-1658             = Complete : "Kala Aster & Milly Taiden - Fetch Me A Mate (epub).epub"
-1679             = Complete : "Kamala Harris - 107 Days (epub).epub"
-1683             = Complete : "Kamitoan - Rise of a Monster (epub).epub"
-1686             = Complete : "Karen Ann Hopkins - Wicked Winds Whisper (epub).epub"
-1687             = Complete : "Karen Baugh Menuhin, Matilda Swift - The Caxton Manor Murders (epub).epub"
-1692             = Complete : "Kat Singleton - Bad for Business (epub).epub"
-1695             = Complete : "Kate Lewis - Her Stolen Scent (epub).epub"
-1701             = Complete : "Kate Rozy - The Summoning Spell (epub).epub"
-1706             = Complete : "Katee Robert - Beautiful Nightmare (epub).epub"
-1709             = Complete : "Katherine McIntyre - Filtration Play (epub).epub"
-1712             = Complete : "Kathi Daley - Haunting or Homicide (epub).epub"
-1714             = Complete : "Kathi S Barton - Aaron (epub).epub"
-1717             = Complete : "Kathleen Suzette - Sweets, Sleuths, and Scoops (epub).epub"
-1721             = Complete : "Katie Gayle - Murder in the Winter Woods (epub).epub"
-1723             = Complete : "Katie May - [Damning 01] - Greed (epub).epub"
-1726             = Complete : "Katie May - [Damning 03] - Gluttony (epub).epub"
-1728             = Complete : "Katie May - [Damning 04] - Sloth (epub).epub"
-1730             = Complete : "Katie May - [Damning 05] - Pride (epub).epub"
-1731             = Complete : "Katie May - [Together We Fall 01] - The Darkness We Crave (epub).epub"
-1732             = Complete : "Katie May - [Together We Fall 03] - Storm We Face (epub).epub"
-1734             = Complete : "Katie May - Wrath (epub).epub"
-1736             = Complete : "Katie May & Loxley Savage - [Afterworld Academy 02] - Darkness Deceives (epub).epub"
-1738             = Complete : "Katie May & Loxley Savage - [Afterworld Academy 03] - Defying Destiny (epub).epub"
-1741             = Complete : "Kay Jennings - Wave's End (epub).epub"
-1743             = Complete : "Kelly Gendron - [A Different Kind of Escort Service 01] - My Escort (retail) (epub).epub"
-1745             = Complete : "Kelly Gendron - [A Different Kind of Escort Service 02] - Her Escort (epub).epub"
-1746             = Complete : "Kelly Golden - Daughter Darling (epub).epub"
-1747             = Complete : "Kelly Goode - Careless (epub).epub"
-1748             = Complete : "Kelly Goode - Dauntless (epub).epub"
-1749             = Complete : "Kelly Grayson - Cecil the Combat Wombat (epub).epub"
-1750             = Complete : "Kelly Grayson - Platypus Platoon (epub).epub"
-1754             = Complete : "Kelly Grayson - Random Synapses (epub).epub"
-1762             = Complete : "Kelly Grayson - Wombat Prime (epub).epub"
-1765             = Complete : "Kennedy Kerr - A Dance with the Fae (epub).epub"
-1768             = Complete : "Kennedy Kerr - A Kiss from the Fae (epub).epub"
-1773             = Complete : "Khloe Summers - Marked by my Protector (epub).epub"
-1775             = Complete : "Kim Stephenson - Your Pace or Mine (epub).epub"
-1780             = Complete : "Kimberly Lemming - My Boyfriends Are All Monsters (epub).epub"
-1781             = Complete : "Kris M Davey - The Leaving Road (epub).epub"
-1784             = Complete : "Kris T Bethke & Tia Fielding - Earn his Trust (epub).epub"
-1787             = Complete : "Kylie Kent - His Deadly Devotion (epub).epub"
-1789             = Complete : "L Loren - Her Missing Cowboy (epub).epub"
-1792             = Complete : "Lacey Day - My Three Hometown Alphas (epub).epub"
-1794             = Complete : "Lanaeus - Return of the S-Rank Hunter 02 (epub).epub"
-1797             = Complete : "Laurel K Reid - Sins of the Father (epub).epub"
-1800             = Complete : "Lee Brook - The Tingley Reservoir Murders (epub).epub"
-1805             = Complete : "Lee Strauss - Murder in the Painted Mask (epub).epub"
-1811             = Complete : "Leni Morgan - Hot n Bothered (epub).epub"
-1812             = Complete : "leo bruce-case for three detectives (retail) (epub).epub"
-1815             = Complete : "Leona White - The Pakhan's Bride (epub).epub"
-1819             = Complete : "Lexi Asher - The Russian Pakhan's Forced Bride (epub).epub"
-1827             = Complete : "Lexi Post - Third Rock from the Cowboy (epub).epub"
-1831             = Complete : "Liam Lawless - The Apocalypse is a Side Quest (epub).epub"
-1834             = Complete : "Lili Valente - The No Touch Roommate Rule (epub).epub"
-1838             = Complete : "Lilith Vincent - Soft Tissue Damage (epub).epub"
-1843             = Complete : "Lilura Sloane - [Fated 01] - Falling for the Wolf (epub).epub"
-1851             = Complete : "Lily Anderson - Big Bad (retail) (epub).epub"
-1853             = Complete : "Lily Anderson - Killer House Party (epub).epub"
-1861             = Complete : "Lily Anderson - Scout's Honor (retail) (epub).epub"
-1865             = Complete : "Lily Anne Rose - [The Elemental Kingdoms 01] - The Truth of Lies (epub).epub"
-1868             = Complete : "Lily Archer - A Land of Never and Night (epub).epub"
-1871             = Complete : "Lily Archer - A Sea of Risk and Ruin (epub).epub"
-1874             = Complete : "Lily Archer - An Isle of Secrets and Shadows (epub).epub"
-1881             = Complete : "Lily Archer - The Book of G (epub).epub"
-1883             = Complete : "Lily Miller - Deal Breaker (epub).epub"
-1888             = Complete : "Linda Norlander - The Pines Were Watching (epub).epub"
-1893             = Complete : "Lisa Kleypas - Devil in Winter (retail) (epub).epub"
-1897             = Complete : "Lisa Oliver - The Most Unsuitable Prince (epub).epub"
-1901             = Complete : "Lora Whitney - Brutal Devil (epub).epub"
-1904             = Complete : "Lorelei M Hart - Shopping for His Omega (epub).epub"
-1909             = Complete : "Lorna Barrett - [Booktown Mystery 19] - A Perilous Plot (epub).epub"
-1911             = Complete : "Lucky Moon - Bratva Daddy (epub).epub"
-1914             = Complete : "Lynnea Lee - Fated to the Hunter (epub).epub"
-1918             = Complete : "M A Innes - Culture and Curiosities (epub).epub"
-1921             = Complete : "M J Michaels - The Trouble With Perfect Women (epub).epub"
-1922             = Complete : "M L Bullock - Wraith of Fort Morgan (epub).epub"
-1925             = Complete : "M Tress - The Lost Bloodline 04 (epub).epub"
-1929             = Complete : "Madison Noelle - When It's Us (epub).epub"
-1933             = Complete : "Mae Malone - Daddy's Firm Hands (epub).epub"
-1938             = Complete : "Mariah Stone - Duke of Eccess (epub).epub"
-1940             = Complete : "Marissa Farrar & S R Jones - The Preachers' Promise (epub).epub"
-1943             = Complete : "Mark Yarwood - Hunt Down (epub).epub"
-1946             = Complete : "Mark Yarwood - Strike Down (epub).epub"
-1949             = Complete : "Mark Yarwood - Track Down (epub).epub"
-1950             = Complete : "Martin H Greenberg (ed) - The Robot and the Man (mobi).mobi"
-1958             = Complete : "Martin H Greenberg (ed) - Travelers of Space (epub).epub"
-1973             = Complete : "Martin H Greenberg (ed) - Travelers of Space (mobi).mobi"
-1975             = Complete : "Martin H Greenberg (ed) - Vampires-The Greatest Stories (html).html"
-1976             = Complete : "Martin H Greenberg (ed) - Visions of Liberty (epub).epub"
-1977             = Complete : "Martin H Greenberg (ed) - Visions of Liberty (mobi).mobi"
-1979             = Complete : "Martin Hill - The Fourth Rising (retail) (epub).epub"
-1980             = Complete : "Martin Hill - The Last Refuge (retail) (epub).epub"
-2010             = Complete : "Martin Howard - Mallory Vayle and the Curse of Maggoty Skull (retail) (epub).epub"
-2012             = Complete : "Martin Howard - Shaun the Sheep Movie (epub).epub"
-2015             = Complete : "Mary Lancaster - Vengeance in Venice (epub).epub"
-2040             = Complete : "Matilda Heindow - The Art of Feeling Better (epub).epub"
-2044             = Complete : "Maya Alden - Best In Class (epub).epub"
-2049             = Complete : "Meghan Ciana Doidge - Snag (epub).epub"
-2051             = Complete : "Melinda Leigh - Dead Against Her (epub).epub"
-2054             = Complete : "Melissa Brayden - Can We Skip to the Good Part (epub).epub"
-2058             = Complete : "Melissa Huxley - Packed in the Penalty Box (epub).epub"
-2061             = Complete : "Michael Anderle - Haven Goes to War (epub).epub"
-2064             = Complete : "Michael Anderle - No Deposits, No Return (epub).epub"
-2067             = Complete : "Michael Cheney - Illegal Operation (epub).epub"
-2070             = Complete : "Michael G Thomas - The Rise of Spartan (epub).epub"
-2075             = Complete : "Michelle Chouinard - A Tour to Die For (epub).epub"
-2078             = Complete : "Michelle Powers - Devil's Ridge (epub).epub"
-2081             = Complete : "Michelle Salter - Murder in Trafalgar Square (epub).epub"
-2083             = Complete : "Mike Faricy - Unmarked Grave (epub).epub"
-2086             = Complete : "Mike Ignatov - The Realization Fifth Circle (epub).epub"
-2089             = Complete : "Milli Rabbit - Second Chance Daddy (epub).epub"
-2093             = Complete : "Mira Shaw - Almost Gone (epub).epub"
-2097             = Complete : "Miranda May - Knot His Omega (epub).epub"
-2102             = Complete : "Miranda Vale & Miranda Martin - A Voice of Silver and Blood (epub).epub"
-2104             = Complete : "MM Farmer & Merry Farmer - His Prize (epub).epub"
-2109             = Complete : "MOJIKAKIYA - My Daughter Left the Nest and Returned an S-Rank Adventurer 11 (epub).epub"
-2112             = Complete : "Montana Fyre - The One Night Match (epub).epub"
-2130             = Complete : "N D Stevenson - Scarlet Morning 01 (epub).epub"
-2133             = Complete : "N J Adel - XOXO, Little Butterfly (epub).epub"
-2135             = Complete : "Naia Moray - Where the Current Takes Him (epub).epub"
-2141             = Complete : "Natalie Alexandra - A Touch of Stars and Stones (epub).epub"
-2146             = Complete : "Nathan Hystad - Pathos (epub).epub"
-2148             = Complete : "Nic Roberts - A Peaceful Murder (epub).epub"
-2154             = Complete : "Nick Lowles - How to Defeat the Far Right (epub).epub"
-2159             = Complete : "Nicole J Owens - Beneath Your Lies (epub).epub"
-2162             = Complete : "Nikita Parmenter - Deadly Reckoning 07 (epub).epub"
-2165             = Complete : "Nikki Landis - Reaping Havoc (epub).epub"
-2167             = Complete : "Nola Heart - Bonds of Hate (epub).epub"
-2172             = Complete : "Nova Kane - Atrocity (epub).epub"
-2175             = Complete : "Olga Tokarczuk,Antonia Lloyd-Jones - House of Day, House of Night (epub).epub"
-2183             = Complete : "Oriana Ramunno - Smoke in Berlin (epub).epub"
-2211             = Complete : "Pamela Butchart - The Popcorn Puppy (retail) (epub).epub"
-2213             = Complete : "Pamela Griffin - A Single Rose (retail) (epub).epub"
-2215             = Complete : "Pamela Griffin - A Treasure Reborn (retail) (epub).epub"
-2217             = Complete : "Pandora Pine - Dead Calm (epub).epub"
-2225             = Complete : "Patricia Lockwood - Will There Ever Be Another You (epub).epub"
-2229             = Complete : "Penny Dee - Cinder (epub).epub"
-2237             = Complete : "Penny Warner - Murder at Blackwood Inn (epub).epub"
-2243             = Complete : "Phil Lecomber - Midnight Streets (epub).epub"
-2251             = Complete : "Philip Fracassi - The Third Rule of Time Travel (retail) (epub).epub"
-2253             = Complete : "Pip Adam - Nothing to See (retail) (epub).epub"
-2342             = Complete : "Pip Bird - The Naughtiest Unicorn and the Birthday Party (retail) (epub).epub"
-2424             = Complete : "Pip Bird - The Naughtiest Unicorn and the Ice Dragon (retail) (epub).epub"
-2427             = Complete : "Piper Stone - Claim Me (epub).epub"
-2449             = Complete : "Poppy Rose Solomon - Woken Kingdom (retail) (epub).epub"
-2455             = Complete : "Priscilla Beaulieu Presley, Mary Jane Ross - Softly, As I Leave You (epub).epub"
-2469             = Complete : "Pulphouse Fiction Magazine - Issue 37 (retail) (epub).epub"
-2472             = Complete : "Quentin Kilgore & Julia Moonie - King of the Block Omnibus (epub).epub"
-2475             = Complete : "Quinn Loftis - Veiled By Smoke (epub).epub"
-2479             = Complete : "R A Schmitt - World Affinity The Radiant Traveler Series (epub).epub"
-2484             = Complete : "R G Alexander - For the Win (epub).epub"
-2489             = Complete : "R J Scott - Rio (epub).epub"
-2492             = Complete : "R K Pierce - Three Ring Heat (epub).epub"
-2494             = Complete : "Rachael Chadwick - Crawl For Me (epub).epub"
-2499             = Complete : "Rachel Enriquez - A Promise of Power (epub).epub"
-2501             = Complete : "Raju Vashishta - Fusion of Love (epub).epub"
-2505             = Complete : "Ranyhin1 - The Abyssal Descent (epub).epub"
-2508             = Complete : "Rebecca Cohen - Bleeding for the Prince (epub).epub"
-2510             = Complete : "Rebekah Lynn - He Is Ours (epub).epub"
-2512             = Complete : "Reina Torres - Falling for Gabriel (epub).epub"
-2514             = Complete : "Reina Torres - Falling for Joshua (epub).epub"
-2517             = Complete : "Remington Kane - Fishers of Men (epub).epub"
-2519             = Complete : "Renee Harless - At First Dance (epub).epub"
-2522             = Complete : "Renee Jagger & Michael Anderle - The Waif Forward (epub).epub"
-2525             = Complete : "Renee Zara - Royal Bargain (epub).epub"
-2526             = Complete : "Rhys Everly - Insatiable (epub).epub"
-2531             = Complete : "Richard F Weyand - Push in Bootes (epub).epub"
-2537             = Complete : "Richard Osman - The Impossible Fortune (epub).epub"
-2541             = Complete : "Robert Dugoni - [Tracy Crosswhite 08.5] - The Last Line (epub).epub"
-2544             = Complete : "Robert Dugoni - [Tracy Crosswhite 08] - In Her Tracks (epub).epub"
-2549             = Complete : "Robert Dugoni - [Tracy Crosswhite 09] - What She Found (epub).epub"
-2550             = Complete : "Robert Dunbar - Gray Soil (rtf).rtf"
-2552             = Complete : "Robert Dunbar - The Shore (epub).epub"
-2554             = Complete : "Robert Dunbar - The Shore (mobi).mobi"
-2561             = Complete : "Robert Tracy McKenzie - We the Fallen People (epub).epub"
-2566             = Complete : "Robin D Mahle & Elle Madison - Bound to the Shadow Queen (epub).epub"
-2570             = Complete : "Robin Knight - The Nook for Brooks (epub).epub"
-2572             = Complete : "Rose Pascoe - Shocking Deceptions (epub).epub"
-2576             = Complete : "Rose Warner - The Teacher Evacuees (epub).epub"
-2580             = Complete : "Rosie Goodwin - The Rag Princess (epub).epub"
-2584             = Complete : "Roxy Monroe - Bossy Mountain Daddies (epub).epub"
-2591             = Complete : "Ruby Dixon - Space Vampire (epub).epub"
-2595             = Complete : "Rupa Mahadevan - Nine Dolls (epub).epub"
-2613             = Complete : "Ryan La Sala - The Dead of Summer (epub).epub"
-2617             = Complete : "Ryan Taylor & Joshua Harwood - Overtime Goal (epub).epub"
-2620             = Complete : "S E Babin - An Unfolding Crime (epub).epub"
-2621             = Complete : "S E Babin - Another One Fights the Dust (epub).epub"
-2622             = Complete : "S E Babin - The Grim Sweeper (epub).epub"
-2624             = Complete : "S E Green - Break (epub).epub"
-2626             = Complete : "S E Reed - The First Wives (epub).epub"
-2629             = Complete : "S J Richards - Tiger Bait (epub).epub"
-2634             = Complete : "S P Miskowski - If You Knew Me (epub).epub"
-2638             = Complete : "Samara Cove - Who's There (epub).epub"
-2643             = Complete : "Sapir A Englard - Dance of the Phoenix (epub).epub"
-2647             = Complete : "Sara Ackerman - The Guest in Room 120 (epub).epub"
-2650             = Complete : "Sara Bourgeois - Monster Madness (epub).epub"
-2653             = Complete : "Sara C Roethle - Vicious Little Vows (epub).epub"
-2656             = Complete : "Sara Ney - Don't Go Breaking My Heart (epub).epub"
-2659             = Complete : "Sarah A Bailey - Reckless Roses (epub).epub"
-2663             = Complete : "Sarah Gailey - Spread Me (epub).epub"
-2667             = Complete : "Saxon James - Wilde's End (epub).epub"
-2671             = Complete : "Scarlett Scott - Duke with a Lie (epub).epub"
-2674             = Complete : "Scarlett Shelton - The Disputed Legacy (epub).epub"
-2676             = Complete : "Scott Medbury - A Debt to Pay (epub).epub"
-2679             = Complete : "Shane Purdy - Reaper's Resurgence (epub).epub"
-2681             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 01] - Conflict of Honors (retail) (mobi).mobi"
-2683             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 02] - Agent of Change (retail) (mobi).mobi"
-2685             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 03] - Carpe Diem (retail) (mobi).mobi"
-2687             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 04] - Plan B (retail) (mobi).mobi"
-2689             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 05] - Local Custom (retail) (mobi).mobi"
-2691             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 06] - Scout's Progress (retail) (mobi).mobi"
-2693             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 07] - I Dare (retail) (mobi).mobi"
-2695             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 08] - Balance of Trade (retail) (mobi).mobi"
-2697             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 09] - Necessity's Child (retail) (epub).epub"
-2701             = Complete : "Sharon Lee & Steve Miller - [Liaden Universe 29] - Ribbon Dance (retail) (epub).epub"
-2705             = Complete : "Siena Trap - Bellini Born (epub).epub"
-2708             = Complete : "Sonia Parin - Killer Heatwave (epub).epub"
-2714             = Complete : "Sophie Love - Scandal and Supper (epub).epub"
-2720             = Complete : "Spaizzzer - Tree of Aeons 7 (epub).epub"
-2725             = Complete : "Stacey Trombley - Devour (epub).epub"
-2727             = Complete : "Stella Rainbow - Shade (epub).epub"
-2731             = Complete : "Stephanie Mylchreest & Mike Kraus - Twilight's Ruin (epub).epub"
-2734             = Complete : "Stephen Szabados - Polish Genealogy (retail) (epub).epub"
-2738             = Complete : "Steve Kelly - Beneath the Red Line (epub).epub"
-2743             = Complete : "Steve McHugh - The Pilgrims of the Damned (epub).epub"
-2746             = Complete : "Steven A McKay - Return of the Wolf (epub).epub"
-2751             = Complete : "Stevie Sparks - Snake Eyes (epub).epub"
-2755             = Complete : "Stewart Giles - The Optician (epub).epub"
-2758             = Complete : "Stina Lindenblatt - One More Heartbeat (epub).epub"
-2761             = Complete : "Susan Boles - Curve Balls & Second Chances (epub).epub"
-2764             = Complete : "Susan Stoker - Marrying Caroline (epub).epub"
-2767             = Complete : "Susan Stoker - Protecting Alabama (epub).epub"
-2770             = Complete : "Susan Stoker - Protecting Alabama's Kids (epub).epub"
-2774             = Complete : "Susan Stoker - Protecting Caroline (epub).epub"
-2777             = Complete : "Susan Stoker - Protecting Cheyenne (epub).epub"
-2780             = Complete : "Susan Stoker - Protecting Dakota (epub).epub"
-2784             = Complete : "Susan Stoker - Protecting Fiona (epub).epub"
-2788             = Complete : "Susan Stoker - Protecting Jessyka (epub).epub"
-2790             = Complete : "Susan Stoker - Protecting Julie (epub).epub"
-2793             = Complete : "Susan Stoker - Protecting Kiera (epub).epub"
-2796             = Complete : "Susan Stoker - Protecting Melody (epub).epub"
-2799             = Complete : "Susan Stoker - Protecting Summer (epub).epub"
-2803             = Complete : "Susan Stoker - Protecting the Future (epub).epub"
-2806             = Complete : "T A Williams - Under a Spanish Sky (epub).epub"
-2810             = Complete : "Tana Stone - Revenge (epub).epub"
-2812             = Complete : "Tasha Alexander - The Sisterhood (epub).epub"
-2813             = Complete : "Taylor Knox - My Troublemaker Hero (epub).epub"
-2816             = Complete : "Teri Woods - True to the Game 01 (epub).epub"
-2820             = Complete : "Teri Woods - True to the Game 02 (epub).epub"
-2823             = Complete : "Teri Woods - True to the Game 03 (epub).epub"
-2826             = Complete : "Tess Oliver - Theo (epub).epub"
-2827             = Complete : "Tessa Hale - Rising Reign (epub).epub"
-2830             = Complete : "Tessa Pacelli - The Garbage Man (epub).epub"
-2833             = Complete : "Theo Baxter - In Her Shadow (epub).epub"
-2836             = Complete : "Thomas Fincham - The Hidden Child (epub).epub"
-2839             = Complete : "Tilly Chapman - Last Lock-In at the Skin and Bones (epub).epub"
-2844             = Complete : "Tim L Rey - The Ship (epub).epub"
-2847             = Complete : "Toby Neighbors - Foray (epub).epub"
-2861             = Complete : "Tony Burgess - The n-Body Problem (retail) (mobi).mobi"
-2863             = Complete : "Tony Burton (ed) - [Holiday Crimes 01] - By the Chimney With Care (mobi).mobi"
-2865             = Complete : "Tony Burton (ed) - [Holiday Crimes 02] - Carols and Crimes, Gifts and Grifters (mobi).mobi"
-2866             = Complete : "Tony Burton (ed) - [Holiday Crimes 03] - Dying in a Winter Wonderland (mobi).mobi"
-2899             = Complete : "Tony C Smith (ed) - StarShipSofa Stories Volume 01 (pdf).pdf"
-2902             = Complete : "Tony C Smith (ed) - StarShipSofa Stories Volume 03 (epub).epub"
-2908             = Complete : "Tony C Smith (ed) - StarShipSofa Stories Volume 03 (mobi).mobi"
-2910             = Complete : "Tony Cape - The Cambridge Theorem (epub).epub"
-2913             = Complete : "Tony Cape - The Cambridge Theorem (mobi).mobi"
-2916             = Complete : "Tony Cavanaugh - Darian Richards 01-02 - Promise, Dead Girl Singing (epub).epub"
-2925             = Complete : "Tonya Burrows - Wilde and Untamed (epub).epub"
-2928             = Complete : "Tory Baker - Feels Like Forever (epub).epub"
-2931             = Complete : "Trina M Lee - Grave Sacrifice (epub).epub"
-2935             = Complete : "Valerie Pepper - Worth the Try (epub).epub"
-2939             = Complete : "Victoria Brown - The Death Ship (epub).epub"
-2944             = Complete : "Victoria Kazarian - Naan the Wiser (epub).epub"
-2948             = Complete : "Victoria LK Williams - Thyme to Depart (epub).epub"
-2953             = Complete : "Victoria McCombs - Labyrinth Wolves (epub).epub"
-2958             = Complete : "Victoria Paige - Scorned Beauty (epub).epub"
-2962             = Complete : "Vince Flynn & Don Bentley - Denied Access (epub).epub"
-2963             = Complete : "Violet Coltair - The Long Lost Omega A Contempo (epub).epub"
-2965             = Complete : "Wendy Meadows - Hops and Homicide (retail) (epub).epub"
-2970             = Complete : "William C Dietz - Short Fiction (epub).epub"
-2980             = Complete : "William L Hamling - Fiction Spectacular (epub).epub"
-2982             = Complete : "William Shakespeare - Macbeth (Deluxe Student ed) - (tr) SparkNotes (retail) (epub).epub"
-2984             = Complete : "William Shakespeare - Richard III - (tr) SparkNotes (retail) (epub).epub"
-2986             = Complete : "William Shakespeare - Sonnets - (tr) SparkNotes (retail) (epub).epub"
-2989             = Complete : "Willow Dixon - Wicked Games (epub).epub"
-2993             = Complete : "Willow Rose - The Woman He Married (epub).epub"
-2996             = Complete : "Winter K Willis - The Psychiatrist (epub).epub"
-2999             = Complete : "Wolfe Locke & Mike Caliban - [Ballad of Shady Greg 01] - Dungeon Mercantile (epub).epub"
-3002             = Complete : "Woody Allen - What's with Baum (epub).epub"
-3008             = Complete : "XKarnation - Reborn as a Demonic Tree 07 (epub).epub"
-3011             = Complete : "Zara Crowe - Hunted by Khor (epub).epub"
-3017             = Complete : "Zara Storm - Prisoner of Darkness and Dreams (epub).epub"
-3019             = Complete : "Zarah Detand - Second to None (epub).epub"
-3023             = Complete : "Zoey Voss - The Crimson Princess (epub).epub"
-
-Complete file count	: 600
-Misnamed file count	: 0
-Damaged file count	: 0
-Missing file count	: 0
-
-Input File Slice found	: 3023
-
-Input File Slice avail	: 3023
-Input File Slice lost	: 0
-
-All Files Complete
