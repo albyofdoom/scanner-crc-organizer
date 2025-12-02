@@ -54,7 +54,9 @@ param(
     # Optional override list of CSV base names or file paths to force move to Completed even if CSV is incomplete
     [string[]]$ForceCSV = @(),
     # If specified, allow forced CSVs to be moved even when zero matching files were found
-    [switch]$ForceCSVMoveEmpty
+    [switch]$ForceCSVMoveEmpty,
+    # If specified, move matched files to CompletedFolder even if incomplete, but leave CSV in RootFolder
+    [switch]$ForceMoveFiles
 )
 
 ###############################
@@ -77,6 +79,11 @@ if (!(Test-Path $LogFolder)) {
 }
 if (!(Test-Path $CompletedFolder)) {
     throw "Completed folder not found: $CompletedFolder"
+}
+
+# Validate parameter combinations
+if ($ForceCSV -and $ForceCSV.Count -gt 0 -and $ForceMoveFiles) {
+    throw "Cannot use both -ForceCSV and -ForceMoveFiles switches simultaneously. Use -ForceCSV to move files+CSV together, or -ForceMoveFiles to move only files."
 }
 
 # Archive existing log files before starting new run
@@ -353,6 +360,8 @@ $PartialMatchCSVs = @()
 $FullMatchCSVs = @()
 # Track forced CSVs (force-moved by user)
 $ForcedCSVs = @()
+# Track CSVs where files were force-moved but CSV left behind
+$ForceMoveFilesCSVs = @()
 
 # Normalize ForceCSV list into exact base-names and wildcard patterns (case-insensitive)
 $ForceCSVBaseNames = @()
@@ -656,8 +665,24 @@ ForEach($File in $CRC_CSV_Files){
                     }
                 }
         
+        # Handle -ForceMoveFiles: move matched files even if incomplete, but leave CSV behind
+        $forceMoveFilesActive = $ForceMoveFiles -and ($FoundFilesCRC.Count -gt 0)
+        if ($forceMoveFilesActive) {
+            $ForceMoveFilesCSVs += $File.Name
+            Write-Log "ForceMoveFiles active for CSV $($File.Name) - will move $($FoundFilesCRC.Count) matched file(s) but leave CSV in RootFolder"
+            Write-Host -ForegroundColor Cyan "ForceMoveFiles: Moving $($FoundFilesCRC.Count) file(s) for $($File.Name), CSV stays in RootFolder"
+            # Set flag to enable file moves without marking CSV complete
+            $moveFilesOnly = $true
+        }
+        else {
+            $moveFilesOnly = $false
+        }
+        
         if ($isCompleteCSV) {
             Write-Log "CSV $($file.Name) is COMPLETE - will move to completed folder"
+        }
+        elseif ($moveFilesOnly) {
+            Write-LogOnly "CSV $($file.Name) is INCOMPLETE - ForceMoveFiles will move matched files only, CSV stays in RootFolder"
         }
         else {
             Write-LogOnly "CSV $($file.Name) is INCOMPLETE - files will remain in source folder"
@@ -732,18 +757,19 @@ ForEach($File in $CRC_CSV_Files){
                 Remove-EmptyDirectories -BasePath (Join-Path $CompletedFolder $file.BaseName) -IncludeBase -Context "empty destination directories for CSV: $($file.Name)"
             }
 
-        # Process file moves ONLY for complete CSVs
-        # Incomplete CSVs leave files in source folder
-        $totalToMove = if ($isCompleteCSV) { $FoundFilesCRC.Count } else { 0 }
+        # Process file moves for complete CSVs OR when ForceMoveFiles is active
+        # Incomplete CSVs leave files in source folder (unless ForceMoveFiles is specified)
+        $shouldMoveFiles = $isCompleteCSV -or $moveFilesOnly
+        $totalToMove = if ($shouldMoveFiles) { $FoundFilesCRC.Count } else { 0 }
         $movedCount = 0
         
-        if (-not $isCompleteCSV) {
+        if (-not $shouldMoveFiles) {
             Write-Host -ForegroundColor DarkGray "  Files remain in source for incomplete CSV"
         }
         
         foreach($foundFile in $FoundFilesCRC){
-            # Skip file moves for incomplete CSVs - files stay in source
-            if (-not $isCompleteCSV) {
+            # Skip file moves for incomplete CSVs unless ForceMoveFiles is active
+            if (-not $shouldMoveFiles) {
                 continue
             }
             
@@ -861,7 +887,8 @@ ForEach($File in $CRC_CSV_Files){
         }
         
         # Move CSV to completed folder only after ALL file operations are done successfully
-        if ($isCompleteCSV) {
+        # Skip CSV move if ForceMoveFiles is active (files moved but CSV stays for tracking)
+        if ($isCompleteCSV -and -not $moveFilesOnly) {
             try {
                 $csvDestPath = Join-Path (Join-Path $CompletedFolder $file.BaseName) $file.Name
                 $csvDestFolder = Split-Path -Parent $csvDestPath
@@ -950,11 +977,21 @@ if ($FullMatchCSVs.Count -gt 0) {
 }
 
 # Forced CSVs
-Write-Host -ForegroundColor Cyan "`nCSVs forced to move regardless of completeness: $($ForcedCSVs.Count)"
+Write-Host -ForegroundColor Cyan "\nCSVs forced to move regardless of completeness: $($ForcedCSVs.Count)"
 Write-Log "CSVs forced to move regardless of completeness: $($ForcedCSVs.Count)"
 if ($ForcedCSVs.Count -gt 0) {
     foreach ($csv in $ForcedCSVs) {
         Write-Host "  - $csv"
+        Write-LogOnly "  - $csv"
+    }
+}
+
+# Force-moved files (CSV left behind)
+Write-Host -ForegroundColor Magenta "\nCSVs where files were moved but CSV left in RootFolder (ForceMoveFiles): $($ForceMoveFilesCSVs.Count)"
+Write-Log "CSVs where files were moved but CSV left in RootFolder (ForceMoveFiles): $($ForceMoveFilesCSVs.Count)"
+if ($ForceMoveFilesCSVs.Count -gt 0) {
+    foreach ($csv in $ForceMoveFilesCSVs) {
+        Write-Host "  - $csv" -ForegroundColor Magenta
         Write-LogOnly "  - $csv"
     }
 }
