@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SCRIPT = REPO_ROOT / 'CSV_Processing' / 'CSV-Validate-Repair.py'
+SCRIPT = REPO_ROOT / 'CSV-Validate-Repair.py'
 
 
 def run_script(csv_path, extra_args=None):
@@ -269,7 +269,7 @@ from pathlib import Path
 
 
 def load_module():
-    src = Path(__file__).parent.parent / 'CSV_Processing' / 'CSV-Validate-Repair.py'
+    src = Path(__file__).parent.parent / 'CSV-Validate-Repair.py'
     spec = importlib.util.spec_from_file_location('csv_validate_repair', str(src))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)

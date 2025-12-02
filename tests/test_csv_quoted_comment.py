@@ -16,7 +16,7 @@ def test_quoted_comment_not_double_quoted():
     # already correctly quoted in the CSV. The parser should return an
     # unquoted Python string and csv.writer should not produce tripled quotes.
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    module_path = os.path.join(repo_root, 'CSV_Processing', 'CSV-Validate-Repair.py')
+    module_path = os.path.join(repo_root, 'CSV-Validate-Repair.py')
     assert os.path.exists(module_path), f"Module not found: {module_path}"
 
     mod = load_module_from_path(module_path)

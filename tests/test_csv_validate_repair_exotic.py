@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SCRIPT = REPO_ROOT / 'CSV_Processing' / 'CSV-Validate-Repair.py'
+SCRIPT = REPO_ROOT / 'CSV-Validate-Repair.py'
 
 
 def run_script(csv_path, extra_args=None):

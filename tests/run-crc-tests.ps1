@@ -19,12 +19,11 @@ param(
 
 Set-StrictMode -Version Latest
 
-# Delegate to consolidated runner so all test entrypoints go through
-# `run-all-tests.ps1`. Use -Which crc to request CRC tests.
-$runner = Join-Path $PSScriptRoot 'run-all-tests.ps1'
+# Call the implementation script directly
+$runner = Join-Path $PSScriptRoot 'run-crc-tests-impl.ps1'
 
 if (-not (Test-Path $runner)) {
-    Write-Error "Consolidated runner not found: $runner"
+    Write-Error "Test implementation not found: $runner"
     exit 2
 }
 
@@ -32,5 +31,5 @@ $argsToPass = @()
 if ($Quick) { $argsToPass += '-Quick' }
 if ($Keep)  { $argsToPass += '-Keep' }
 
-& $runner -Which crc @argsToPass
+& $runner @argsToPass
 exit $LASTEXITCODE

@@ -23,7 +23,7 @@ $ErrorActionPreference = 'Stop'
 # Resolve paths relative to repository root (tests/ is one level down)
 $RepoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $TestPath = Join-Path $RepoRoot 'TestData' 'TestWorking'
-$ScriptPath = Join-Path $RepoRoot 'CSV_Processing' 'CRC-FileOrganizer.ps1'
+$ScriptPath = Join-Path $RepoRoot 'CRC-FileOrganizer.ps1'
 $TestDataZip = Join-Path $RepoRoot 'TestData' 'TestSourceData.zip'
 
 Write-Host "`n=== Quick Test: CRC-FileOrganizer ===" -ForegroundColor Cyan

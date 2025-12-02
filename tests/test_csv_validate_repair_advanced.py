@@ -16,15 +16,24 @@ import os
 import csv
 import json
 import zipfile
+import importlib.util
 from pathlib import Path
 
-# Add CSV_Processing to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'CSV_Processing'))
-from CSV_Validate_Repair import (
-    validate_and_repair_csv,
-    process_folder_bulk,
-    archive_csv_file
-)
+
+def load_module():
+    """Load CSV-Validate-Repair.py module."""
+    src = Path(__file__).parent.parent / 'CSV-Validate-Repair.py'
+    spec = importlib.util.spec_from_file_location('csv_validate_repair', str(src))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+# Load the module and get functions
+csv_module = load_module()
+validate_and_repair_csv = csv_module.validate_and_repair_csv
+process_folder_bulk = csv_module.process_folder_bulk
+archive_csv_file = csv_module.archive_csv_file
 
 
 def test_archive_original_creates_zip(tmp_path):
@@ -172,9 +181,10 @@ def test_encoding_detection_fallback_chain(tmp_path):
 
 def test_flag_nonutf8_treats_as_issue(tmp_path):
     """Test --flag-nonutf8 treats non-UTF-8 encoding as an issue."""
-    # Create Latin-1 encoded file
+    # Create Latin-1 encoded file with non-ASCII characters
     input_csv = tmp_path / "latin1.csv"
-    content = "FileName,Size,CRC32,Path\nfile.txt,100,12345678,\\path\\"
+    # Include Latin-1 specific characters (like é) that aren't valid UTF-8
+    content = "FileName,Size,CRC32,Path\nfilé.txt,100,12345678,\\path\\"
     input_csv.write_bytes(content.encode('latin-1'))
     
     output_csv = tmp_path / "repaired.csv"
@@ -190,7 +200,7 @@ def test_flag_nonutf8_treats_as_issue(tmp_path):
     )
     
     # Should report non-UTF-8 as an issue
-    assert issues > 0, "Non-UTF-8 encoding should be flagged as issue"
+    assert len(issues) > 0, "Non-UTF-8 encoding should be flagged as issue"
     
     # Check log contains encoding message
     if log_file.exists():
@@ -339,7 +349,7 @@ def test_duplicate_crc_detection_with_different_sizes(tmp_path):
     )
     
     # Should detect duplicate CRC+Size (file1 and file2)
-    assert issues > 0, "Should detect duplicate CRC+Size"
+    assert len(issues) > 0, "Should detect duplicate CRC+Size"
     
     # Check log mentions duplicate
     if log_file.exists():
@@ -370,7 +380,7 @@ def test_empty_fields_handling(tmp_path):
     )
     
     # Empty FileName, Size, or CRC32 should be flagged
-    assert issues >= 3, f"Should flag at least 3 empty field issues, found {issues}"
+    assert len(issues) >= 3, f"Should flag at least 3 empty field issues, found {len(issues)}"
 
 
 def test_path_with_multiple_backslashes(tmp_path):

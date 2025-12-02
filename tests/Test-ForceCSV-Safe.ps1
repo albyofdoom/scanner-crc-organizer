@@ -13,7 +13,7 @@ param()
 $ErrorActionPreference = 'Stop'
 
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$scriptPath = Join-Path $scriptRoot '..\CSV_Processing\CRC-FileOrganizer.ps1' | Resolve-Path -ErrorAction Stop
+$scriptPath = Join-Path $scriptRoot '..\CRC-FileOrganizer.ps1' | Resolve-Path -ErrorAction Stop
 $scriptPath = $scriptPath.Path
 
 $timestamp = Get-Date -Format 'yyyyMMdd_HHmmss'

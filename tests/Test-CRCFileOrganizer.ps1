@@ -41,7 +41,7 @@ if (-not $WorkingPath) {
     $WorkingPath = Join-Path $RepoRoot 'TestData' 'TestWorking'
 }
 if (-not $ScriptPath) {
-    $ScriptPath = Join-Path $RepoRoot 'CSV_Processing' 'CRC-FileOrganizer.ps1'
+    $ScriptPath = Join-Path $RepoRoot 'CRC-FileOrganizer.ps1'
 }
 
 $ErrorActionPreference = 'Stop'

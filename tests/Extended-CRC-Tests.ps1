@@ -16,7 +16,7 @@
 param([switch]$KeepData)
 
 $ErrorActionPreference = 'Stop'
-$ScriptPath = Join-Path $PSScriptRoot '..\CSV_Processing\CRC-FileOrganizer.ps1'
+$ScriptPath = Join-Path $PSScriptRoot '..\CRC-FileOrganizer.ps1'
 $TestZip = Join-Path $PSScriptRoot '..\TestData\TestSourceData.zip'
 $WorkRoot = Join-Path $PSScriptRoot '..\TestData\ExtendedWorking'
 
@@ -32,7 +32,7 @@ Expand-Archive -Path $TestZip -DestinationPath $WorkRoot -Force
 @('_98_Logs','_99_Completed') | ForEach-Object { $d = Join-Path $WorkRoot $_; if (-not (Test-Path $d)) { New-Item -ItemType Directory -Path $d | Out-Null } }
 
 # Dot-source CRC helper to compute CRCs for synthetic CSV rows
-. (Join-Path $PSScriptRoot '..\Functions\CRC-FileOrganizerLib.ps1')
+. (Join-Path $PSScriptRoot '..\CRC-FileOrganizerLib.ps1')
 
 $csvDir = Join-Path $WorkRoot '_01_CSV_Source'
 $srcDir = Join-Path $WorkRoot '_02_Image_Source'

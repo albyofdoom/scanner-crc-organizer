@@ -13,7 +13,7 @@ param()
 $ErrorActionPreference = 'Stop'
 
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$scriptPath = Join-Path $scriptRoot '..\CSV_Processing\CRC-FileOrganizer.ps1' | Resolve-Path -ErrorAction Stop
+$scriptPath = Join-Path $scriptRoot '..\CRC-FileOrganizer.ps1' | Resolve-Path -ErrorAction Stop
 $scriptPath = $scriptPath.Path
 
 $timestamp = Get-Date -Format 'yyyyMMdd_HHmmss'
@@ -41,7 +41,7 @@ $sampleFilePath = Join-Path $srcDir $sampleFileName
 [System.IO.File]::WriteAllText($sampleFilePath, 'sample-data-for-crc')
 
 # Dot-source the CRC helper library to compute the CRC for our sample file
-$libPath = Join-Path (Split-Path -Parent $scriptPath) '..\Functions\CRC-FileOrganizerLib.ps1' | Resolve-Path -ErrorAction SilentlyContinue
+$libPath = Join-Path (Split-Path -Parent $scriptPath) '..\CRC-FileOrganizerLib.ps1' | Resolve-Path -ErrorAction SilentlyContinue
 if ($libPath) { . $libPath }
 else { Write-Host "Warning: CRC library not found at expected location; test may fail" -ForegroundColor Yellow }
 

@@ -20,8 +20,8 @@ import tempfile
 import shutil
 from pathlib import Path
 
-# Add CSV_Processing to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'CSV_Processing'))
+# Add parent directory to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from CRC32_Folder_Calc import compute_crc32, scan_directory
 
 

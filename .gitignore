@@ -1,0 +1,78 @@
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# Ignore coverage reports
+htmlcov/
+.coverage
+# Ignore pytest cache
+.pytest_cache/
+.mypy_cache/
+# Ignore virtual environment folders
+.venv/
+env/
+venv/
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.swp
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+# Ignore log files
+*.log
+# Ignore system files
+.DS_Store
+Thumbs.db
+desktop.ini
+# Ignore distribution/build folders
+dist/
+build/
+.eggs/
+*.egg-info/
+# Ignore temporary files
+*.tmp
+*.bak
+*.old
+# Ignore dotenv files
+.env
+.env.local
+.env.*.local
+# Ignore secret configuration files
+config.yaml
+secrets.json
+# Ignore data files
+data/
+data_raw/
+data_processed/
+outputs/
+results/
+# Ignore Jupyter Notebook output files
+*.nbconvert.ipynb
+# Ignore local settings
+local_settings.py
+# Ignore test output files
+test_output/
+test_reports/
+# Ignore Sphinx documentation build files
+docs/_build/
+# Ignore Docker files
+docker-compose.override.yml
+Dockerfile.dev
+docker-compose.dev.yml
+# Ignore Celery beat schedule files
+celerybeat-schedule
+# Ignore coverage HTML reports
+coverage_html_report/
+coverage.xml
+# Ignore temporary Jupyter files
+*.ipynb_tmp
+# Ignore local database files
+*.sqlite3
+localdb.sqlite3
+# Ignore backup files created by some editors
+*~.bak
+*~.swp
+# Ignore compiled C extensions
+*.so
+*.dylib
+*.dll
+*.exe

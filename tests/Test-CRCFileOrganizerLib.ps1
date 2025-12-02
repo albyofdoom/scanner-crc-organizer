@@ -52,7 +52,7 @@ Function Write-TestResult {
 }
 
 # Load library
-. (Join-Path $PSScriptRoot '..\Functions\CRC-FileOrganizerLib.ps1')
+. (Join-Path $PSScriptRoot '..\CRC-FileOrganizerLib.ps1')
 
 # Create test environment
 if (Test-Path $TestDataPath) {

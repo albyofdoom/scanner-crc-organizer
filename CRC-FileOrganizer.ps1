@@ -125,7 +125,7 @@ function Write-Log {
 }
 
 # Dot-source shared library for CRC helpers (keeps behavior identical)
-. (Join-Path $PSScriptRoot '..\Functions\CRC-FileOrganizerLib.ps1')
+. (Join-Path $PSScriptRoot 'CRC-FileOrganizerLib.ps1')
 
 # Write to the log file only (don't print to console)
 function Write-LogOnly {

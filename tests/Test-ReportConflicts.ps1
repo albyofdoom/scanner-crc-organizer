@@ -28,7 +28,7 @@ if (-not $TestDataPath) {
     $TestDataPath = Join-Path $RepoRoot 'TestData' 'ConflictTests'
 }
 if (-not $ScriptPath) {
-    $ScriptPath = Join-Path $RepoRoot 'CSV_Processing' 'CRC-FileOrganizer-ReportConflicts.ps1'
+    $ScriptPath = Join-Path $RepoRoot 'CRC-FileOrganizer-ReportConflicts.ps1'
 }
 
 # Test results tracking
@@ -74,7 +74,7 @@ Write-Host "CRC-FileOrganizer-ReportConflicts.ps1 Test Suite" -ForegroundColor C
 Write-Host "========================================`n" -ForegroundColor Cyan
 
 # Load library for creating test data
-. (Join-Path $PSScriptRoot '..\Functions\CRC-FileOrganizerLib.ps1')
+. (Join-Path $PSScriptRoot '..\CRC-FileOrganizerLib.ps1')
 
 # ============================================
 # Setup Test Data

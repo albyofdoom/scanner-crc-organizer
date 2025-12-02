@@ -13,7 +13,7 @@ def load_module_from_path(path):
 def test_escaped_comma_trailing_backslash():
     # Locate the CSV-Validate-Repair.py script relative to the repo root
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    module_path = os.path.join(repo_root, 'CSV_Processing', 'CSV-Validate-Repair.py')
+    module_path = os.path.join(repo_root, 'CSV-Validate-Repair.py')
     assert os.path.exists(module_path), f"Module not found: {module_path}"
 
     mod = load_module_from_path(module_path)

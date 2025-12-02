@@ -69,7 +69,7 @@ function Write-LogOnly {
 }
 
 # Dot-source library
-. (Join-Path $PSScriptRoot '..\Functions\CRC-FileOrganizerLib.ps1')
+. (Join-Path $PSScriptRoot 'CRC-FileOrganizerLib.ps1')
 
 Write-Host "Building candidate map (this will compute CRC32 for files under $SourceFolderCRC)" -ForegroundColor Cyan
 $candidateMap = Get-CandidateMap -SourceFolderCRC $SourceFolderCRC -ThrottleLimit $ThrottleLimit
