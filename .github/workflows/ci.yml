@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  python-linux:
+    name: Python tests (Linux)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.12]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run pytest
+        run: |
+          pytest tests/ -q
+
+  windows-full:
+    name: Python + PowerShell tests (Windows)
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: [3.12]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if (Test-Path requirements.txt) { pip install -r requirements.txt }
+        shell: pwsh
+
+      - name: Run pytest (Windows)
+        run: pytest tests/ -q
+        shell: pwsh
+
+      - name: Run PowerShell CRC tests
+        run: |
+          # Run the test runner; keeps script non-interactive
+          pwsh -NoProfile -NonInteractive -Command "& './tests/run-crc-tests.ps1' -Quick"
+        shell: pwsh
