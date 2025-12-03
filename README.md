@@ -82,7 +82,7 @@ CompletedFolder/     # Organized complete sets
 
 Expected CSV format (5 columns, no header row):
 
-```
+``` CSV
 FileName,Size,CRC32,Path,Comment
 image001.jpg,1234567,ABCD1234,optional/path,Optional comment
 image002.jpg,2345678,EFGH5678,,
@@ -229,7 +229,6 @@ Additional parameters (new):
 **Deprecated (kept for compatibility):**
 
 - `-StagingFolder` - No longer used in current workflow
-
 
 ## Troubleshooting
 
