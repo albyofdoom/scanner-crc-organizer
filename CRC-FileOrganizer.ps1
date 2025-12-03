@@ -57,6 +57,16 @@ param(
     [switch]$ForceCSVMoveEmpty,
     # If specified, move matched files to CompletedFolder even if incomplete, but leave CSV in RootFolder
     [switch]$ForceMoveFiles
+    ,
+    # If specified, run a post-pass that compares conflicts (source vs destination) by size+CRC
+    [switch]$CompareConflicts,
+    # Throttle limit for conflict CRC calculations (Compare-Conflicts function)
+    [int]$ConflictThrottleLimit = 4
+    ,
+    # Automatically confirm large conflict CRC comparisons (skip interactive prompt)
+    [switch]$AutoConfirmConflicts,
+    # If combined conflicts exceed this number, prompt (or skip if AutoConfirmConflicts set)
+    [int]$SkipCRCIfOver = 500
 )
 
 ###############################
@@ -208,6 +218,113 @@ function Write-LogOnly {
     }
  }
 
+# Function to compare conflicts by computing CRCs for source and destination files
+function Compare-Conflicts {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$InputCsv,
+        [Parameter(Mandatory=$true)]
+        [string]$OutputCsv,
+        [int]$ThrottleLimit = 4
+    )
+
+    Write-Log "Starting conflict comparisons: $((Split-Path $InputCsv -Leaf)) -> $((Split-Path $OutputCsv -Leaf))"
+
+    if (-not (Test-Path -LiteralPath $InputCsv)) {
+        Write-Log "Compare-Conflicts: Input CSV not found: $InputCsv"
+        return
+    }
+
+    $rows = Import-Csv -Path $InputCsv
+    if (-not $rows -or $rows.Count -eq 0) {
+        Write-LogOnly "Compare-Conflicts: No rows to process in $InputCsv"
+        return
+    }
+
+    # Capture function definitions for runspaces
+    $GetCRC32HashFunction = ${function:Get-CRC32Hash}.ToString()
+    $AddCRC32TypeFunction = ${function:Add-CRC32Type}.ToString()
+
+    # Run parallel comparisons as a job for controlled throttling
+    $job = $rows | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
+        ${function:Add-CRC32Type} = $using:AddCRC32TypeFunction
+        ${function:Get-CRC32Hash} = $using:GetCRC32HashFunction
+        Add-CRC32Type
+
+        $srcPath = $_.SourceFullPath
+        $dstPath = $_.DestinationPath
+        $srcExists = Test-Path -LiteralPath $srcPath
+        $dstExists = Test-Path -LiteralPath $dstPath
+
+        $srcSize = $null
+        $dstSize = $null
+        $srcCRC = ''
+        $dstCRC = ''
+        $sizeMatch = $false
+        $crcMatch = 'NA'
+
+        if ($srcExists) {
+            try { $srcSize = (Get-Item -LiteralPath $srcPath -ErrorAction Stop).Length } catch { $srcSize = $null }
+        }
+        if ($dstExists) {
+            try { $dstSize = (Get-Item -LiteralPath $dstPath -ErrorAction Stop).Length } catch { $dstSize = $null }
+        }
+
+        if ($null -ne $srcSize -and $null -ne $dstSize) { $sizeMatch = ($srcSize -eq $dstSize) }
+
+        if ($srcExists) {
+            try { $srcCRC = Get-CRC32Hash -FilePath $srcPath } catch { $srcCRC = '' }
+        }
+        if ($dstExists) {
+            try { $dstCRC = Get-CRC32Hash -FilePath $dstPath } catch { $dstCRC = '' }
+        }
+
+        if ($srcCRC -ne '' -and $dstCRC -ne '') {
+            $crcMatch = ($srcCRC -eq $dstCRC)
+        }
+
+        $notes = @()
+        if (-not $dstExists) { $notes += 'Destination missing' }
+        elseif (-not $sizeMatch) { $notes += 'Size differs' }
+        elseif ($crcMatch -eq $false) { $notes += 'CRC differs' }
+        else { $notes += 'Match' }
+
+        [PSCustomObject]@{
+            FileName = $_.FileName
+            Size = $_.Size
+            CRC32 = $_.CRC32
+            Path = $_.Path
+            Comment = $_.Comment
+            SourceFullPath = $srcPath
+            DestinationPath = $dstPath
+            SourceSize = $srcSize
+            DestSize = $dstSize
+            SizeMatch = $sizeMatch
+            SourceCRC = $srcCRC
+            DestCRC = $dstCRC
+            CRCMatch = $crcMatch
+            Notes = ($notes -join '; ')
+        }
+    } -AsJob
+
+    # Collect job output incrementally
+    $collected = @()
+    while ($true) {
+        $new = Receive-Job -Job $job -ErrorAction SilentlyContinue
+        if ($new) { $collected += $new }
+        if ($job.State -eq 'Completed' -and -not $new) { break }
+        if ($job.State -eq 'Failed') { break }
+        Start-Sleep -Milliseconds 200
+    }
+    $remaining = Receive-Job -Job $job -Wait -ErrorAction SilentlyContinue
+    if ($remaining) { $collected += $remaining }
+
+    # Export a single final CSV report
+    $collected | Export-Csv -Path $OutputCsv -NoTypeInformation -Encoding UTF8 -Force
+    Write-Log "Compare-Conflicts: Wrote $($collected.Count) rows to: $(Split-Path $OutputCsv -Leaf)"
+}
+
 # If DryRun is enabled, print a clear banner and write to the log
 if ($DryRun) {
     Write-Host -ForegroundColor Yellow "DRY RUN: No folders will be created and no files will be moved."
@@ -354,6 +471,7 @@ Write-Host "Calculated CRC32 hashes for $($FileHashes.Count) files"
 # Get list of CSV files to process
 $CRC_CSV_Files = Get-ChildItem -LiteralPath $RootFolder -Filter "*.csv" | Where-Object { $_.Name -notlike "*_missing_files.csv" }
 
+$AllConflictTempFiles = @()
 # Initialize summary tracking variables
 $ZeroMatchCSVs = @()
 $PartialMatchCSVs = @()
@@ -362,6 +480,7 @@ $FullMatchCSVs = @()
 $ForcedCSVs = @()
 # Track CSVs where files were force-moved but CSV left behind
 $ForceMoveFilesCSVs = @()
+# NOTE: conflict records are collected per-CSV and flushed to per-CSV temp files.
 
 # Normalize ForceCSV list into exact base-names and wildcard patterns (case-insensitive)
 $ForceCSVBaseNames = @()
@@ -424,6 +543,9 @@ if (($ForceCSVBaseNames.Count -gt 0) -or ($ForceCSVPatterns.Count -gt 0)) {
 ForEach($File in $CRC_CSV_Files){
     # Commence CSV Actions
     Write-Host -ForegroundColor Blue "`r`n--Processing" $File.Name "--"
+
+    # Per-CSV in-memory conflict accumulator (flushed to temp per CSV to bound memory)
+    $ConflictRecords = @()
 
 
     # RFC 4180-compliant CSV line parser
@@ -796,7 +918,13 @@ ForEach($File in $CRC_CSV_Files){
                 }
                 
                 # Pre-calculate destination path
-                $NewFileName = Join-Path (Join-Path $CompletedFolder $file.BaseName) (Join-Path $foundFile.Path $foundFile.Filename)
+                $csvBaseFolder = Join-Path $CompletedFolder $file.BaseName
+                if ([string]::IsNullOrWhiteSpace($foundFile.Path)) {
+                    $NewFileName = Join-Path $csvBaseFolder $foundFile.Filename
+                }
+                else {
+                    $NewFileName = Join-Path (Join-Path $csvBaseFolder $foundFile.Path) $foundFile.Filename
+                }
                 $destFolder = Split-Path -Parent $NewFileName
                 $sourcePath = $matchedFile.File.FullName
                 $destinationPath = $NewFileName
@@ -829,6 +957,23 @@ ForEach($File in $CRC_CSV_Files){
                     
                     if ($pathsValid) {
                         try {
+                            # If destination already exists, record conflict and skip moving now
+                            $destExists = Test-Path -LiteralPath $destinationPath
+                            if ($destExists) {
+                                # Record conflict information mirroring first 5 CSV columns plus paths
+                                $ConflictRecords += [PSCustomObject]@{
+                                    FileName = $foundFile.FileName
+                                    Size = $foundFile.Size
+                                    CRC32 = $foundFile.CRC32
+                                    Path = $foundFile.Path
+                                    Comment = if ($foundFile.PSObject.Properties.Match('Comment')) { $foundFile.Comment } else { '' }
+                                    SourceFullPath = $sourcePath
+                                    DestinationPath = $destinationPath
+                                }
+                                # Recorded in-memory for later batch processing (per-CSV summary will be logged)
+                                continue
+                            }
+
                             if ($DryRun) {
                                 Write-LogOnly "DryRun: Would move file from $sourcePath to $destinationPath"
                             }
@@ -836,7 +981,7 @@ ForEach($File in $CRC_CSV_Files){
                                 # Perform the move operation
                                 Move-Item -LiteralPath $sourcePath -Destination $destinationPath -Force
                                 $movedFilesCount++
-                                
+
                                 # Remove the used file from the hashtable using composite key
                                 $lookupKey = "{0}:{1}" -f $foundFile.CRC32.ToString().ToUpper(), $foundFile.Size
                                 if ($CRCLookup[$lookupKey] -is [array]) {
@@ -915,9 +1060,136 @@ ForEach($File in $CRC_CSV_Files){
         Write-Log "Error processing CSV file $($File.Name): $_"
         Write-Host -ForegroundColor Red "Error processing CSV file: $($File.Name)"
     }
+
+    # Per-CSV conflict flush: if any conflicts were recorded for this CSV, write a per-CSV temp CSV and record it
+    try {
+        if ($ConflictRecords -and $ConflictRecords.Count -gt 0) {
+            $confTimestamp = Get-Date -Format 'yyyyMMdd_HHmmss'
+            $confTempCsv = Join-Path $LogFolder ("conflicts_$($File.BaseName)_$confTimestamp.csv")
+            $ConflictRecords | Select-Object FileName,Size,CRC32,Path,Comment,SourceFullPath,DestinationPath | Export-Csv -Path $confTempCsv -NoTypeInformation -Encoding UTF8 -Force
+            $AllConflictTempFiles += $confTempCsv
+            Write-LogOnly "Recorded $($ConflictRecords.Count) conflict(s) for CSV $($File.Name) to: $(Split-Path $confTempCsv -Leaf)"
+            Write-Host -ForegroundColor Magenta "  → Recorded $($ConflictRecords.Count) conflict(s) for $($File.Name) to $(Split-Path $confTempCsv -Leaf)"
+        }
+    }
+    catch {
+        Write-LogOnly "Error while flushing conflicts for CSV $($File.Name): $_"
+    }
 }
 
         # Clean up any empty folders left behind
+        # If any per-CSV conflict temp files were created, consolidate into a single combined CSV
+        if ($AllConflictTempFiles -and $AllConflictTempFiles.Count -gt 0) {
+            $ts = Get-Date -Format 'yyyyMMdd_HHmmss'
+            $combinedTemp = Join-Path $LogFolder ("conflicts_combined_$ts.csv")
+
+            try {
+                # Combine all per-CSV temp files into one consolidated CSV (single write)
+                $AllConflictTempFiles | ForEach-Object { Import-Csv -Path $_ } | Export-Csv -Path $combinedTemp -NoTypeInformation -Encoding UTF8 -Force
+                Write-Log "Combined $($AllConflictTempFiles.Count) per-CSV conflict files into: $(Split-Path $combinedTemp -Leaf)"
+                Write-Host -ForegroundColor Magenta "Combined $($AllConflictTempFiles.Count) conflict files -> $(Split-Path $combinedTemp -Leaf)"
+
+                # Remove per-CSV temp files now that they are consolidated
+                foreach ($t in $AllConflictTempFiles) {
+                    try {
+                        Remove-Item -LiteralPath $t -Force -ErrorAction SilentlyContinue
+                        Write-LogOnly "Removed per-CSV temp file: $(Split-Path $t -Leaf)"
+                    }
+                    catch {
+                        Write-LogOnly "Failed to remove temp file $(Split-Path $t -Leaf): $_"
+                    }
+                }
+
+                # Clear the list now that temp files are removed
+                $AllConflictTempFiles = @()
+
+                if ($CompareConflicts) {
+                    if ($DryRun) {
+                        Write-Log "DryRun: Skipping conflict CRC comparisons. Consolidated temp conflicts CSV: $(Split-Path $combinedTemp -Leaf)"
+                        Write-Host -ForegroundColor Yellow "DryRun: Skipping conflict CRC comparisons. Consolidated temp file: $(Split-Path $combinedTemp -Leaf)"
+                    }
+                    else {
+                        # Count rows in combined CSV to decide whether to prompt
+                        try {
+                            $combinedCount = (Import-Csv -Path $combinedTemp | Measure-Object).Count
+                        }
+                        catch {
+                            Write-Log "Failed to read combined conflicts CSV for counting: $_"
+                            $combinedCount = 0
+                        }
+
+                        $finalReport = Join-Path $LogFolder ("conflict_report_$ts.csv")
+
+                        if ($combinedCount -gt $SkipCRCIfOver) {
+                            # If auto-confirm is requested, proceed without prompting
+                            if ($AutoConfirmConflicts) {
+                                Compare-Conflicts -InputCsv $combinedTemp -OutputCsv $finalReport -ThrottleLimit $ConflictThrottleLimit
+                                Write-Log "Conflict comparison written to: $(Split-Path $finalReport -Leaf)"
+                                Write-Host -ForegroundColor Magenta "Conflict comparison done: $(Split-Path $finalReport -Leaf)"
+                            }
+                            else {
+                                # Prompt the user for confirmation
+                                $ans = Read-Host "Conflict comparison will process $combinedCount files (this may take time). Continue with full CRC comparisons? (Y/N)"
+                                if ($ans -match '^[Yy](es)?$') {
+                                    Compare-Conflicts -InputCsv $combinedTemp -OutputCsv $finalReport -ThrottleLimit $ConflictThrottleLimit
+                                    Write-Log "Conflict comparison written to: $(Split-Path $finalReport -Leaf)"
+                                    Write-Host -ForegroundColor Magenta "Conflict comparison done: $(Split-Path $finalReport -Leaf)"
+                                }
+                                else {
+                                    # User declined: generate final report without CRC values (size-based only)
+                                    try {
+                                        $rows = Import-Csv -Path $combinedTemp
+                                        $out = foreach ($r in $rows) {
+                                            $src = $r.SourceFullPath
+                                            $dst = $r.DestinationPath
+                                            $srcSize = $null; $dstSize = $null; $sizeMatch = $false
+                                            if (Test-Path -LiteralPath $src) { try { $srcSize = (Get-Item -LiteralPath $src).Length } catch { $srcSize = $null } }
+                                            if (Test-Path -LiteralPath $dst) { try { $dstSize = (Get-Item -LiteralPath $dst).Length } catch { $dstSize = $null } }
+                                            if ($null -ne $srcSize -and $null -ne $dstSize) { $sizeMatch = ($srcSize -eq $dstSize) }
+
+                                            [PSCustomObject]@{
+                                                FileName = $r.FileName
+                                                Size = $r.Size
+                                                CRC32 = $r.CRC32
+                                                Path = $r.Path
+                                                Comment = $r.Comment
+                                                SourceFullPath = $src
+                                                DestinationPath = $dst
+                                                SourceSize = $srcSize
+                                                DestSize = $dstSize
+                                                SizeMatch = $sizeMatch
+                                                SourceCRC = ''
+                                                DestCRC = ''
+                                                CRCMatch = 'NA'
+                                                Notes = (if (-not (Test-Path -LiteralPath $dst)) { 'Destination missing' } elseif (-not $sizeMatch) { 'Size differs' } else { 'Size matches (CRC skipped)' })
+                                            }
+                                        }
+                                        $out | Export-Csv -Path $finalReport -NoTypeInformation -Encoding UTF8 -Force
+                                        Write-Log "Size-only conflict report written to: $(Split-Path $finalReport -Leaf) (CRC values omitted by user choice)"
+                                        Write-Host -ForegroundColor Magenta "Size-only conflict report written: $(Split-Path $finalReport -Leaf)"
+                                    }
+                                    catch {
+                                        Write-Log "Failed to write size-only conflict report: $_"
+                                        Write-Host -ForegroundColor Yellow "Warning: Could not write size-only conflict report: $_"
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            # Small enough to run full comparison without prompting
+                            Compare-Conflicts -InputCsv $combinedTemp -OutputCsv $finalReport -ThrottleLimit $ConflictThrottleLimit
+                            Write-Log "Conflict comparison written to: $(Split-Path $finalReport -Leaf)"
+                            Write-Host -ForegroundColor Magenta "Conflict comparison done: $(Split-Path $finalReport -Leaf)"
+                        }
+                    }
+                }
+            }
+            catch {
+                Write-Log "Error consolidating conflict temp files: $_"
+                Write-Host -ForegroundColor Yellow "Warning: Could not consolidate conflict temp files: $_"
+            }
+        }
+
         Write-LogOnly "Starting cleanup of empty folders"
         Remove-EmptyDirectories -BasePath $SourceFolderCRC -Context "source tree empty folder cleanup"
 
