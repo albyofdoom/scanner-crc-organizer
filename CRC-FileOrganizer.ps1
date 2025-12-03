@@ -775,42 +775,33 @@ ForEach($File in $CRC_CSV_Files){
             
             try {
                 $movedCount++
-                $movePercent = if ($totalToMove -gt 0) { [int](($movedCount / [double]$totalToMove) * 100) } else { 100 }
-                Write-Progress -Id 3 -Activity "Moving Files for $($file.Name)" `
-                              -Status "Moving file $movedCount of $totalToMove - $($foundFile.Filename)" `
-                              -PercentComplete $movePercent
+                # Update progress every 25 files or on first/last to reduce overhead
+                if (($movedCount % 25) -eq 1 -or $movedCount -eq $totalToMove) {
+                    $movePercent = if ($totalToMove -gt 0) { [int](($movedCount / [double]$totalToMove) * 100) } else { 100 }
+                    Write-Progress -Id 3 -Activity "Moving Files for $($file.Name)" `
+                                  -Status "Moving file $movedCount of $totalToMove - $($foundFile.Filename)" `
+                                  -PercentComplete $movePercent
+                }
                 
                 # Use composite CRC:Size key to lookup the file (matches matching logic above)
                 $lookupKey = "{0}:{1}" -f $foundFile.CRC32.ToString().ToUpper(), $foundFile.Size
                 $matchedFiles = $CRCLookup[$lookupKey]
-                Write-LogOnly "Processing file: $($foundFile.Filename) with CRC:Size key $lookupKey"
                 
                 # Handle case where CRCLookup contains arrays (multiple files with same CRC:Size)
                 if ($matchedFiles -is [array]) {
                     $matchedFile = $matchedFiles[0]  # Use first available file
-                    Write-LogOnly "Found $($matchedFiles.Count) files with key $lookupKey, using first available"
                 }
                 else {
                     $matchedFile = $matchedFiles
                 }
                 
-                # Only complete CSVs move files - use CompletedFolder
-                $targetFolder = $CompletedFolder
-                
-                $NewFileName = ($targetFolder + $file.BaseName + '\' + $foundFile.Path + '\' + $foundFile.Filename)
-                $NewFileName = $NewFileName -replace '\\\\','\'
-                $destFolder = (Split-Path -Parent $NewFileName)
+                # Pre-calculate destination path
+                $NewFileName = Join-Path (Join-Path $CompletedFolder $file.BaseName) (Join-Path $foundFile.Path $foundFile.Filename)
+                $destFolder = Split-Path -Parent $NewFileName
+                $sourcePath = $matchedFile.File.FullName
+                $destinationPath = $NewFileName
 
-                IF($matchedFile -and (Test-Path -LiteralPath $matchedFile.File.FullName)) {
-                    # Move the file from the source folder to the new destination
-                    Write-LogOnly "--Moving File to New Location--"
-                    
-                    # Construct proper paths with Join-Path to handle path separators correctly
-                    $sourcePath = $matchedFile.File.FullName
-                    $destinationPath = Join-Path $destFolder $foundFile.Filename
-                    
-                    Write-LogOnly "Source = $sourcePath"
-                    Write-LogOnly "Destination = $destinationPath"
+                IF($matchedFile) {
 
                     # Create parent directory if it doesn't exist
                     if (!(Test-Path -LiteralPath $destFolder)) {
@@ -829,7 +820,14 @@ ForEach($File in $CRC_CSV_Files){
                     }
 
                     # Verify paths and move file
-                    if ((Test-Path -LiteralPath $sourcePath) -and (Test-Path -LiteralPath $destFolder)) {
+                    # Skip destination verification in DryRun mode since folders aren't created
+                    $pathsValid = if ($DryRun) { 
+                        (Test-Path -LiteralPath $sourcePath) 
+                    } else { 
+                        (Test-Path -LiteralPath $sourcePath) -and (Test-Path -LiteralPath $destFolder) 
+                    }
+                    
+                    if ($pathsValid) {
                         try {
                             if ($DryRun) {
                                 Write-LogOnly "DryRun: Would move file from $sourcePath to $destinationPath"
@@ -837,7 +835,6 @@ ForEach($File in $CRC_CSV_Files){
                             else {
                                 # Perform the move operation
                                 Move-Item -LiteralPath $sourcePath -Destination $destinationPath -Force
-                                Write-LogOnly "Successfully moved file to destination"
                                 $movedFilesCount++
                                 
                                 # Remove the used file from the hashtable using composite key
@@ -847,16 +844,11 @@ ForEach($File in $CRC_CSV_Files){
                                     $CRCLookup[$lookupKey] = @($CRCLookup[$lookupKey] | Where-Object { $_.File.FullName -ne $sourcePath })
                                     if ($CRCLookup[$lookupKey].Count -eq 0) {
                                         $CRCLookup.Remove($lookupKey)
-                                        Write-LogOnly "Removed key $lookupKey from lookup table (last file)"
-                                    }
-                                    else {
-                                        Write-LogOnly "Removed file from key $lookupKey array ($($CRCLookup[$lookupKey].Count) remaining)"
                                     }
                                 }
                                 else {
                                     # Single file, remove the key entirely
                                     $CRCLookup.Remove($lookupKey)
-                                    Write-LogOnly "Removed key $lookupKey from lookup table"
                                 }
                             }
                         }
@@ -977,7 +969,7 @@ if ($FullMatchCSVs.Count -gt 0) {
 }
 
 # Forced CSVs
-Write-Host -ForegroundColor Cyan "\nCSVs forced to move regardless of completeness: $($ForcedCSVs.Count)"
+Write-Host -ForegroundColor Cyan "`nCSVs forced to move regardless of completeness: $($ForcedCSVs.Count)"
 Write-Log "CSVs forced to move regardless of completeness: $($ForcedCSVs.Count)"
 if ($ForcedCSVs.Count -gt 0) {
     foreach ($csv in $ForcedCSVs) {
@@ -987,7 +979,7 @@ if ($ForcedCSVs.Count -gt 0) {
 }
 
 # Force-moved files (CSV left behind)
-Write-Host -ForegroundColor Magenta "\nCSVs where files were moved but CSV left in RootFolder (ForceMoveFiles): $($ForceMoveFilesCSVs.Count)"
+Write-Host -ForegroundColor Magenta "`nCSVs where files were moved but CSV left in RootFolder (ForceMoveFiles): $($ForceMoveFilesCSVs.Count)"
 Write-Log "CSVs where files were moved but CSV left in RootFolder (ForceMoveFiles): $($ForceMoveFilesCSVs.Count)"
 if ($ForceMoveFilesCSVs.Count -gt 0) {
     foreach ($csv in $ForceMoveFilesCSVs) {
