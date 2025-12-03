@@ -61,7 +61,7 @@ param(
     # If specified, run a post-pass that compares conflicts (source vs destination) by size+CRC
     [switch]$CompareConflicts,
     # Throttle limit for conflict CRC calculations (Compare-Conflicts function)
-    [int]$ConflictThrottleLimit = 4
+    [int]$ConflictThrottleLimit = 8
     ,
     # Automatically confirm large conflict CRC comparisons (skip interactive prompt)
     [switch]$AutoConfirmConflicts,

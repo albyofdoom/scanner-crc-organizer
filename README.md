@@ -23,7 +23,6 @@ This tool automates the workflow of:
 - **CSV validation**: Repair malformed CSVs, handle exotic encodings, preserve comments
 - **Dry-run mode**: Preview all actions before making changes
 - **Comprehensive logging**: Timestamped logs with archiving, detailed conflict reports
-- **Staging workflow**: Hybrid direct-move + staging folder for complex cases
 
 ## Quick Start
 
