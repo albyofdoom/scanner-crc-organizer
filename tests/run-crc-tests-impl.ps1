@@ -33,6 +33,18 @@ else {
     else {
         & "$TestsPath\Test-CRCFileOrganizer.ps1"
     }
+
+    # Run additional focused Pester tests for conflict-compare and force-move
+    $conflictTest = Join-Path $TestsPath 'Test-ConflictCompareAndForceMove.ps1'
+    if (Test-Path $conflictTest) {
+        Write-Host "Running conflict/force-move Pester tests..." -ForegroundColor Cyan
+        try {
+            pwsh -NoProfile -Command "Import-Module Pester -ErrorAction Stop; Invoke-Pester -Script '$conflictTest' -Verbose"
+        }
+        catch {
+            Write-Host "Warning: Pester tests failed or Pester not available: $_" -ForegroundColor Yellow
+        }
+    }
 }
 
 exit $LASTEXITCODE
