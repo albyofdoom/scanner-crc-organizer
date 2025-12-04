@@ -841,7 +841,7 @@ ForEach($File in $CRC_CSV_Files){
             }
 
             # Single output operation for speed - Force overwrites any existing file
-            $missingFilesReport | Export-Csv -Path $missingFilesCsv -NoTypeInformation -Encoding UTF8 -Force
+            $missingFilesReport | Export-Csv -LiteralPath $missingFilesCsv -NoTypeInformation -Encoding UTF8 -Force
 
             # Concise console warning (no per-file prints) and a summary line to main log
             Write-Host -ForegroundColor Red "WARNING: $($NotFoundFiles.Count) files from CSV were not found. See $(Split-Path $missingFilesCsv -Leaf) for details."
