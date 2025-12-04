@@ -63,19 +63,21 @@ pip install -r requirements.txt
 ## Folder Structure
 
 ``` plaintext
-RootFolder/          # CSV files and logs
-  ├── *.csv          # CSV metadata files
-  ├── Logs/      # Timestamped logs
-  └── Archive/       # Archived logs
+Workspace Folder
+  └── CSVFolder/         # CSV files and logs (aka RootFolder)
+      └── *.csv          # CSV metadata files
 
-SourceFolderCRC/     # Downloaded files to organize
-  └── [files]
+  └── LogFolder/         # Timestamped Logs
+      └── Archive/       # Archived logs
 
-CompletedFolder/     # Organized complete sets
-  ├── SetName1/
-  │   ├── SetName1.csv
-  │   └── [matched files]
-  └── SetName2/
+  └── SourceFolderCRC/   # Downloaded files to organize
+      └── [files]
+
+  └── CompletedFolder/   # Organized complete sets
+      ├── SetName1/
+      │   ├── SetName1.csv
+      │   └── [matched files]
+      └── SetName2/
 ```
 
 ## CSV Format

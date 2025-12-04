@@ -236,7 +236,7 @@ function Compare-Conflicts {
         return
     }
 
-    $rows = Import-Csv -Path $InputCsv
+    $rows = Import-Csv -LiteralPath $InputCsv
     if (-not $rows -or $rows.Count -eq 0) {
         Write-LogOnly "Compare-Conflicts: No rows to process in $InputCsv"
         return
@@ -321,7 +321,7 @@ function Compare-Conflicts {
     if ($remaining) { $collected += $remaining }
 
     # Export a single final CSV report
-    $collected | Export-Csv -Path $OutputCsv -NoTypeInformation -Encoding UTF8 -Force
+    $collected | Export-Csv -LiteralPath $OutputCsv -NoTypeInformation -Encoding UTF8 -Force
     Write-Log "Compare-Conflicts: Wrote $($collected.Count) rows to: $(Split-Path $OutputCsv -Leaf)"
 }
 
@@ -1066,7 +1066,7 @@ ForEach($File in $CRC_CSV_Files){
         if ($ConflictRecords -and $ConflictRecords.Count -gt 0) {
             $confTimestamp = Get-Date -Format 'yyyyMMdd_HHmmss'
             $confTempCsv = Join-Path $LogFolder ("conflicts_$($File.BaseName)_$confTimestamp.csv")
-            $ConflictRecords | Select-Object FileName,Size,CRC32,Path,Comment,SourceFullPath,DestinationPath | Export-Csv -Path $confTempCsv -NoTypeInformation -Encoding UTF8 -Force
+            $ConflictRecords | Select-Object FileName,Size,CRC32,Path,Comment,SourceFullPath,DestinationPath | Export-Csv -LiteralPath $confTempCsv -NoTypeInformation -Encoding UTF8 -Force
             $AllConflictTempFiles += $confTempCsv
             Write-LogOnly "Recorded $($ConflictRecords.Count) conflict(s) for CSV $($File.Name) to: $(Split-Path $confTempCsv -Leaf)"
             Write-Host -ForegroundColor Magenta "  → Recorded $($ConflictRecords.Count) conflict(s) for $($File.Name) to $(Split-Path $confTempCsv -Leaf)"
@@ -1085,7 +1085,7 @@ ForEach($File in $CRC_CSV_Files){
 
             try {
                 # Combine all per-CSV temp files into one consolidated CSV (single write)
-                $AllConflictTempFiles | ForEach-Object { Import-Csv -Path $_ } | Export-Csv -Path $combinedTemp -NoTypeInformation -Encoding UTF8 -Force
+                $AllConflictTempFiles | ForEach-Object { Import-Csv -LiteralPath $_ } | Export-Csv -LiteralPath $combinedTemp -NoTypeInformation -Encoding UTF8 -Force
                 Write-Log "Combined $($AllConflictTempFiles.Count) per-CSV conflict files into: $(Split-Path $combinedTemp -Leaf)"
                 Write-Host -ForegroundColor Magenta "Combined $($AllConflictTempFiles.Count) conflict files -> $(Split-Path $combinedTemp -Leaf)"
 
@@ -1111,7 +1111,7 @@ ForEach($File in $CRC_CSV_Files){
                     else {
                         # Count rows in combined CSV to decide whether to prompt
                         try {
-                            $combinedCount = (Import-Csv -Path $combinedTemp | Measure-Object).Count
+                            $combinedCount = (Import-Csv -LiteralPath $combinedTemp | Measure-Object).Count
                         }
                         catch {
                             Write-Log "Failed to read combined conflicts CSV for counting: $_"
@@ -1138,7 +1138,7 @@ ForEach($File in $CRC_CSV_Files){
                                 else {
                                     # User declined: generate final report without CRC values (size-based only)
                                     try {
-                                        $rows = Import-Csv -Path $combinedTemp
+                                        $rows = Import-Csv -LiteralPath $combinedTemp
                                         $out = foreach ($r in $rows) {
                                             $src = $r.SourceFullPath
                                             $dst = $r.DestinationPath
@@ -1164,7 +1164,7 @@ ForEach($File in $CRC_CSV_Files){
                                                 Notes = (if (-not (Test-Path -LiteralPath $dst)) { 'Destination missing' } elseif (-not $sizeMatch) { 'Size differs' } else { 'Size matches (CRC skipped)' })
                                             }
                                         }
-                                        $out | Export-Csv -Path $finalReport -NoTypeInformation -Encoding UTF8 -Force
+                                        $out | Export-Csv -LiteralPath $finalReport -NoTypeInformation -Encoding UTF8 -Force
                                         Write-Log "Size-only conflict report written to: $(Split-Path $finalReport -Leaf) (CRC values omitted by user choice)"
                                         Write-Host -ForegroundColor Magenta "Size-only conflict report written: $(Split-Path $finalReport -Leaf)"
                                     }
