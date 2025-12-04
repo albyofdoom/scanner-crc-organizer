@@ -175,16 +175,25 @@ function Write-LogOnly {
              }
 
              # Remove deepest empty directories first
+             # Optimize: Get all directories once, then check in memory
              $dirs = Get-ChildItem -LiteralPath $BasePath -Directory -Recurse -ErrorAction SilentlyContinue | Sort-Object FullName -Descending
              foreach ($dir in $dirs) {
-                 $hasEntries = Get-ChildItem -LiteralPath $dir.FullName -Force -ErrorAction SilentlyContinue | Select-Object -First 1
+                 # Fast check: use .EnumerateFileSystemInfos() which stops at first item
+                 try {
+                     $hasEntries = [System.IO.Directory]::EnumerateFileSystemInfos($dir.FullName) | Select-Object -First 1
+                 }
+                 catch {
+                     # Directory might have been removed already or access denied
+                     continue
+                 }
+                 
                  if (-not $hasEntries) {
                      if ($DryRun) {
                          Write-LogOnly "DryRun: Would remove empty directory: $($dir.FullName)"
                      }
                      else {
                          try {
-                             Remove-Item -LiteralPath $dir.FullName -Force
+                             Remove-Item -LiteralPath $dir.FullName -Recurse -Force -ErrorAction Stop
                              Write-LogOnly "Removed empty directory: $($dir.FullName)"
                          }
                          catch {
@@ -195,14 +204,20 @@ function Write-LogOnly {
              }
 
              if ($IncludeBase) {
-                 $baseHasEntries = Get-ChildItem -LiteralPath $BasePath -Force -ErrorAction SilentlyContinue | Select-Object -First 1
+                 try {
+                     $baseHasEntries = [System.IO.Directory]::EnumerateFileSystemInfos($BasePath) | Select-Object -First 1
+                 }
+                 catch {
+                     $baseHasEntries = $null
+                 }
+                 
                  if (-not $baseHasEntries) {
                      if ($DryRun) {
                          Write-LogOnly "DryRun: Would remove empty base directory: $BasePath"
                      }
                      else {
                          try {
-                             Remove-Item -LiteralPath $BasePath -Force
+                             Remove-Item -LiteralPath $BasePath -Recurse -Force -ErrorAction Stop
                              Write-LogOnly "Removed empty base directory: $BasePath"
                          }
                         catch {
@@ -308,17 +323,21 @@ function Compare-Conflicts {
         }
     } -AsJob
 
-    # Collect job output incrementally
-    $collected = @()
+    # Collect job output incrementally using ArrayList for O(1) append
+    $collected = [System.Collections.ArrayList]::new()
     while ($true) {
         $new = Receive-Job -Job $job -ErrorAction SilentlyContinue
-        if ($new) { $collected += $new }
+        if ($new) { 
+            foreach ($item in $new) { $null = $collected.Add($item) }
+        }
         if ($job.State -eq 'Completed' -and -not $new) { break }
         if ($job.State -eq 'Failed') { break }
         Start-Sleep -Milliseconds 200
     }
     $remaining = Receive-Job -Job $job -Wait -ErrorAction SilentlyContinue
-    if ($remaining) { $collected += $remaining }
+    if ($remaining) { 
+        foreach ($item in $remaining) { $null = $collected.Add($item) }
+    }
 
     # Export a single final CSV report
     $collected | Export-Csv -LiteralPath $OutputCsv -NoTypeInformation -Encoding UTF8 -Force
@@ -413,11 +432,14 @@ $totalFiles = $FileSearchCRC.Count
         } -AsJob
 
         # Monitor progress while the job produces output incrementally
-        $received = @()
+        # Use ArrayList for O(1) append instead of array +=
+        $received = [System.Collections.ArrayList]::new()
         while ($true) {
             # Pull any completed results from the job (consumes them)
             $newResults = Receive-Job -Job $job -ErrorAction SilentlyContinue
-            if ($newResults) { $received += $newResults }
+            if ($newResults) { 
+                foreach ($item in $newResults) { $null = $received.Add($item) }
+            }
 
             $hashCount = $received.Count
             $hashPercent = if ($totalFiles -gt 0) { [int](($hashCount / [double]$totalFiles) * 100) } else { 100 }
@@ -435,7 +457,9 @@ $totalFiles = $FileSearchCRC.Count
 
         # Receive any remaining results (if any) and combine
         $remaining = Receive-Job -Job $job -Wait -ErrorAction SilentlyContinue
-        if ($remaining) { $received += $remaining }
+        if ($remaining) { 
+            foreach ($item in $remaining) { $null = $received.Add($item) }
+        }
         $FileHashes = $received
 
     # Create hashtable for O(1) lookups using composite CRC:Size keys
@@ -545,7 +569,8 @@ ForEach($File in $CRC_CSV_Files){
     Write-Host -ForegroundColor Blue "`r`n--Processing" $File.Name "--"
 
     # Per-CSV in-memory conflict accumulator (flushed to temp per CSV to bound memory)
-    $ConflictRecords = @()
+    # Use ArrayList for O(1) append instead of array += which is O(n²)
+    $ConflictRecords = [System.Collections.ArrayList]::new()
 
 
     # RFC 4180-compliant CSV line parser
@@ -586,12 +611,12 @@ ForEach($File in $CRC_CSV_Files){
 
     Write-Host "--Importing CSV--"
     $rawLines = Get-Content -LiteralPath $File.FullName -Encoding UTF8
-    $list = @()
-    foreach ($line in $rawLines) {
+    # Use foreach statement (not ForEach-Object) for better performance with large CSVs
+    $list = foreach ($line in $rawLines) {
         if ([string]::IsNullOrWhiteSpace($line)) { continue }
         $parts = Parse-CSVLineRFC4180 $line
         if ($parts.Count -ge 4) {
-            $list += [PSCustomObject]@{
+            [PSCustomObject]@{
                 FileName = $parts[0].Trim()
                 Size     = $parts[1].Trim()
                 CRC32    = $parts[2].Trim()
@@ -630,17 +655,17 @@ ForEach($File in $CRC_CSV_Files){
     # Check for duplicate CRCs within this CSV file
     Write-Host "--Checking for Duplicate CRCs in CSV--"
     $csvCRCCheck = @{}
-    $duplicatesFound = @()
+    $duplicatesFound = [System.Collections.ArrayList]::new()
     
     foreach ($csvRow in $list) {
         # Only consider duplicates if CRC and Size both match (avoid false positives where CRC collides but sizes differ)
         $crcValue = "{0}:{1}" -f $csvRow.CRC32.ToString().ToUpper(), $csvRow.Size
         if ($csvCRCCheck.ContainsKey($crcValue)) {
-            $duplicatesFound += [PSCustomObject]@{
+            $null = $duplicatesFound.Add([PSCustomObject]@{
                 CRC32 = $crcValue
                 FirstFile = $csvCRCCheck[$crcValue]
                 DuplicateFile = $csvRow.FileName
-            }
+            })
         }
         else {
             $csvCRCCheck[$crcValue] = $csvRow.FileName
@@ -712,9 +737,10 @@ ForEach($File in $CRC_CSV_Files){
         $processedEntries = 0
         $matchedEntries = 0
         $movedFilesCount = 0
-        $FoundFilesCRC = @()
-        $NotFoundFiles = @()
-        $AlreadyInDestinationOrCompleted = @()
+        # Use ArrayLists for O(1) append instead of array += which is O(n²)
+        $FoundFilesCRC = [System.Collections.ArrayList]::new()
+        $NotFoundFiles = [System.Collections.ArrayList]::new()
+        $AlreadyInDestinationOrCompleted = [System.Collections.ArrayList]::new()
         
         foreach ($csvEntry in $list) {
             $processedEntries++
@@ -733,7 +759,7 @@ ForEach($File in $CRC_CSV_Files){
             if ($CRCLookup.ContainsKey($lookupKey)) {
                 # Found at least one file with matching CRC and Size
                 $matchedEntries++
-                $FoundFilesCRC += $csvEntry
+                $null = $FoundFilesCRC.Add($csvEntry)
                 $foundMatch = $true
             }
             if (-not $foundMatch) {
@@ -743,17 +769,17 @@ ForEach($File in $CRC_CSV_Files){
 
                 if (Test-Path -LiteralPath $expectedCompletedPath) {
                     $matchedEntries++
-                    $AlreadyInDestinationOrCompleted += $csvEntry
+                    $null = $AlreadyInDestinationOrCompleted.Add($csvEntry)
                     Write-LogOnly "File already in completed folder: $($csvEntry.Filename)"
                 }
                 else {
-                    $NotFoundFiles += [PSCustomObject]@{
+                    $null = $NotFoundFiles.Add([PSCustomObject]@{
                         FileName = $csvEntry.FileName
                         Size     = $csvSize
                         CRC32    = $csvCRC
                         Path     = $csvEntry.Path
                         Comment  = if ($null -ne $csvEntry.Comment) { $csvEntry.Comment } else { '' }
-                    }
+                    })
                 }
             }
         }
@@ -787,20 +813,29 @@ ForEach($File in $CRC_CSV_Files){
                     }
                 }
         
-        # Handle -ForceMoveFiles: move matched files even if incomplete, but leave CSV behind
+        # Handle -ForceMoveFiles: move matched files even if incomplete
+        # If CSV is complete, move both files and CSV; if incomplete, move only files (CSV stays)
         $forceMoveFilesActive = $ForceMoveFiles -and ($FoundFilesCRC.Count -gt 0)
         if ($forceMoveFilesActive) {
-            $ForceMoveFilesCSVs += $File.Name
-            Write-Log "ForceMoveFiles active for CSV $($File.Name) - will move $($FoundFilesCRC.Count) matched file(s) but leave CSV in RootFolder"
-            Write-Host -ForegroundColor Cyan "ForceMoveFiles: Moving $($FoundFilesCRC.Count) file(s) for $($File.Name), CSV stays in RootFolder"
-            # Set flag to enable file moves without marking CSV complete
-            $moveFilesOnly = $true
+            if ($isCompleteCSV) {
+                # Complete CSV with ForceMoveFiles: move both files and CSV
+                Write-Log "ForceMoveFiles active for COMPLETE CSV $($File.Name) - will move $($FoundFilesCRC.Count) file(s) and CSV to completed folder"
+                Write-Host -ForegroundColor Cyan "ForceMoveFiles: Moving $($FoundFilesCRC.Count) file(s) and CSV for $($File.Name)"
+                $moveFilesOnly = $false
+            }
+            else {
+                # Incomplete CSV with ForceMoveFiles: move files only, leave CSV in root
+                $ForceMoveFilesCSVs += $File.Name
+                Write-Log "ForceMoveFiles active for INCOMPLETE CSV $($File.Name) - will move $($FoundFilesCRC.Count) matched file(s) but leave CSV in RootFolder"
+                Write-Host -ForegroundColor Cyan "ForceMoveFiles: Moving $($FoundFilesCRC.Count) file(s) for $($File.Name), CSV stays in RootFolder (incomplete)"
+                $moveFilesOnly = $true
+            }
         }
         else {
             $moveFilesOnly = $false
         }
         
-        if ($isCompleteCSV) {
+        if ($isCompleteCSV -and -not $moveFilesOnly) {
             Write-Log "CSV $($file.Name) is COMPLETE - will move to completed folder"
         }
         elseif ($moveFilesOnly) {
@@ -827,17 +862,18 @@ ForEach($File in $CRC_CSV_Files){
             Write-LogOnly "Creating missing files report: $(Split-Path $missingFilesCsv -Leaf)"
 
             # Preserve original CSV columns first, then append our additional metadata columns
-            $missingFilesReport = $NotFoundFiles | ForEach-Object {
-            [PSCustomObject]@{
-                FileName     = $_.FileName
-                Size         = $_.Size
-                CRC32        = $_.CRC32
-                Path         = $_.Path
-                Comment      = if ($_.PSObject.Properties.Match('Comment')) { $_.Comment } else { '' }
-                ExpectedPath = $_.Path
-                OriginalCSV  = $currentCSVName
-                TimeStamp    = $timestamp
-            }
+            # Use foreach statement (not ForEach-Object) for better performance with large arrays
+            $missingFilesReport = foreach ($nf in $NotFoundFiles) {
+                [PSCustomObject]@{
+                    FileName     = $nf.FileName
+                    Size         = $nf.Size
+                    CRC32        = $nf.CRC32
+                    Path         = $nf.Path
+                    Comment      = if ($nf.PSObject.Properties.Match('Comment')) { $nf.Comment } else { '' }
+                    ExpectedPath = $nf.Path
+                    OriginalCSV  = $currentCSVName
+                    TimeStamp    = $timestamp
+                }
             }
 
             # Single output operation for speed - Force overwrites any existing file
@@ -961,7 +997,7 @@ ForEach($File in $CRC_CSV_Files){
                             $destExists = Test-Path -LiteralPath $destinationPath
                             if ($destExists) {
                                 # Record conflict information mirroring first 5 CSV columns plus paths
-                                $ConflictRecords += [PSCustomObject]@{
+                                $null = $ConflictRecords.Add([PSCustomObject]@{
                                     FileName = $foundFile.FileName
                                     Size = $foundFile.Size
                                     CRC32 = $foundFile.CRC32
@@ -969,7 +1005,7 @@ ForEach($File in $CRC_CSV_Files){
                                     Comment = if ($foundFile.PSObject.Properties.Match('Comment')) { $foundFile.Comment } else { '' }
                                     SourceFullPath = $sourcePath
                                     DestinationPath = $destinationPath
-                                }
+                                })
                                 # Recorded in-memory for later batch processing (per-CSV summary will be logged)
                                 continue
                             }

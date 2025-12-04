@@ -4,7 +4,7 @@ Production-grade CRC32-based file organization workflow for managing downloaded 
 
 Historical note: Most scanner csvs pre-date creation or wide adoption of csv standards in [RFC4180](https://datatracker.ietf.org/doc/html/rfc4180) which wasn't published until 2005, and the expansion and further defining of CSV standards by the [W3C in 2013](https://www.w3.org/TR/sparql11-results-csv-tsv/). The height of scanning as an internet sub-culture occurred during the late 1990s and early 2000s, though thre were pre-cursors and there are some remnants remaining to this day.
 
-This context helps explain the heavy amount of CSV validation and repair tool included in this repo, as the CSVs follow a lot of different ad-hoc standards from that timeframe and a wide variety of text encoding types. It is strongly encouraged to use those tools validate and repair CSVs before using them in the main workflow.
+This context helps explain the heavy amount of CSV validation and repair tool included in this repo, as the CSVs follow a lot of different ad-hoc standards from that timeframe and a wide variety of text encoding types. It is strongly encouraged to use those tools to validate and repair CSVs before using them in the main workflow.
 
 ## Overview
 
@@ -116,18 +116,31 @@ image002.jpg,2345678,EFGH5678,,
 Comprehensive test suite with 85% coverage:
 
 ```powershell
-# Run all PowerShell CRC tests
+# Run full PowerShell test suite (default)
 .\tests\run-crc-tests.ps1
 
-# Quick validation test (runs in seconds)
-.\tests\Quick-Test-CRC.ps1
+# Quick validation (runs in seconds)
+.\tests\run-crc-tests.ps1 -Quick
 
 # Extended test scenarios
+.\tests\run-crc-tests.ps1 -Extended
+
+# Run ALL tests (Quick + Full + Extended + Library + Focused)
+.\tests\run-crc-tests.ps1 -All
+
+# Keep test data after run for inspection
+.\tests\run-crc-tests.ps1 -Keep
+
+# Or run individual test scripts directly
+.\tests\Quick-Test-CRC.ps1
 .\tests\Extended-CRC-Tests.ps1
+.\tests\Test-CRCFileOrganizer.ps1
 
 # Python CSV tests (requires pytest)
 pytest tests/
 ```
+
+**Note:** All test commands automatically return to the repo root directory after completion.
 
 ### Test Files
 
