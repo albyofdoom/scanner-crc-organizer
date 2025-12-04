@@ -112,7 +112,7 @@ Function Test-FileCount {
     )
     
     if (Test-Path -LiteralPath $Path) {
-        $actualCount = (Get-ChildItem -LiteralPath $Path -Filter $Filter -Recurse -File).Count
+        $actualCount = @(Get-ChildItem -LiteralPath $Path -Filter $Filter -Recurse -File).Count
         $passed = $actualCount -eq $ExpectedCount
         Write-TestResult -TestName $Description -Passed $passed -Message "Expected: $ExpectedCount, Actual: $actualCount"
         return $actualCount
@@ -195,13 +195,13 @@ if (!(Test-Path $csvDir)) {
 Write-Host "✓ Test structure validated" -ForegroundColor Green
 
 # Count initial files
-$initialDVD31Count = (Get-ChildItem "$sourceDir\DVD31" -Recurse -File).Count
-$initialDVD34Count = (Get-ChildItem "$sourceDir\DVD34" -Recurse -File).Count
-$initialDVD33Count = (Get-ChildItem "$sourceDir\TEST_MetArt-DVD033(Final)_5923" -Recurse -File).Count
-$initialDVD36Count = (Get-ChildItem "$sourceDir\DVD36_Brackets" -Recurse -File -ErrorAction SilentlyContinue).Count
-$initialDVD39Count = (Get-ChildItem "$sourceDir\DVD39_Conflicts" -Recurse -File -ErrorAction SilentlyContinue).Count
-$initialDVD40Count = (Get-ChildItem "$sourceDir\DVD40_EmptyFolders" -Recurse -File -ErrorAction SilentlyContinue).Count
-$initialCompletedDVD32Count = (Get-ChildItem "$completedDir\MetArt-DVD032(Final)_5090" -Recurse -File).Count
+$initialDVD31Count = @(Get-ChildItem "$sourceDir\DVD31" -Recurse -File).Count
+$initialDVD34Count = @(Get-ChildItem "$sourceDir\DVD34" -Recurse -File).Count
+$initialDVD33Count = @(Get-ChildItem "$sourceDir\TEST_MetArt-DVD033(Final)_5923" -Recurse -File).Count
+$initialDVD36Count = @(Get-ChildItem "$sourceDir\DVD36_Brackets" -Recurse -File -ErrorAction SilentlyContinue).Count
+$initialDVD39Count = @(Get-ChildItem "$sourceDir\DVD39_Conflicts" -Recurse -File -ErrorAction SilentlyContinue).Count
+$initialDVD40Count = @(Get-ChildItem "$sourceDir\DVD40_EmptyFolders" -Recurse -File -ErrorAction SilentlyContinue).Count
+$initialCompletedDVD32Count = @(Get-ChildItem "$completedDir\MetArt-DVD032(Final)_5090" -Recurse -File).Count
 
 Write-Host "`nInitial file counts:" -ForegroundColor Cyan
 Write-Host "  DVD31: $initialDVD31Count files" -ForegroundColor Gray
@@ -260,7 +260,7 @@ Write-TestResult -TestName "DVD031 CSV moved to Completed" `
 
 # Verify files were moved into completed folder (expect at least one file moved)
 $dvd31CompletedFolder = Join-Path $completedDir 'TEST_MetArt-DVD031(Final)_42'
-$dvd31MovedCount = if (Test-Path $dvd31CompletedFolder) { (Get-ChildItem -LiteralPath $dvd31CompletedFolder -Recurse -File -Exclude "*.csv").Count } else { 0 }
+$dvd31MovedCount = if (Test-Path $dvd31CompletedFolder) { @(Get-ChildItem -LiteralPath $dvd31CompletedFolder -Recurse -File -Exclude "*.csv").Count } else { 0 }
 Write-TestResult -TestName "DVD031 files moved to Completed" `
     -Passed ($dvd31MovedCount -ge 1) `
     -Message "Expected files moved to completed, Actual moved: $dvd31MovedCount"
@@ -282,7 +282,7 @@ Write-TestResult -TestName "DVD033 CSV not in Completed" `
     -Passed (!(Test-Path "$completedDir\TEST_MetArt-DVD033(Final)_35\TEST_MetArt-DVD033(Final)_35.csv")) `
     -Message "Incomplete CSV should not move to completed"
 
-$dvd33FilesRemain = (Get-ChildItem "$sourceDir\TEST_MetArt-DVD033(Final)_5923" -Recurse -File -ErrorAction SilentlyContinue).Count
+$dvd33FilesRemain = @(Get-ChildItem "$sourceDir\TEST_MetArt-DVD033(Final)_5923" -Recurse -File -ErrorAction SilentlyContinue).Count
 Write-TestResult -TestName "DVD033 files remain in source (hybrid workflow)" `
     -Passed ($dvd33FilesRemain -eq $initialDVD33Count) `
     -Message "Expected: $initialDVD33Count, Actual: $dvd33FilesRemain"
@@ -322,7 +322,7 @@ Write-TestResult -TestName "DVD034 CSV removed from source" `
 
 $dvd34Completed = "$completedDir\TEST_MetArt-DVD034(Final)_35"
 if (Test-Path $dvd34Completed) {
-    $completedFileCount = (Get-ChildItem $dvd34Completed -Recurse -File -Exclude "*.csv").Count
+    $completedFileCount = @(Get-ChildItem $dvd34Completed -Recurse -File -Exclude "*.csv").Count
     Write-TestResult -TestName "DVD034 all 42 files in Completed" `
         -Passed ($completedFileCount -eq 42) `
         -Message "Expected: 42, Actual: $completedFileCount"
@@ -344,7 +344,7 @@ if (Test-Path $dvd34Completed) {
     # Note: DVD31 and DVD034 share files, so DVD34 folder may still exist with DVD31's remaining files
     $dvd34SourceRemaining = 0
     if (Test-Path "$sourceDir\DVD34") {
-        $dvd34SourceRemaining = (Get-ChildItem "$sourceDir\DVD34" -Recurse -File -ErrorAction SilentlyContinue).Count
+        $dvd34SourceRemaining = @(Get-ChildItem "$sourceDir\DVD34" -Recurse -File -ErrorAction SilentlyContinue).Count
     }
     Write-TestResult -TestName "DVD034 source folder empty or has shared files" `
         -Passed ($dvd34SourceRemaining -le 21) `
@@ -377,7 +377,7 @@ if ($logFile) {
 # --- TEST 5: DVD032 (Pre-existing Completed) ---
 Write-Host "`n--- DVD032: Pre-existing Completed Set ---" -ForegroundColor Magenta
 
-$dvd32CompletedCount = (Get-ChildItem "$completedDir\MetArt-DVD032(Final)_5090" -Recurse -File).Count
+$dvd32CompletedCount = @(Get-ChildItem "$completedDir\MetArt-DVD032(Final)_5090" -Recurse -File).Count
 Write-TestResult -TestName "DVD032 unchanged in Completed" `
     -Passed ($dvd32CompletedCount -eq $initialCompletedDVD32Count) `
     -Message "Pre-existing set should be untouched"
@@ -417,7 +417,7 @@ Write-TestResult -TestName "DVD036 CSV removed from source" `
 
 $dvd36Completed = "$completedDir\TEST_MetArt-DVD036_Brackets"
 if (Test-Path $dvd36Completed) {
-    $dvd36FileCount = (Get-ChildItem $dvd36Completed -Recurse -File -Exclude "*.csv").Count
+    $dvd36FileCount = @(Get-ChildItem $dvd36Completed -Recurse -File -Exclude "*.csv").Count
     Write-TestResult -TestName "DVD036 all 10 files in Completed" `
         -Passed ($dvd36FileCount -eq 10) `
         -Message "Expected: 10, Actual: $dvd36FileCount (tests -LiteralPath fix)"
@@ -470,7 +470,7 @@ Write-TestResult -TestName "DVD039 CSV not in Completed" `
 
 $dvd39FilesRemain = 0
 if (Test-Path "$sourceDir\DVD39_Conflicts") {
-    $dvd39FilesRemain = (Get-ChildItem "$sourceDir\DVD39_Conflicts" -Recurse -File -ErrorAction SilentlyContinue).Count
+    $dvd39FilesRemain = @(Get-ChildItem "$sourceDir\DVD39_Conflicts" -Recurse -File -ErrorAction SilentlyContinue).Count
 }
 Write-TestResult -TestName "DVD039 files remain in source" `
     -Passed ($dvd39FilesRemain -eq $initialDVD39Count) `
@@ -497,7 +497,7 @@ Write-TestResult -TestName "DVD040 CSV moved to Completed" `
 
 $dvd40Completed = "$completedDir\TEST_MetArt-DVD040_EmptyFolders"
 if (Test-Path $dvd40Completed) {
-    $dvd40FileCount = (Get-ChildItem $dvd40Completed -Recurse -File -Exclude "*.csv").Count
+    $dvd40FileCount = @(Get-ChildItem $dvd40Completed -Recurse -File -Exclude "*.csv").Count
     Write-TestResult -TestName "DVD040 all 4 files in Completed" `
         -Passed ($dvd40FileCount -eq 4) `
         -Message "Expected: 4, Actual: $dvd40FileCount"
@@ -506,7 +506,7 @@ if (Test-Path $dvd40Completed) {
 # Check that empty source folders were removed
 $dvd40SourceExists = Test-Path "$sourceDir\DVD40_EmptyFolders"
 if ($dvd40SourceExists) {
-    $dvd40Remaining = (Get-ChildItem "$sourceDir\DVD40_EmptyFolders" -Recurse -File -ErrorAction SilentlyContinue).Count
+    $dvd40Remaining = @(Get-ChildItem "$sourceDir\DVD40_EmptyFolders" -Recurse -File -ErrorAction SilentlyContinue).Count
     Write-TestResult -TestName "DVD040 source folder empty or removed" `
         -Passed ($dvd40Remaining -eq 0) `
         -Message "Empty folders should be cleaned up"

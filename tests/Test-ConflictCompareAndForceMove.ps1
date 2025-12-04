@@ -45,16 +45,25 @@ Describe "CRC-FileOrganizer conflict and force-move tests" {
         $crc = Get-CRC32Hash -FilePath $sourceFile
         $size = (Get-Item -LiteralPath $sourceFile).Length
 
-        # Create CSV in Root (no header)
+        # Create CSV in Root with 2 files (incomplete - only 1 file exists in source)
         $csvName = 'TestPack-001.csv'
         $csvPath = Join-Path $TestRoot $csvName
-        [PSCustomObject]@{
-            FileName = $fileName
-            Size = $size
-            CRC32 = $crc
-            Path = ''
-            Comment = ''
-        } | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8 -Force
+        @(
+            [PSCustomObject]@{
+                FileName = $fileName
+                Size = $size
+                CRC32 = $crc
+                Path = ''
+                Comment = ''
+            },
+            [PSCustomObject]@{
+                FileName = 'missing_file.bin'
+                Size = 12345
+                CRC32 = 'ABCD1234'
+                Path = ''
+                Comment = ''
+            }
+        ) | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8 -Force
 
         # Run the organizer with ForceMoveFiles
         & pwsh -NoProfile -File $ScriptPath -RootFolder $TestRoot -SourceFolderCRC $TestSource -CompletedFolder $TestCompleted -LogFolder $TestLog -ThrottleLimit 1 -ForceMoveFiles
@@ -64,7 +73,7 @@ Describe "CRC-FileOrganizer conflict and force-move tests" {
         $destFile = Join-Path $dest $fileName
         Test-Path $destFile | Should Be $true
 
-        # CSV should still exist in RootFolder
+        # CSV should still exist in RootFolder (incomplete CSV)
         Test-Path $csvPath | Should Be $true
     }
 

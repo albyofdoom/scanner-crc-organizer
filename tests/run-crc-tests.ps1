@@ -27,6 +27,12 @@ $TestsPath = $PSScriptRoot
 
 # Helper to set CWD back to repo root after tests
 function Set-RepoRoot {
+    # Skip in CI environments (GitHub Actions, etc.)
+    if ($env:CI -or $env:GITHUB_ACTIONS) {
+        Write-Host "CI environment detected - skipping directory change" -ForegroundColor Gray
+        return
+    }
+    
     $repoRoot = Split-Path -Parent $TestsPath
     Set-Location -LiteralPath $repoRoot
     Write-Host "Working directory set to: $repoRoot" -ForegroundColor Gray
