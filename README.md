@@ -172,6 +172,7 @@ New / updated tests:
 
 - Moves previous logs to `Archive/` subfolder with timestamps
 - Prevents log directory clutter
+ - Archive includes `.log`, `.csv`, `.json`, and `.txt` files from the `LogFolder` root (excluding Archive subfolders)
 
 ### Phase 2: Calculate CRC32 Hashes
 
@@ -235,7 +236,7 @@ New / updated tests:
 
 Additional parameters (new):
 
-| `-ForceMoveFiles` | (switch) | Move matched files to `CompletedFolder` even if the CSV is incomplete; the CSV remains in `RootFolder` for tracking. |
+| `-ForceMoveFiles` | (switch) | Move matched files to `CompletedFolder` even if the CSV is incomplete; the CSV remains in `RootFolder` for tracking. When `-ForceMoveFiles` is used and a missing-files report is generated, the missing-files CSV will be written into the per-CSV folder under `CompletedFolder` (so it travels with the moved files) instead of being left in the `LogFolder`. |
 | `-CompareConflicts` | (switch) | Consolidate per-CSV conflict entries and run a single pass to compare source vs destination (Size+CRC). Produces `conflict_report_*.csv` in `LogFolder`. |
 | `-ConflictThrottleLimit` | `4` | Throttle limit for CRC calculations run by the `Compare-Conflicts` routine. |
 | `-AutoConfirmConflicts` | (switch) | Bypass interactive confirmation when the combined conflict rows exceed `-SkipCRCIfOver` (useful for CI). |

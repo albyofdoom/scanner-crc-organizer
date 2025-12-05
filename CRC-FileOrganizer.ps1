@@ -104,8 +104,8 @@ try {
     
     $existingLogs = Get-ChildItem -LiteralPath $LogFolder -File -ErrorAction SilentlyContinue | 
                     Where-Object { 
-                        ($_.Extension -eq '.log' -or $_.Extension -eq '.csv') -and 
-                        ($_.DirectoryName.TrimEnd('\') -eq $normalizedLogFolder)
+                        ($_.Extension -eq '.log' -or $_.Extension -eq '.csv' -or $_.Extension -eq '.json' -or $_.Extension -eq '.txt') -and 
+                        ($_.DirectoryName.TrimEnd('\\') -eq $normalizedLogFolder)
                     }
     
     if ($existingLogs -and $existingLogs.Count -gt 0) {
@@ -856,7 +856,30 @@ ForEach($File in $CRC_CSV_Files){
             # Create a fast, single-write CSV report for this CSV's missing files
             $currentCSVBaseName = $file.BaseName
             $currentCSVName = $file.Name
-            $missingFilesCsv = Join-Path $LogFolder ($currentCSVBaseName + "_" + $($NotFoundFiles.Count) + "_missing_files.csv")
+            # Decide where to write the missing-files report.
+            # When ForceMoveFiles is active for this CSV (incomplete CSV but matched files are being moved),
+            # place the missing-files CSV alongside the moved files in the per-CSV Completed folder.
+            if ($moveFilesOnly) {
+                $csvBaseFolder = Join-Path $CompletedFolder $file.BaseName
+                $missingFilesCsv = Join-Path $csvBaseFolder ($currentCSVBaseName + "_" + $($NotFoundFiles.Count) + "_missing_files.csv")
+                if ($DryRun) {
+                    Write-LogOnly "DryRun: Would create missing files report in completed folder: $(Split-Path $missingFilesCsv -Leaf) under $csvBaseFolder"
+                }
+                else {
+                    if (!(Test-Path -LiteralPath $csvBaseFolder)) {
+                        try {
+                            $null = New-Item -ItemType Directory -Path $csvBaseFolder -Force -ErrorAction Stop
+                            Write-LogOnly "Created folder for missing-files report: $csvBaseFolder"
+                        }
+                        catch {
+                            Write-LogOnly "Warning: Could not create folder for missing-files report: $csvBaseFolder - $_"
+                        }
+                    }
+                }
+            }
+            else {
+                $missingFilesCsv = Join-Path $LogFolder ($currentCSVBaseName + "_" + $($NotFoundFiles.Count) + "_missing_files.csv")
+            }
             $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
             
             Write-LogOnly "Creating missing files report: $(Split-Path $missingFilesCsv -Leaf)"
